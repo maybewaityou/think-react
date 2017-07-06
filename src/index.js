@@ -14,7 +14,7 @@ import ReactDOM from 'react-dom';
 
 // var store = configureStore();
 
-class ReduxApp extends Component {
+class ReduxApp extends PureComponent {
 
     constructor(props) {
         super(props);
