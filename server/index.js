@@ -12,7 +12,7 @@ const session = require('koa-session');
 const views = require('koa-views');
 const errorHandler = require('koa-onerror');
 const logger = require('koa-logger');
-const router = require('./src/config/routes');
+const router = require('./config/routes');
 // require('./src/app/utilities/dbutility');
 
 // 初始化实例
@@ -32,7 +32,7 @@ app.use(json());
 app.use(require('koa-static')(__dirname + '/public'));
 
 // template
-app.use(views(__dirname + '/src/views', {
+app.use(views(__dirname + '/views', {
     extension: 'pug'
 }));
 
