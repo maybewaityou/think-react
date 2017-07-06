@@ -1,0 +1,18 @@
+/**
+ * Created by MeePwn
+ * https://github.com/maybewaityou
+ *
+ * description:
+ *
+ */
+const Router = require('koa-router');
+const App = require('../app/controllers/app');
+
+const router = new Router({
+    prefix: '/pages'
+});
+
+// 设置路由规则
+router.get('/index', App.index);
+
+module.exports = router;
