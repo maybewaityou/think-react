@@ -22,20 +22,25 @@ var config = {
         new webpack.DefinePlugin({
             __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
             __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false'))
-        })
-    ],
-    eslint: {
-        configFile: './.eslintrc.json'
-    },
-    module: {
-        loaders: [
+        }),
+        new webpack.LoaderOptionsPlugin(
             { test: /\.html$/, loader: 'file?name=[name].[ext]' },
             { test: /\.js$/, exclude: /node_modules/, loader: 'react-hot!babel!eslint-loader' },
             { test: /\.css$/, loader: 'style!css' },
             { test: /\.scss$/, loader: 'style!css!sass'},
-            { test: /\.(jpg|png|svg)$/, loader: 'url?limit=8192' }
-        ]
-    }
+            { test: /\.(jpg|png|svg)$/, loader: 'url?limit=8192' },
+            {
+                options: {
+                    eslint: {
+                        configFile: './.eslintrc.json'
+                    }
+                }
+            }
+        )
+    ],
+    // eslint: {
+    //     configFile: './.eslintrc.json'
+    // }
 };
 
 if (env === 'production') {
