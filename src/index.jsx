@@ -22,7 +22,11 @@ class ReduxApp extends PureComponent {
     }
 
     render() {
-        return (<div></div>);
+        return (
+            <div>
+                asdasdasd
+            </div>
+        );
     }
 }
 

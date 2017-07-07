@@ -3,14 +3,14 @@ const webpack = require('webpack');
 
 const env = process.env.NODE_ENV;
 
-const entryPath = './src/index.js';
-const dirPath = '/Users/MeePwn/Desktop/MeePwn/ReactNative/source/think-react';
-const publicDirName = './';
+const entryPath = './src/index.jsx';
+const dirPath = __dirname;
+const publicDirName = '/';
 
 var config = {
     entry: {
         jsx: entryPath,
-        html: dirPath + 'index.html'
+        html: dirPath + '/index.html'
     },
     output: {
         publicPath: path.join(publicDirName, 'dist'),
@@ -25,7 +25,15 @@ var config = {
         }),
         new webpack.LoaderOptionsPlugin(
             { test: /\.html$/, loader: 'file?name=[name].[ext]' },
-            { test: /\.js$/, exclude: /node_modules/, loader: 'react-hot!babel!eslint-loader' },
+            { test: /\.js$/, exclude: /node_modules/, loader: 'react-hot!eslint-loader' },
+            {
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['es2015']
+                }
+            },
             { test: /\.css$/, loader: 'style!css' },
             { test: /\.scss$/, loader: 'style!css!sass'},
             { test: /\.(jpg|png|svg)$/, loader: 'url?limit=8192' },
