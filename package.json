@@ -4,9 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "watch": "nodemon --exec npm run start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack-dev-server --progress --colors --inline --hot -d",
+    "server": "webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build",
+    "build": "webpack --progress --colors",
+    "lint": "gulp lint",
+    "start": "gulp server",
+    "clean": "gulp clean",
+    "rebuild": "gulp build",
+    "commit": "git add . && git commit -m \"first commit\"",
+    "push": "git push -u origin master"
   },
   "author": "MeePwn",
   "license": "MIT",
