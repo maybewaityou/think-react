@@ -24,6 +24,7 @@ class ReduxApp extends PureComponent {
     render() {
         return (
             <div>
+                zxcasddsaasddsa
             </div>
         );
     }
