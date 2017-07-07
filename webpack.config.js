@@ -3,15 +3,9 @@ const webpack = require('webpack');
 
 const env = process.env.NODE_ENV;
 
-const entryPath = './WebComponents/app/index.js';
-const reactPath = './WebComponents/';
-const reactPublicPath = '/WebComponents/';
-// const mobileFirstPath = './MobileFirstBoilerplate/apps/HybridBoilerplate/common/';
-const mobileFirstPath = './SHbank/apps/SHbank/common/';
-const mobileFirstPublicPath = '/MobileFirstBoilerplate/apps/HybridBoilerplate/common/';
-
-const dirPath = reactPath;
-const publicDirName = reactPublicPath;
+const entryPath = './src/index.js';
+const dirPath = './';
+const publicDirName = '/';
 
 var config = {
     entry: {
