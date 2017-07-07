@@ -56,3 +56,7 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# 生成文件
+dist/
+build/

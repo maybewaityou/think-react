@@ -4,8 +4,8 @@ const webpack = require('webpack');
 const env = process.env.NODE_ENV;
 
 const entryPath = './src/index.js';
-const dirPath = './';
-const publicDirName = '/';
+const dirPath = '/Users/MeePwn/Desktop/MeePwn/ReactNative/source/think-react';
+const publicDirName = './';
 
 var config = {
     entry: {

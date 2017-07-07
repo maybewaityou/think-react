@@ -12,20 +12,16 @@ const runSequence = require('run-sequence');
 const assign = require('object-assign');
 
 /* ========================== path end ========================== */
-const reactPath = './WebComponents/';
+const reactPath = './';
 const reactDistPath = reactPath + 'dist';
 const reactStaticResourcePath = reactPath + 'static';
-// const mobileFirstPath = './MobileFirstBoilerplate/apps/HybridBoilerplate/common/';
-const mobileFirstPath = './SHbank/apps/SHbank/common/';
-const mobileFirstDistPath = mobileFirstPath + 'dist';
-const mobileFirstStaticResourcePath = mobileFirstPath + 'static';
 /* ========================== path end ========================== */
 
 gulp.task('default', []);
 
 /* ========================== clean start ========================== */
 gulp.task('clean', () => {
-    return del([reactDistPath, mobileFirstDistPath]);
+    return del([reactDistPath]);
 });
 /* ========================== clean end ========================== */
 
@@ -35,7 +31,7 @@ gulp.task('clean', () => {
 
 /* ========================== eslint end ========================== */
 gulp.task('lint', () => {
-    return gulp.src('WebComponents/app/**/*.js')
+    return gulp.src('src/**/*.js')
         .pipe(eslint())
         .pipe(eslint.format());
 });
@@ -61,23 +57,11 @@ gulp.task('uglify', () => {
 });
 
 /* 将生成的dist文件夹, 复制到MobileFirst工程中 */
-gulp.task('copy', () => {
-    return gulp.src(reactDistPath + '/**/*')
-        .pipe(gulp.dest(mobileFirstDistPath));
-});
-
-gulp.task('copy_static_resource', () => {
-    return gulp.src(reactStaticResourcePath + '/**/*')
-        .pipe(gulp.dest(mobileFirstStaticResourcePath));
-});
-
 gulp.task('build', (callback) => {
     runSequence(
         'clean',
         'webpack_build',
         'uglify',
-        'copy_static_resource',
-        'copy',
         (error) => {
             if (error) {
                 console.log(error.message);
