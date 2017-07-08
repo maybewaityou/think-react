@@ -25,15 +25,7 @@ var config = {
         }),
         new webpack.LoaderOptionsPlugin(
             { test: /\.html$/, loader: 'file?name=[name].[ext]' },
-            { test: /\.js$/, exclude: /node_modules/, loader: 'react-hot!eslint-loader' },
-            {
-                test: /\.jsx?$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/,
-                query: {
-                    presets: ['es2015']
-                }
-            },
+            { test: /\.js$/, exclude: /node_modules/, loader: 'react-hot!babel!eslint-loader' },
             { test: /\.css$/, loader: 'style!css' },
             { test: /\.scss$/, loader: 'style!css!sass'},
             { test: /\.(jpg|png|svg)$/, loader: 'url?limit=8192' },
