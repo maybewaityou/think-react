@@ -10,7 +10,7 @@ const publicDirName = '/';
 
 module.exports = {
     entry: {
-        app: './src/index.jsx',
+        app: './src/index.tsx',
         // print: './src/print.js',
         // vendor: ['lodash']
     },
