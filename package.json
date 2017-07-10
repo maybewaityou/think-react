@@ -16,6 +16,8 @@
   "author": "MeePwn",
   "license": "MIT",
   "dependencies": {
+    "@types/react": "^15.0.36",
+    "@types/react-dom": "^15.5.1",
     "bluebird": "^3.5.0",
     "immutable": "^3.8.1",
     "koa": "^2.3.0",
