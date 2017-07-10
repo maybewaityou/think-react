@@ -55,13 +55,12 @@ const webpackConfig = {
             {
                 test: /\.tsx?$/,
                 use: [
-                    'ts-loader'
+                    'awesome-typescript-loader'
                 ],
                 exclude: /node_modules/
             },
             // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
             { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
-            { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
             /* Loading CSS */
             {
                 test: /\.css$/,
