@@ -29,10 +29,10 @@ class ReduxApp extends PureComponent {
                     think-react ~
                 </div>
                 <div>
-                    hello :  <input  />
+                    hello :  <input />
                 </div>
                 <div>
-                    world :  <input  />
+                    world :  <input />
                 </div>
             </div>
         );
