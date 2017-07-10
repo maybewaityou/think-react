@@ -8,7 +8,7 @@ const env = process.env.NODE_ENV;
 const distPath = 'dist';
 const publicDirName = '/';
 
-module.exports = {
+const webpackConfig = {
     entry: {
         app: './src/index.jsx',
         // app: './src/index.tsx',
@@ -104,3 +104,16 @@ module.exports = {
         ]
     }
 };
+
+if (env === 'production') {
+    const uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
+        compress: {
+            warnings: false
+        }
+    });
+    const occurenceOrderPlugin = new webpack.optimize.OccurenceOrderPlugin();
+    webpackConfig.plugins.push(uglifyJsPlugin);
+    webpackConfig.plugins.push(occurenceOrderPlugin);
+}
+
+module.exports = webpackConfig;
