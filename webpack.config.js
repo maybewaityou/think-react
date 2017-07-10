@@ -29,9 +29,10 @@ module.exports = {
             __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false'))
         }),
         new webpack.HotModuleReplacementPlugin(), // Enable HMR
-        // new CleanWebpackPlugin([distPath]),
+        new CleanWebpackPlugin([distPath]),
         new HtmlWebpackPlugin({
-            title: 'think-react'
+            title: 'think-react',
+            template: 'src/index.html',
         })
     ],
     module: {
