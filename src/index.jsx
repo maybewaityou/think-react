@@ -60,6 +60,9 @@ function component() {
     btn.onclick = printMe;
     element.appendChild(btn);
 
+    var input = document.createElement('input');
+    element.appendChild(input);
+
     return element;
 }
 
