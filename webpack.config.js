@@ -15,7 +15,9 @@ module.exports = {
                     'react-hot-loader',
                     'babel-loader',
                     'eslint-loader'
-                ]},
+                ]
+            },
+            /* Loading CSS */
             {
                 test: /\.css$/,
                 use: [
@@ -31,18 +33,33 @@ module.exports = {
                     'sass-loader'
                 ]
             },
+            /* Loading Images */
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [
                     'file-loader'
                 ]
             },
+            /* Loading Fonts */
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: [
                     'file-loader'
                 ]
-            }
+            },
+            /* Loading Data */
+            {
+                test: /\.(csv|tsv)$/,
+                use: [
+                    'csv-loader'
+                ]
+            },
+            {
+                test: /\.xml$/,
+                use: [
+                    'xml-loader'
+                ]
+            },
         ]
     }
 };
