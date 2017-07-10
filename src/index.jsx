@@ -23,8 +23,8 @@ class ReduxApp extends PureComponent {
 
     render() {
         return (
-            <div>
-                asdasdasd
+            <div className="hello">
+                think-react ~
             </div>
         );
     }
