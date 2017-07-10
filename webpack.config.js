@@ -23,6 +23,9 @@ module.exports = {
         contentBase: path.resolve(__dirname, distPath),
     },
     devtool: 'source-map',
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js', 'jsx']
+    },
     plugins: [
         new webpack.DefinePlugin({
             __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
