@@ -9,5 +9,5 @@
 .hello {
     color: red;
     font-family: 'CustomFont';
-    background: url('./ic_launcher.png');
+    /*background: url('./ic_launcher.png');*/
 }
