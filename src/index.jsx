@@ -49,4 +49,4 @@ const styles = {
 
 ReactDOM.render((
     <ReduxApp />
-), document.getElementById('content'));
+), document.getElementById('app'));
