@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack-dev-server --progress --colors --inline --hot -d",
-    "server": "webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build",
+    "watch": "webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build",
     "build": "webpack --progress --colors",
     "lint": "gulp lint",
     "start": "gulp server",
