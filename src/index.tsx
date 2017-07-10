@@ -55,7 +55,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { Hello } from "./Hello";
+import { Hello } from './Hello';
 
 ReactDOM.render((
     <Hello compiler="TypeScript" framework="React" />
