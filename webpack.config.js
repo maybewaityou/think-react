@@ -46,6 +46,14 @@ module.exports = {
                     'eslint-loader'
                 ]
             },
+            /* Loading Typescript */
+            {
+                test: /\.tsx?$/,
+                use: [
+                    'ts-loader'
+                ],
+                exclude: /node_modules/
+            },
             /* Loading CSS */
             {
                 test: /\.css$/,
@@ -88,7 +96,7 @@ module.exports = {
                 use: [
                     'xml-loader'
                 ]
-            },
+            }
         ]
     }
 };
