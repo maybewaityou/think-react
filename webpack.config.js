@@ -14,6 +14,7 @@ module.exports = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, distPath)
     },
+    devtool: 'source-map',
     plugins: [
         new CleanWebpackPlugin([distPath]),
         new HtmlWebpackPlugin({
