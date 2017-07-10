@@ -30,7 +30,12 @@ gulp.task('clean', () => {
 
 /* ========================== eslint end ========================== */
 gulp.task('lint', () => {
-    return gulp.src('src/**/*.js')
+    return gulp.src([
+        'src/**/*.ts',
+        'src/**/*.tsx',
+        'src/**/*.js',
+        'src/**/*.jsx'
+    ])
         .pipe(eslint())
         .pipe(eslint.format());
 });
