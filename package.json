@@ -39,6 +39,7 @@
     "rxjs": "^5.4.2",
     "sha1": "^1.1.1",
     "speakeasy": "^2.0.0",
+    "styled-components": "^2.1.1",
     "underscore": "^1.8.3",
     "uuid": "^3.1.0",
     "xss": "^0.3.3"
