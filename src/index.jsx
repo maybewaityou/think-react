@@ -47,4 +47,6 @@ const styles = {
 
 };
 
-ReactDOM.render(( <ReduxApp /> ), document.getElementById('content'));
+ReactDOM.render((
+    <ReduxApp />
+), document.getElementById('content'));
