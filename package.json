@@ -8,7 +8,6 @@
     "build": "webpack --progress --colors",
     "watch": "webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build",
     "lint": "gulp lint",
-    "start": "gulp server",
     "clean": "gulp clean",
     "rebuild": "gulp build",
     "commit": "git add . && git commit -m \"first commit\"",

@@ -14,7 +14,6 @@ const assign = require('object-assign');
 /* ========================== path end ========================== */
 const reactPath = './';
 const reactDistPath = reactPath + 'dist';
-const reactStaticResourcePath = reactPath + 'static';
 /* ========================== path end ========================== */
 
 gulp.task('default', []);
