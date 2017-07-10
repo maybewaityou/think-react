@@ -9,10 +9,6 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.html$/,
-                loader: 'file-loader?name=[name].[ext]'
-            },
-            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: [
@@ -37,6 +33,12 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
+                ]
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use: [
                     'file-loader'
                 ]
