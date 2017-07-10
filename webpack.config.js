@@ -36,7 +36,7 @@ const webpackConfig = {
         new CleanWebpackPlugin([distPath]),
         new HtmlWebpackPlugin({
             title: 'think-react',
-            template: 'src/index.html',
+            template: 'src/assets/template/index.html',
         })
     ],
     module: {
