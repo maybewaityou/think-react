@@ -39,6 +39,8 @@ import './style.css';
 import Icon from './ic_launcher.png';
 import Data from './data.xml';
 
+import printMe from './print';
+
 function component() {
     var element = document.createElement('div');
 
@@ -52,6 +54,11 @@ function component() {
     element.appendChild(myIcon);
 
     console.log(Data);
+
+    var btn = document.createElement('button');
+    btn.innerHTML = 'Click me and check the console!';
+    btn.onclick = printMe;
+    element.appendChild(btn);
 
     return element;
 }

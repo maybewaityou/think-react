@@ -1,9 +1,12 @@
 var path = require('path');
 
 module.exports = {
-    entry: './src/index.jsx',
+    entry: {
+        app: './src/index.jsx',
+        print: './src/print.js'
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
     module: {
