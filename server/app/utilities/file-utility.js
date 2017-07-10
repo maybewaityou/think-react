@@ -13,8 +13,7 @@ module.exports = {
         return new Promise((resolve, rejeck) => {
             fs.readFile(path, (error, result) => {
                 if (error) {
-                    rejeck(error);
-                    return;
+                    return rejeck(error);
                 }
                 resolve(result);
             });
