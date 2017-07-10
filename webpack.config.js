@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+const env = process.env.NODE_ENV;
+
 const distPath = 'dist';
 const publicDirName = '/';
 
@@ -22,8 +24,12 @@ module.exports = {
     },
     devtool: 'source-map',
     plugins: [
+        new webpack.DefinePlugin({
+            __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')),
+            __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false'))
+        }),
         new webpack.HotModuleReplacementPlugin(), // Enable HMR
-        new CleanWebpackPlugin([distPath]),
+        // new CleanWebpackPlugin([distPath]),
         new HtmlWebpackPlugin({
             title: 'think-react'
         })
