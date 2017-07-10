@@ -7,6 +7,7 @@ const env = process.env.NODE_ENV;
 
 const distPath = 'dist';
 const publicDirName = '/';
+const templatePath = 'src/assets/template/index.html';
 
 const webpackConfig = {
     entry: {
@@ -36,7 +37,7 @@ const webpackConfig = {
         new CleanWebpackPlugin([distPath]),
         new HtmlWebpackPlugin({
             title: 'think-react',
-            template: 'src/assets/template/index.html',
+            template: templatePath,
         })
     ],
     module: {
