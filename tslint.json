@@ -68,8 +68,9 @@
             "check-whitespace"
         ],
         "quotemark": [
-            false,
-            "double"
+            true,
+            "single",
+            "jsx-double"
         ],
         "semicolon": [
             true,
