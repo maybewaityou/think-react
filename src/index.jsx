@@ -30,7 +30,7 @@ class ReduxApp extends PureComponent {
     }
 }
 
-ReactDOM.render(( <ReduxApp /> ), document.getElementById('root'));
+ReactDOM.render(( <ReduxApp /> ), document.getElementById('content'));
 
 // import _ from 'lodash';
 // import './style.css';
