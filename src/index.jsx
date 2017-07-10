@@ -24,11 +24,27 @@ class ReduxApp extends PureComponent {
 
     render() {
         return (
-            <div className="hello">
-                think-react ~
+            <div className="hello" style={styles.container}>
+                <div>
+                    think-react ~
+                </div>
+                <div>
+                    hello :  <input  />
+                </div>
+                <div>
+                    world :  <input  />
+                </div>
             </div>
         );
     }
 }
+
+const styles = {
+    container: {
+        flex: 1,
+        fontSize: 20,
+    },
+
+};
 
 ReactDOM.render(( <ReduxApp /> ), document.getElementById('content'));
