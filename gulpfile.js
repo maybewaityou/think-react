@@ -54,9 +54,9 @@ gulp.task('webpack_build', (callback) => {
 });
 
 gulp.task('uglify', () => {
-    return gulp.src(reactDistPath + '/bundle.js')
+    return gulp.src(reactDistPath + '/app.bundle.js')
         .pipe(uglify())
-        .pipe(rename('bundle.min.js'))
+        .pipe(rename('app.bundle.min.js'))
         .pipe(gulp.dest(reactDistPath));
 });
 
