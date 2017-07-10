@@ -11,8 +11,8 @@ const templatePath = 'src/assets/template/index.html';
 
 const webpackConfig = {
     entry: {
-        app: './src/index.jsx',
-        // app: './src/index.tsx',
+        // app: './src/index.jsx',
+        app: './src/index.tsx',
         // print: './src/print.js',
         // vendor: ['lodash']
     },
@@ -109,10 +109,10 @@ const webpackConfig = {
         // assume a corresponding global variable exists and use that instead.
         // This is important because it allows us to avoid bundling all of our
         // dependencies, which allows browsers to cache those libraries between builds.
-        externals: {
-            'react': 'React',
-            'react-dom': 'ReactDOM'
-        },
+        // externals: {
+        //     'react': 'React',
+        //     'react-dom': 'ReactDOM'
+        // },
     }
 };
 
