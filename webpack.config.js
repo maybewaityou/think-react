@@ -1,8 +1,10 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const distPath = 'dist';
+const publicDirName = '/';
 
 module.exports = {
     entry: {
@@ -12,10 +14,17 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, distPath)
+        path: path.resolve(__dirname, distPath),
+        publicPath: publicDirName
+    },
+    devServer: {
+        hot: true, // Tell the dev-server we're using HMR
+        contentBase: path.resolve(__dirname, distPath),
+        publicPath: publicDirName
     },
     devtool: 'source-map',
     plugins: [
+        new webpack.HotModuleReplacementPlugin(), // Enable HMR
         new CleanWebpackPlugin([distPath]),
         new HtmlWebpackPlugin({
             title: 'think-react'
