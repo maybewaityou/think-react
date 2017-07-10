@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+const distPath = 'dist';
+
 module.exports = {
     entry: {
         app: './src/index.jsx',
@@ -10,10 +12,10 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, distPath)
     },
     plugins: [
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin([distPath]),
         new HtmlWebpackPlugin({
             title: 'think-react'
         })
