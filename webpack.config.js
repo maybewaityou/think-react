@@ -9,18 +9,16 @@ const publicDirName = '/';
 module.exports = {
     entry: {
         app: './src/index.jsx',
-        print: './src/print.js',
-        vendor: ['lodash']
+        // print: './src/print.js',
+        // vendor: ['lodash']
     },
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, distPath),
-        publicPath: publicDirName
     },
     devServer: {
         hot: true, // Tell the dev-server we're using HMR
         contentBase: path.resolve(__dirname, distPath),
-        publicPath: publicDirName
     },
     devtool: 'source-map',
     plugins: [
