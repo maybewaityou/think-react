@@ -5,8 +5,8 @@
  * description:
  *
  */
-// import React, { PureComponent } from 'react';
-// import ReactDOM from 'react-dom';
+import React, { PureComponent } from 'react';
+import ReactDOM from 'react-dom';
 // import { Provider } from 'react-redux';
 // import configureStore from './dataflow/store/Store';
 // import Just from './main/context/Just';
@@ -14,23 +14,23 @@
 //
 // var store = configureStore();
 //
-// class ReduxApp extends PureComponent {
-//
-//     constructor(props) {
-//         super(props);
-//
-//     }
-//
-//     render() {
-//         return (
-//             <div>
-//                 asdasdasd
-//             </div>
-//         );
-//     }
-// }
-//
-// ReactDOM.render(( <ReduxApp /> ), document.getElementById('root'));
+class ReduxApp extends PureComponent {
+
+    constructor(props) {
+        super(props);
+
+    }
+
+    render() {
+        return (
+            <div>
+                asdasdasd
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(( <ReduxApp /> ), document.getElementById('root'));
 
 // import _ from 'lodash';
 // import './style.css';
@@ -65,51 +65,3 @@
 // }
 //
 // document.body.appendChild(component());
-/**
- * Created by MeePwn
- * https://github.com/maybewaityou
- *
- * description:
- *
- */
-import React, { PureComponent, PropTypes } from 'react';
-import ReactDOM from 'react-dom';
-
-const propTypes = {
-
-};
-
-const defaultProps = {
-
-};
-
-const defaultState = {
-
-};
-
-export default class zzzView extends PureComponent {
-
-    constructor(props) {
-        super(props);
-
-        this.state = defaultState;
-    }
-
-    render() {
-        return (
-            <div>aaaa</div>
-        );
-    }
-}
-
-zzzView.propTypes = propTypes;
-zzzView.defaultProps = defaultProps;
-
-const styles = {
-    container: {
-        flex: 1,
-
-    },
-};
-
-ReactDOM.render(( <zzzView /> ), document.getElementById('root'));
