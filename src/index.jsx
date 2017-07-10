@@ -14,22 +14,34 @@ import ReactDOM from 'react-dom';
 
 // var store = configureStore();
 
-class ReduxApp extends PureComponent {
+// class ReduxApp extends PureComponent {
+//
+//     constructor(props) {
+//         super(props);
+//
+//     }
+//
+//     render() {
+//         return (
+//             <div>
+//                 asdasdasd
+//             </div>
+//         );
+//     }
+// }
+//
+// ReactDOM.render((
+//     <ReduxApp />
+// ), document.getElementById('app'));
 
-    constructor(props) {
-        super(props);
+import _ from 'lodash';
 
-    }
+function component() {
+    var element = document.createElement('div');
 
-    render() {
-        return (
-            <div>
-                asdasdasd
-            </div>
-        );
-    }
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+
+    return element;
 }
 
-ReactDOM.render((
-    <ReduxApp />
-), document.getElementById('app'));
+document.body.appendChild(component());
