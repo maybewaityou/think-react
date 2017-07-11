@@ -23,6 +23,7 @@ const webpackConfig = {
     devServer: {
         hot: true, // Tell the dev-server we're using HMR
         contentBase: path.resolve(__dirname, distPath),
+        port: 9000
     },
     devtool: 'source-map',
     resolve: {
