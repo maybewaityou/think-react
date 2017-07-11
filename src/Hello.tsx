@@ -28,7 +28,7 @@ export class Hello extends React.Component<IHelloProps, undefined> {
 
 const styles = {
     bgColor: {
-        backgroundColor: 'blue',
+
     },
     container: {
         flex: 1,
