@@ -8,7 +8,14 @@ export interface IHelloProps {
 
 // 'HelloProps' describes the shape of props.
 // State is never set so we use the 'undefined' type.
+
 export class Hello extends React.Component<IHelloProps, undefined> {
+
+    public onClick = () => {
+        const aa = squareNumber(4);
+        console.log(aa);
+    }
+
     public render() {
         return (
             <div className="hello">
@@ -21,10 +28,24 @@ export class Hello extends React.Component<IHelloProps, undefined> {
                 <div style={styles.bgColor}>
                     password :  <input />
                 </div>
+                <button onClick={this.onClick}>button</button>
             </div>
         );
     }
 }
+
+const memoize = (f: any) => {
+    const cache: any = {};
+    return (x: any) => {
+        const argStr = JSON.stringify(x);
+        cache[argStr] = cache[argStr] || f(x);
+        return cache[argStr];
+    };
+};
+
+const squareNumber = memoize((x: number) => {
+    return x * x;
+});
 
 const styles = {
     bgColor: {
