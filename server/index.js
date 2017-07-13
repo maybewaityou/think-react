@@ -12,6 +12,7 @@ const session = require('koa-session');
 const views = require('koa-views');
 const errorHandler = require('koa-onerror');
 const logger = require('koa-logger');
+const cors = require('koa-cors');
 const router = require('./config/routes');
 // require('./src/app/utilities/dbutility');
 
@@ -25,6 +26,7 @@ errorHandler(app);
 // middlewares
 app.use(logger());
 app.use(session(app));
+app.use(cors());
 app.use(bodyParser({
     enableTypes: ['json', 'form', 'text']
 }));
