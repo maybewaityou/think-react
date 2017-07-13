@@ -6,10 +6,10 @@
  *
  */
 import * as React from 'react';
-import { ComponentClass, connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { CANCEL, PROMISE } from '../../dataflow/actions/Action';
 import actionCreator from '../../dataflow/actions/ActionCreator';
+import { connection } from '../../dataflow/connect/connection';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import ObservableView from './ObservableView';
 import { getError, getHomeData, getHomeDataSelector, isSuccess } from './selector/Selectors';
@@ -25,25 +25,13 @@ export interface IObservableContainerState {
 
 }
 
-function mapStateToProps(state: any) {
-    log('===== mapStateToProps =====');
-    return {
-        $data: getHomeDataSelector(state),
-        $error: getError(state),
-        success: isSuccess(state),
-    };
-}
-
-function mapDispatchToProps(dispatch: any) {
-    return {
-        actions: bindActionCreators(actionCreator, dispatch),
-    };
-}
-
-const connectedContainer: any = connect(mapStateToProps, mapDispatchToProps);
-
-// @connect(mapStateToProps, mapDispatchToProps)
-@connectedContainer
+@connection((state: any) => ({
+    $data: getHomeDataSelector(state),
+    $error: getError(state),
+    success: isSuccess(state),
+}), (dispatch: any) => ({
+    actions: bindActionCreators(actionCreator, dispatch),
+}))
 export default class ObservableContainer extends React.PureComponent<IObservableContainerProps, IObservableContainerState> {
 
     constructor(props: any) {
