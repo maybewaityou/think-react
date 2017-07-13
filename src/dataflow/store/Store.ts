@@ -9,7 +9,7 @@ import { applyMiddleware, createStore, MiddlewareAPI } from 'redux';
 import rootReducer from '../reducer/Reducer';
 
 import { createEpicMiddleware, Epic } from 'redux-observable';
-import rootEpic from '../../demos/redux-observable/epic/Epics';
+import rootEpic from '../epic/Epic';
 
 // redux-observable Middleware
 // dependencies: 注入的参数

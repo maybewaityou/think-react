@@ -8,7 +8,7 @@
  *
  */
 import { ActionsObservable } from 'redux-observable';
-import IAction from '../../../dataflow/actions/Action';
+import IAction from '../actions/Action';
 
-export default (action$: any) => (actionType: string) => (nextAction: any) =>
+export const epicCreator = (action$: any) => (actionType: string) => (nextAction: any) =>
     action$.ofType(actionType).mergeMap((action: IAction) => nextAction(action));
