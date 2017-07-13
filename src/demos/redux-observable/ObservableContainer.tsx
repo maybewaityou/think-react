@@ -25,7 +25,8 @@ export interface IObservableContainerState {
 
 }
 
-export default class ObservableContainer extends React.PureComponent<IObservableContainerProps, IObservableContainerState> {
+// @connect(mapStateToProps, mapDispatchToProps)
+class ObservableContainer extends React.PureComponent<IObservableContainerProps, IObservableContainerState> {
 
     constructor(props: any) {
         super(props);
@@ -33,13 +34,13 @@ export default class ObservableContainer extends React.PureComponent<IObservable
     }
 
     public handleTestObservableClick = () => {
-        // this.props.actions(PROMISE, { params: 'mu haha ~ ~' });
-        log(PROMISE);
+        this.props.actions(PROMISE, { params: 'mu haha ~ ~' });
+        // log(PROMISE);
     }
 
     public handleTestObservableCancelClick = () => {
-        // this.props.actions(CANCEL);
-        log(CANCEL);
+        this.props.actions(CANCEL);
+        // log(CANCEL);
     }
 
     public render() {
@@ -71,3 +72,5 @@ function mapDispatchToProps(dispatch: any) {
         actions: bindActionCreators(actionCreator, dispatch),
     };
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(ObservableContainer as ComponentClass<any>);
