@@ -33,11 +33,13 @@ export default class ObservableContainer extends React.PureComponent<IObservable
     }
 
     public handleTestObservableClick = () => {
-        this.props.actions(PROMISE, { params: 'mu haha ~ ~' });
+        // this.props.actions(PROMISE, { params: 'mu haha ~ ~' });
+        log(PROMISE);
     }
 
     public handleTestObservableCancelClick = () => {
-        this.props.actions(CANCEL);
+        // this.props.actions(CANCEL);
+        log(CANCEL);
     }
 
     public render() {
