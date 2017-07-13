@@ -4,7 +4,8 @@
         "paths": {
             "redux": ["node_modules/redux/index.d.ts"],
             "redux-observable": ["node_modules/redux-observable/index.d.ts"],
-            "immutable": ["node_modules/immutable/dist/immutable.d.ts"]
+            "immutable": ["node_modules/immutable/dist/immutable.d.ts"],
+            "rxjs": ["node_modules/rxjs/Rx.d.ts"]
         },
         "target": "es2015",
         "module": "es2015",
