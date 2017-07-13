@@ -36,11 +36,35 @@ export function fetchData(subURL: string, params?: any): Promise<Response> {
     log(`== URL ===>>>> ${URL}`);
     log(`== params ===>>>> ${params}`);
 
-    return fetch(URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: toString(params && {}),
-    }).then((response) => response.json());
+    return new Promise((resolve, reject) => {
+        fetch(URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: toString(params && {}),
+        })
+            .then(checkStatus)
+            .then(parseJSON)
+            .then((response) => {
+                resolve(response);
+            })
+            .catch((error) => {
+                reject({ error });
+            });
+    });
+}
+
+function checkStatus(response: any) {
+    if (response.status >= 200 && response.status < 300) {
+      return response;
+  } else {
+    const error: any = new Error(response.statusText);
+    error.response = response;
+    throw error;
+  }
+}
+
+function parseJSON(response: any) {
+  return response.json();
 }
