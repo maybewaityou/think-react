@@ -16,6 +16,6 @@ const router = new Router({
 // 设置路由规则
 router.get('/index', App.index);
 
-router.get('/showIndexInfo', Home.home);
+router.post('/showIndexInfo', Home.home);
 
 module.exports = router;
