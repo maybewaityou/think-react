@@ -51,12 +51,9 @@ export default class ObservableContainer extends React.PureComponent<IObservable
 
     public render() {
         const { success, $data, $error } = this.props;
-        // data={success ? $data.toJS() : $error.toJS()}
         return (
             <ObservableView
-                data={{
-                    name: '张三',
-                }}
+                data={success ? $data.toJS() : $error.toJS()}
                 handleTestObservableClick={this.handleTestObservableClick}
                 handleTestObservableCancelClick={this.handleTestObservableCancelClick}
             />
