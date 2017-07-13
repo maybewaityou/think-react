@@ -2,16 +2,22 @@ import * as React from 'react';
 import './assets/stylesheet/style.css';
 
 import R from 'ramda';
+import { Provider } from 'react-redux';
 
-export interface IHelloProps {
-    compiler: string;
-    framework: string;
+export interface IAppProps {
+
 }
 
-// 'HelloProps' describes the shape of props.
-// State is never set so we use the 'undefined' type.
+export interface IAppState {
 
-export class Hello extends React.Component<IHelloProps, undefined> {
+}
+
+export default class App extends React.PureComponent<IAppProps, IAppState> {
+
+    constructor(props: any) {
+        super(props);
+
+    }
 
     public onClick = () => {
         // const aa = squareNumber(4);
@@ -28,7 +34,7 @@ export class Hello extends React.Component<IHelloProps, undefined> {
         return (
             <div className="hello">
                 <h1>
-                    Hello from {this.props.compiler} and {this.props.framework}!
+                    Hello from App!
                 </h1>
                 <div>
                     name :  <input />
