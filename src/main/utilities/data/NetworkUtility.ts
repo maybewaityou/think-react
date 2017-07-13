@@ -50,7 +50,7 @@ export function fetchData(subURL: string, params?: any): Promise<Response> {
                 resolve(response);
             })
             .catch((error) => {
-                reject({ error });
+                reject({ errorMessage: error.message, errorStack: error.stack });
             });
     });
 }
