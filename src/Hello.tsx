@@ -12,8 +12,14 @@ export interface IHelloProps {
 export class Hello extends React.Component<IHelloProps, undefined> {
 
     public onClick = () => {
-        const aa = squareNumber(4);
-        console.log(aa);
+        // const aa = squareNumber(4);
+        // console.log(aa);
+        // const aa = ['jumpkick', 'roundhouse', 'uppercut'].reduce((acc: any, x: any) => {
+        //     console.log(`x ===>>> ${x}`);
+        //     console.log(`acc ===>>> ${acc}`);
+        //     return [x].concat(acc);
+        // }, []);
+        // console.log(aa);
     }
 
     public render() {
