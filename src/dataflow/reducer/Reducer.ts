@@ -22,7 +22,6 @@ function $networkReducer($state = $initializeNetworkState, action: IAction) {
             .set('isSuccess', true)
             .set('homeData', fromJS(action.payload));
     case ERROR:
-        console.log(action.payload);
         return $state
             .set('isSuccess', false)
             .set('error', fromJS(action.payload));
