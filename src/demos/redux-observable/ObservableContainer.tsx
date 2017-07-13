@@ -25,8 +25,26 @@ export interface IObservableContainerState {
 
 }
 
+function mapStateToProps(state: any) {
+    log('===== mapStateToProps =====');
+    return {
+        $data: getHomeDataSelector(state),
+        $error: getError(state),
+        success: isSuccess(state),
+    };
+}
+
+function mapDispatchToProps(dispatch: any) {
+    return {
+        actions: bindActionCreators(actionCreator, dispatch),
+    };
+}
+
+const connectedContainer: any = connect(mapStateToProps, mapDispatchToProps);
+
 // @connect(mapStateToProps, mapDispatchToProps)
-class ObservableContainer extends React.PureComponent<IObservableContainerProps, IObservableContainerState> {
+@connectedContainer
+export default class ObservableContainer extends React.PureComponent<IObservableContainerProps, IObservableContainerState> {
 
     constructor(props: any) {
         super(props);
@@ -57,20 +75,3 @@ class ObservableContainer extends React.PureComponent<IObservableContainerProps,
         );
     }
 }
-
-function mapStateToProps(state: any) {
-    log('===== mapStateToProps =====');
-    return {
-        $data: getHomeDataSelector(state),
-        $error: getError(state),
-        success: isSuccess(state),
-    };
-}
-
-function mapDispatchToProps(dispatch: any) {
-    return {
-        actions: bindActionCreators(actionCreator, dispatch),
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ObservableContainer as ComponentClass<any>);
