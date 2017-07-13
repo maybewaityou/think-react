@@ -1,6 +1,8 @@
 import * as React from 'react';
 import './assets/stylesheet/style.css';
 
+import R from 'ramda';
+
 export interface IHelloProps {
     compiler: string;
     framework: string;
