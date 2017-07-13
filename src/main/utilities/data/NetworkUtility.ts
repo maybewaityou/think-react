@@ -31,7 +31,7 @@ export function networkObservable(subURL: string, params?: any) {
 export function fetchData(subURL: string, params?: any): Promise<Response> {
 
     // const URL = `http://10.240.90.212:8088/padServer/${subURL}`;
-    const URL = 'http://192.168.1.112:3000/pages/showIndexInfo';
+    const URL = 'http://localhost:3000/pages/showIndexInfo';
 
     log(`== URL ===>>>> ${URL}`);
     log(`== params ===>>>> ${params}`);
