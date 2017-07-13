@@ -7,6 +7,7 @@
  */
 const Router = require('koa-router');
 const App = require('../app/controllers/app');
+const Home = require('../app/controllers/home');
 
 const router = new Router({
     prefix: '/pages'
@@ -14,5 +15,7 @@ const router = new Router({
 
 // 设置路由规则
 router.get('/index', App.index);
+
+router.get('/showIndexInfo', Home.home);
 
 module.exports = router;
