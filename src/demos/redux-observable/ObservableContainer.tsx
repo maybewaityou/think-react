@@ -12,7 +12,7 @@ import { CANCEL, PROMISE } from '../../dataflow/actions/Action';
 import actionCreator from '../../dataflow/actions/ActionCreator';
 import { connection } from '../../dataflow/connect/connection';
 import { log } from '../../main/utilities/debug/DebugUtility';
-import ObservableView from './ObservableView';
+import ObservableView, { ObservableStatelessView } from './ObservableView';
 import { getError, getHomeData, getHomeDataSelector, isSuccess } from './selector/Selectors';
 
 export interface IObservableContainerProps {
