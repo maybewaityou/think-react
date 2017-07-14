@@ -7,6 +7,8 @@
  */
 import { is } from 'immutable';
 import * as React from 'react';
+import { toString } from '../../../utilities/data/JSONUtility';
+import { log } from '../../../utilities/debug/DebugUtility';
 
 const pureRenderDecorator = (WrappedComponent: React.ComponentClass) => (
     class extends React.PureComponent<any, any> {
@@ -32,6 +34,7 @@ const pureRenderDecorator = (WrappedComponent: React.ComponentClass) => (
                 }
             }
 
+            log('====== pureRender ======');
             return false;
         }
 

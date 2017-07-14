@@ -10,7 +10,7 @@ import { pureRender } from '../../main/components/high-order-component/Decorator
 import { toString } from '../../main/utilities/data/JSONUtility';
 
 export interface IObservableViewProps {
-    data: any;
+    $data: any;
     handleTestObservableClick: any;
     handleTestObservableCancelClick: any;
 }
@@ -32,7 +32,7 @@ export default class ObservableView extends React.PureComponent<IObservableViewP
             <div style={styles.container}>
                 <button style={styles.button} onClick={this.props.handleTestObservableClick}>test observable</button>
                 <button style={styles.button} onClick={this.props.handleTestObservableCancelClick}>test observable cancel</button>
-                <div style={styles.text}>{toString(this.props.data)}</div>
+                <div style={styles.text}>{toString(this.props.$data.toJS())}</div>
             </div>
         );
     }
