@@ -13,7 +13,7 @@ import actionCreator from '../../dataflow/actions/ActionCreator';
 import { connection } from '../../dataflow/connect/connection';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import ObservableView, { ObservableStatelessView } from './ObservableView';
-import { getError, getHomeData, getHomeDataSelector, isSuccess } from './selector/Selectors';
+import { $getError, $getHomeData, $getHomeDataSelector, isSuccess } from './selector/Selectors';
 
 export interface IObservableContainerProps {
     actions?: any;
@@ -27,8 +27,8 @@ export interface IObservableContainerState {
 }
 
 @connection((state: any) => ({
-    $data: getHomeDataSelector(state),
-    $error: getError(state),
+    $data: $getHomeDataSelector(state),
+    $error: $getError(state),
     success: isSuccess(state),
 }), (dispatch: any) => ({
     actions: bindActionCreators(actionCreator, dispatch),
