@@ -5,6 +5,7 @@
  * description:
  *
  */
+import { Map } from 'immutable';
 import * as React from 'react';
 import { bindActionCreators } from 'redux';
 import { CANCEL, PROMISE } from '../../dataflow/actions/Action';
@@ -17,8 +18,8 @@ import { getError, getHomeData, getHomeDataSelector, isSuccess } from './selecto
 export interface IObservableContainerProps {
     actions?: any;
     success?: any;
-    $data?: any;
-    $error?: any;
+    $data?: Map<string, any>;
+    $error?: Map<string, any>;
 }
 
 export interface IObservableContainerState {
@@ -34,7 +35,7 @@ export interface IObservableContainerState {
 }))
 export default class ObservableContainer extends React.PureComponent<IObservableContainerProps, IObservableContainerState> {
 
-    constructor(props: any) {
+    constructor(props: Readonly<any>) {
         super(props);
 
     }
