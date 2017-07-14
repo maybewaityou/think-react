@@ -5,7 +5,7 @@
  * description:
  *
  */
-import { is } from 'immutable';
+import { Map } from 'immutable';
 import { createSelector } from 'reselect';
 import { toString } from '../../../main/utilities/data/JSONUtility';
 import { log } from '../../../main/utilities/debug/DebugUtility';
@@ -21,9 +21,9 @@ export const isSuccess = (state: any) => state.$networkReducer.get('isSuccess');
  */
 export const getHomeDataSelector = createSelector(
     [ getHomeData, isSuccess ],
-    (homeData: any, success: any) => {
-        log(`== homeData ===>>>> ${toString(homeData)}`);
+    ($homeData: Map<string, any>, success: boolean) => {
+        log(`== homeData ===>>>> ${toString($homeData)}`);
         log(`== isSuccess ===>>>> ${toString(success)}`);
-        return homeData;
+        return $homeData;
     },
 );
