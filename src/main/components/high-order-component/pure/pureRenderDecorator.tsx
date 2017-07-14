@@ -11,9 +11,11 @@ import * as React from 'react';
 const pureRenderDecorator = (WrappedComponent: React.ComponentClass) => (
     class extends React.PureComponent<any, any> {
 
-        public shouldComponentUpdate(nextProps: Readonly<any>, nextState: Readonly<any>) {
+        public shouldComponentUpdate(nProps: Readonly<any>, nState: Readonly<any>) {
             const thisProps = this.props || {};
             const thisState = this.state || {};
+            const nextProps = nProps || {};
+            const nextState = nState || {};
 
             if (Object.keys(thisProps).length !== Object.keys(nextProps).length ||
                 Object.keys(thisState).length !== Object.keys(nextState).length) {
