@@ -6,6 +6,7 @@
  *
  */
 import * as React from 'react';
+import { pureRender } from '../../main/components/high-order-component/Decorator';
 import { toString } from '../../main/utilities/data/JSONUtility';
 
 export interface IObservableViewProps {
@@ -18,6 +19,7 @@ export interface IObservableViewState {
 
 }
 
+@pureRender
 export default class ObservableView extends React.PureComponent<IObservableViewProps, IObservableViewState> {
 
     constructor(props: any) {
