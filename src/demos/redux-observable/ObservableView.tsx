@@ -20,6 +20,9 @@ export interface IObservableViewState {
 
 }
 
+/**
+ * 无状态组件
+ */
 export const ObservableStatelessView = (props: Readonly<any>) => (
     <div style={styles.container}>
         <button style={styles.button} onClick={props.handleTestObservableClick}>test observable</button>
