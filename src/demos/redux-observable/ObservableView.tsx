@@ -20,10 +20,18 @@ export interface IObservableViewState {
 
 }
 
+export const ObservableStatelessView = (props: Readonly<any>) => (
+    <div style={styles.container}>
+        <button style={styles.button} onClick={props.handleTestObservableClick}>test observable</button>
+        <button style={styles.button} onClick={props.handleTestObservableCancelClick}>test observable cancel</button>
+        <div style={styles.text}>{toString(props.$data.toJS())}</div>
+    </div>
+);
+
 @pureRender
 export default class ObservableView extends React.PureComponent<IObservableViewProps, IObservableViewState> {
 
-    constructor(props: any) {
+    constructor(props: Readonly<any>) {
         super(props);
 
     }
