@@ -5,5 +5,10 @@
     ],
     "plugins": [
         "import"
-    ]
+    ],
+    "env": {
+        "production": {
+            "presets": ["react-optimize"]
+        }
+    }
 }
