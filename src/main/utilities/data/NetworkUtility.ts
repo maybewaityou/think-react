@@ -57,14 +57,14 @@ export function fetchData(subURL: string, params?: any): Promise<Response> {
 
 function checkStatus(response: any) {
     if (response.status >= 200 && response.status < 300) {
-      return response;
-  } else {
-    const error: any = new Error(response.statusText);
-    error.response = response;
-    throw error;
-  }
+        return response;
+    } else {
+        const error: any = new Error(response.statusText);
+        error.response = response;
+        throw error;
+    }
 }
 
 function parseJSON(response: any) {
-  return response.json();
+    return response.json();
 }
