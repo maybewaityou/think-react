@@ -26,4 +26,12 @@ export default class Maybe {
         return this.isNothing() ? Maybe.of(null) : Maybe.of(f(this.__value));
     }
 
+    public join() {
+        return this.isNothing() ? Maybe.of(null) : this.__value;
+    }
+
+    public chain(f: any) {
+        return this.map(f).join();
+    }
+
 }

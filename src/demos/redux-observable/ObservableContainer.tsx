@@ -60,6 +60,10 @@ export default class ObservableContainer extends React.PureComponent<IObservable
         //     return x.toUpperCase();
         // });
         // console.log(result1);
+        const result = Maybe.of(3).chain((x: any) => {
+            return Maybe.of(2).map((a: any) => a + 3);
+        });
+        console.log(result);
     }
 
     public render() {
