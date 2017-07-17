@@ -54,7 +54,7 @@ export default class ObservableContainer extends React.PureComponent<IObservable
 
     public handleTestFunctionalClick = () => {
         const result = Maybe.of(null).map((x: string) => {
-            return '===' + x;
+            return x;
         });
         // const result = Container.of(3);
         // console.log(result);
