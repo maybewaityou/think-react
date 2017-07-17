@@ -12,6 +12,7 @@ import { CANCEL, PROMISE } from '../../dataflow/actions/Action';
 import actionCreator from '../../dataflow/actions/ActionCreator';
 import { connection } from '../../dataflow/connect/connection';
 import { log } from '../../main/utilities/debug/DebugUtility';
+import Container from './functional/Container';
 import ObservableView, { ObservableStatelessView } from './ObservableView';
 import { $getError, $getHomeData, $getHomeDataSelector, isSuccess } from './selector/Selectors';
 
@@ -42,12 +43,21 @@ export default class ObservableContainer extends React.PureComponent<IObservable
 
     public handleTestObservableClick = () => {
         this.props.actions(PROMISE, { params: 'mu haha ~ ~' });
-        // log(PROMISE);
+        log(PROMISE);
     }
 
     public handleTestObservableCancelClick = () => {
         this.props.actions(CANCEL);
-        // log(CANCEL);
+        log(CANCEL);
+    }
+
+    public handleTestFunctionalClick = () => {
+        const result = Container.of(3);
+        console.log(result);
+        const result1 = Container.of('hello world').map((x: string) => {
+            return x.toUpperCase();
+        });
+        console.log(result1);
     }
 
     public render() {
@@ -57,6 +67,7 @@ export default class ObservableContainer extends React.PureComponent<IObservable
                 $data={success ? $data : $error}
                 handleTestObservableClick={this.handleTestObservableClick}
                 handleTestObservableCancelClick={this.handleTestObservableCancelClick}
+                handleTestFunctionalClick={this.handleTestFunctionalClick}
             />
         );
     }
