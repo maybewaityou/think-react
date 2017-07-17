@@ -13,6 +13,7 @@ import actionCreator from '../../dataflow/actions/ActionCreator';
 import { connection } from '../../dataflow/connect/connection';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import Container from './functional/Container';
+import Maybe from './functional/Maybe';
 import ObservableView, { ObservableStatelessView } from './ObservableView';
 import { $getError, $getHomeData, $getHomeDataSelector, isSuccess } from './selector/Selectors';
 
@@ -52,12 +53,15 @@ export default class ObservableContainer extends React.PureComponent<IObservable
     }
 
     public handleTestFunctionalClick = () => {
-        const result = Container.of(3);
-        console.log(result);
-        const result1 = Container.of('hello world').map((x: string) => {
-            return x.toUpperCase();
+        const result = Maybe.of(null).map((x: string) => {
+            return '===' + x;
         });
-        console.log(result1);
+        // const result = Container.of(3);
+        // console.log(result);
+        // const result1 = Container.of('hello world').map((x: string) => {
+        //     return x.toUpperCase();
+        // });
+        // console.log(result1);
     }
 
     public render() {
