@@ -13,6 +13,7 @@ import actionCreator from '../../dataflow/actions/ActionCreator';
 import { connection } from '../../dataflow/connect/connection';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import Container from './functional/Container';
+import { add } from './functional/Functions';
 import Maybe from './functional/Maybe';
 import ObservableView, { ObservableStatelessView } from './ObservableView';
 import { $getError, $getHomeData, $getHomeDataSelector, isSuccess } from './selector/Selectors';
@@ -60,9 +61,12 @@ export default class ObservableContainer extends React.PureComponent<IObservable
         //     return x.toUpperCase();
         // });
         // console.log(result1);
-        const result = Maybe.of(3).chain((x: any) => {
-            return Maybe.of(2).map((a: any) => a + 3);
-        });
+        //
+        // const result = Maybe.of(3).chain((x: any) => {
+        //     return Maybe.of(2).map((a: any) => a + 3);
+        // });
+        // console.log(result);
+        const result = Maybe.of(2).map(add).apply(Maybe.of(3));
         console.log(result);
     }
 

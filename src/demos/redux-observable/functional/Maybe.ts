@@ -34,4 +34,8 @@ export default class Maybe {
         return this.map(f).join();
     }
 
+    public apply(otherMaybe: Maybe) {
+        return otherMaybe.map(this.__value);
+    }
+
 }
