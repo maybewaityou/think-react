@@ -13,7 +13,7 @@ import actionCreator from '../../dataflow/actions/ActionCreator';
 import { connection } from '../../dataflow/connect/connection';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import Container from './functional/Container';
-import { add, compose, filter, map, match, reduce, replace, trace } from './functional/Functions';
+import { add, compose, filter, join, map, match, reduce, replace, split, trace } from './functional/Functions';
 import Maybe from './functional/Maybe';
 import ObservableView, { ObservableStatelessView } from './ObservableView';
 import { $getError, $getHomeData, $getHomeDataSelector, isSuccess } from './selector/Selectors';
@@ -99,8 +99,6 @@ export default class ObservableContainer extends React.PureComponent<IObservable
         //
 
         const toLower = (x: string) => x.toLowerCase();
-        const split = (x: string) => (str: string) => str.split(x);
-        const join = (x: string) => (array: any[]) => array.join(x);
         const arrayResult = compose(map(toLower), split(' '));
         const stringResult = compose(join(' '), arrayResult);
         const dasherize = compose(stringResult, replace(/\s{2,}/ig)(' '));
