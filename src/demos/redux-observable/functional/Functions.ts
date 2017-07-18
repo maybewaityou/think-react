@@ -5,8 +5,6 @@
  * description:
  *
  */
-// import curry from 'lodash/curry';
-import R from 'ramda';
 
 export const add = (x: number) => (y: number) => x + y;
 
