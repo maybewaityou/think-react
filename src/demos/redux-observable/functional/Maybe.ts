@@ -12,22 +12,22 @@ export default class Maybe {
         return new Maybe(x);
     }
 
-    public __value: any;
+    private val: any;
 
     constructor(x: any) {
-        this.__value = x;
+        this.val = x;
     }
 
     public isNothing() {
-        return this.__value === null || this.__value === undefined;
+        return this.val === null || this.val === undefined;
     }
 
     public map(f: any) {
-        return this.isNothing() ? Maybe.of(null) : Maybe.of(f(this.__value));
+        return this.isNothing() ? Maybe.of(null) : Maybe.of(f(this.val));
     }
 
     public join() {
-        return this.isNothing() ? Maybe.of(null) : this.__value;
+        return this.isNothing() ? Maybe.of(null) : this.val;
     }
 
     public chain(f: any) {
@@ -35,7 +35,7 @@ export default class Maybe {
     }
 
     public apply(otherMaybe: Maybe) {
-        return otherMaybe.map(this.__value);
+        return otherMaybe.map(this.val);
     }
 
 }

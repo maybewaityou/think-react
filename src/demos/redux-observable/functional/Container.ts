@@ -12,14 +12,14 @@ export default class Container {
         return new Container(x);
     }
 
-    public __value: any;
+    private val: any;
 
     constructor(x: any) {
-        this.__value = x;
+        this.val = x;
     }
 
     public map(f: any) {
-        return Container.of(f(this.__value));
+        return Container.of(f(this.val));
     }
 
 }
