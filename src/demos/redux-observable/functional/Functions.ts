@@ -39,8 +39,11 @@ export const capitalize = (s: string) => {
 };
 
 export const camelize = (s: string) => {
-    const tmpStr = replace(/\s|_|-/ig)(' ')(s).toLowerCase();
-    return tmpStr.split(' ').map((x: string) => capitalize(x)).join('');
+    return replace(/\s|_|-/ig)(' ')(s)
+        .toLowerCase()
+        .split(' ')
+        .map((x: string) => capitalize(x))
+        .join('');
 };
 
 export const trace = (tag: any) => (x: any) => {
