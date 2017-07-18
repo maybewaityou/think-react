@@ -35,10 +35,58 @@ export default class FunctionalContainer extends React.PureComponent<IFunctional
     }
 
     public handleTestObservableClick = () => {
-        const stream$ = Observable.of(1, 2, 3, 4).map((x: number) => x + '!!!');
-        stream$.subscribe((val: string) => {
-            log(val);
-        });
+        // const stream$ = Observable.of(1, 2, 3, 4).map((x: number) => x + '!!!');
+        // stream$.subscribe((val: string) => {
+        //     log(val);
+        // });
+
+        // const stream$ = Observable.create((subscriber: any) => {
+        //     subscriber.next(1);
+        // });
+        // stream$.subscribe((val: any) => {
+        //     log(val);
+        // });
+
+        // const source1 = Observable.interval(100).map((val: any) => 'source 1 ==>> ' + val).take(5);
+        // const source2 = Observable.interval(50).map((val: any) => 'source 2 ==>> ' + val).take(2);
+        // const stream$ = Observable.combineLatest(source1, source2);
+        // stream$.subscribe((data: any) => {
+        //     log(data);
+        // });
+
+        // const source1 = Observable.of(1, 2, 3, 4).map((val: any) => 'source 1 ==>> ' + val);
+        // const source2 = Observable.of(5, 6, 7).map((val: any) => 'source 2 ==>> ' + val);
+        // const stream$ = Observable.concat(source1, source2);
+        // stream$.subscribe((data: any) => {
+        //     log(data);
+        // });
+
+        // const stream$ = Observable.merge(Observable.of(1), Observable.of(3, 2, 5));
+        // stream$.subscribe((data: any) => {
+        //     log(data);
+        // });
+
+        // // 以列为基础连接的值, 将采用最小标准
+        // const stream$ = Observable.zip(
+        //     Observable.of(1, 5),
+        //     Observable.of(2, 3, 4),
+        //     Observable.of(7, 9),
+        // );
+        // stream$.subscribe((data: any) => {
+        //     log(data);
+        // });
+
+        // // 把所有对象合并成一个
+        // const o1: any = { name: 'zhangsan' };
+        // const o2: any = { age: 11 };
+        // const objectStream$ = Observable.of(o1, o2)
+        //     .reduce((acc: any, curr: any) => {
+        //         return Object.assign({}, acc, curr);
+        //     });
+        // objectStream$.subscribe((data: any) => {
+        //     log(data);
+        // });
+
     }
 
     public handleTestFunctionalClick = () => {
