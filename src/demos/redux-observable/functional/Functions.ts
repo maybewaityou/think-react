@@ -6,6 +6,7 @@
  *
  */
 // import curry from 'lodash/curry';
+import R from 'ramda';
 
 export const add = (x: number) => (y: number) => x + y;
 
@@ -21,3 +22,8 @@ export const map = (f: any) => (array: any[]) => array.map(f);
 export const compose = (f: any, g: any) => (x: any) => f(g(x));
 
 export const reduce = (f: any, x: any) => (array: any[]) => array.reduce(f, x);
+
+export const trace = (tag: any) => (x: any) => {
+    console.log(tag, x);
+    return x;
+};
