@@ -5,6 +5,7 @@
  * description:
  *
  */
+import R from 'ramda';
 
 export const add = (x: number) => (y: number) => x + y;
 
@@ -21,7 +22,7 @@ export const split = (x: string) => (str: string) => str.split(x);
 
 export const join = (x: string) => (array: any[]) => array.join(x);
 
-export const compose = (f: any, g: any) => (x: any) => f(g(x));
+export const compose = R.compose;
 
 export const reduce = (f: any, x: any) => (array: any[]) => array.reduce(f, x);
 

@@ -6,7 +6,6 @@
  *
  */
 import { Map } from 'immutable';
-import R from 'ramda';
 import * as React from 'react';
 import { bindActionCreators } from 'redux';
 import { CANCEL, PROMISE } from '../../dataflow/actions/Action';
@@ -85,7 +84,6 @@ export default class ObservableContainer extends React.PureComponent<IObservable
         // const result = censored('Welcome to China ~');
         // console.log(result);
         //
-
         // const toUpperCase = (x: string) => x.toUpperCase();
         // const exclaim = (x: string) => x + '!';
         // const shout = compose(exclaim, toUpperCase);
@@ -100,8 +98,7 @@ export default class ObservableContainer extends React.PureComponent<IObservable
         //
 
         const toLower = (x: string) => x.toLowerCase();
-        const dasherize = compose(compose(join(' '), compose(map(toLower), split(' '))), replace(/\s{2,}/ig)(' '));
-        // const dasherize = R.compose(join(' '), map(toLower), split(' '), replace(/\s{2,}/ig)(' '));
+        const dasherize = compose(join(' '), map(toLower), split(' '), replace(/\s{2,}/ig)(' '));
         const result =  dasherize('The world is Vampire');
         console.log(result);
     }
