@@ -13,7 +13,7 @@ import actionCreator from '../../dataflow/actions/ActionCreator';
 import { connection } from '../../dataflow/connect/connection';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import Container from './functional/Container';
-import { add, capitalize, compose, filter, join, map, match, reduce, replace, split, trace } from './functional/Functions';
+import { add, capitalize, compose, filter, join, map, match, reduce, replace, split, toLowerCase, toUpperCase, trace } from './functional/Functions';
 import Maybe from './functional/Maybe';
 import ObservableView, { ObservableStatelessView } from './ObservableView';
 import { $getError, $getHomeData, $getHomeDataSelector, isSuccess } from './selector/Selectors';
@@ -84,20 +84,17 @@ export default class ObservableContainer extends React.PureComponent<IObservable
         // const result = censored('Welcome to China ~');
         // log(result);
         //
-        // const toUpperCase = (x: string) => x.toUpperCase();
         // const exclaim = (x: string) => x + '!';
         // const shout = compose(exclaim, toUpperCase);
         // const result = shout('send in the clowms');
         // log(result);
         //
         // const reverse = reduce((acc: any, x: any) => [x].concat(acc), []);
-        // const head = (x: any[]) => x[0];
         // const last = compose(head, reverse);
         // const result = last(['jumpkick', 'roundhouse', 'uppercut']);
         // log(result);
         //
-        // const toLower = (x: string) => x.toLowerCase();
-        // const dasherize = compose(join(' '), map(toLower), split(' '), replace(/\s{2,}/ig)(' '));
+        // const dasherize = compose(join(' '), map(toLowerCase), split(' '), replace(/\s{2,}/ig)(' '));
         // const result =  dasherize('The world is Vampire');
         // log(result);
 
