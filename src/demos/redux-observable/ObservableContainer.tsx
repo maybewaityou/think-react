@@ -13,7 +13,7 @@ import actionCreator from '../../dataflow/actions/ActionCreator';
 import { connection } from '../../dataflow/connect/connection';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import Container from './functional/Container';
-import { add, capitalize, compose, filter, join, map, match, reduce, replace, split, toLowerCase, toUpperCase, trace } from './functional/Functions';
+import { add, camelize, capitalize, compose, filter, join, map, match, reduce, replace, split, toLowerCase, toUpperCase, trace } from './functional/Functions';
 import Maybe from './functional/Maybe';
 import ObservableView, { ObservableStatelessView } from './ObservableView';
 import { $getError, $getHomeData, $getHomeDataSelector, isSuccess } from './selector/Selectors';
@@ -97,8 +97,11 @@ export default class ObservableContainer extends React.PureComponent<IObservable
         // const dasherize = compose(join(' '), map(toLowerCase), split(' '), replace(/\s{2,}/ig)(' '));
         // const result =  dasherize('The world is Vampire');
         // log(result);
-
-        const result = capitalize('smurf');
+        //
+        // const result = capitalize('smurf');
+        // log(result);
+        //
+        const result = camelize('smurf name haha_ss');
         log(result);
     }
 

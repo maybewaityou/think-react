@@ -38,6 +38,11 @@ export const capitalize = (s: string) => {
     return toUpperCase(head(s)) + toLowerCase(tail(s));
 };
 
+export const camelize = (s: string) => {
+    const tmpStr = replace(/\s|_|-/ig)(' ')(s).toLowerCase();
+    return tmpStr.split(' ').map((x: string) => capitalize(x)).join('');
+};
+
 export const trace = (tag: any) => (x: any) => {
     console.log(tag, x);
     return x;
