@@ -96,7 +96,6 @@ export default class ObservableContainer extends React.PureComponent<IObservable
         // const result = last(['jumpkick', 'roundhouse', 'uppercut']);
         // log(result);
         //
-        //
         // const toLower = (x: string) => x.toLowerCase();
         // const dasherize = compose(join(' '), map(toLower), split(' '), replace(/\s{2,}/ig)(' '));
         // const result =  dasherize('The world is Vampire');
