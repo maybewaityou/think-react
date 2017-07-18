@@ -101,8 +101,8 @@ export default class ObservableContainer extends React.PureComponent<IObservable
         // const result = capitalize('smurf');
         // log(result);
         //
-        const result = camelize('smurf name haha_ss');
-        log(result);
+        // const result = camelize('smurf name haha_ss');
+        // log(result);
     }
 
     public render() {
