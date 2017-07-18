@@ -14,7 +14,6 @@ const errorHandler = require('koa-onerror');
 const logger = require('koa-logger');
 const cors = require('koa-cors');
 const router = require('./config/routes');
-// require('./src/app/utilities/dbutility');
 
 // 初始化实例
 const app = new koa();
