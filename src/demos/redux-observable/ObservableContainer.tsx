@@ -102,7 +102,7 @@ export default class ObservableContainer extends React.PureComponent<IObservable
         const toLower = (x: string) => x.toLowerCase();
         const dasherize = compose(compose(join(' '), compose(map(toLower), split(' '))), replace(/\s{2,}/ig)(' '));
         // const dasherize = R.compose(join(' '), map(toLower), split(' '), replace(/\s{2,}/ig)(' '));
-        const result =  dasherize('The world is vampire');
+        const result =  dasherize('The world is Vampire');
         console.log(result);
     }
 
