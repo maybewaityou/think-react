@@ -7,7 +7,8 @@
             "immutable": ["node_modules/immutable/dist/immutable.d.ts"],
             "rxjs": ["node_modules/rxjs/Rx.d.ts"],
             "reselect": ["node_modules/reselect/src/index.d.ts"],
-            "axios": ["node_modules/axios/index.d.ts"]
+            "axios": ["node_modules/axios/index.d.ts"],
+            "normalizr": ["node_modules/normalizr/index.d.ts"]
         },
         "target": "es2015",
         "module": "es2015",
