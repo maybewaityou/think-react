@@ -19,7 +19,16 @@
         "experimentalDecorators": true,
         "preserveConstEnums": true,
         "allowJs": false,
-        "sourceMap": true
+        "sourceMap": true,
+        "lib": [
+            "es5",
+            "es2015.new",
+            "es2015.const",
+            "es2015.iterable",
+            "es2015.collection",
+            "es2015.promise",
+            "dom"
+        ]
     },
     "include": [
         "./src/**/*"
