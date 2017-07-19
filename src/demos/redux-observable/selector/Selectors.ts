@@ -6,9 +6,39 @@
  *
  */
 import { Map } from 'immutable';
+import { normalize, schema } from 'normalizr';
 import { createSelector } from 'reselect';
 import { toString } from '../../../main/utilities/data/JSONUtility';
 import { log } from '../../../main/utilities/debug/DebugUtility';
+
+const originData = {
+    id: '123',
+    author: {
+        id: '1',
+        name: 'Paul',
+    },
+    title: 'My awesome blog post',
+    comments: [
+        {
+            id: '324',
+            commenter: {
+                id: '2',
+                name: 'Nicole',
+            },
+        },
+    ],
+};
+
+const user = new schema.Entity('users');
+const comment = new schema.Entity('comments', {
+    commenter: user,
+});
+const article = new schema.Entity('articles', {
+    author: user,
+    comments: [ comment ],
+});
+
+const normalizeData = normalize(originData, article);
 
 export const $getHomeData = (state: any) => state.$networkReducer.get('homeData');
 
