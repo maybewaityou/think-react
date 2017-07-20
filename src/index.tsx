@@ -1,22 +1,20 @@
-// /**
-//  * Created by MeePwn
-//  * https://github.com/maybewaityou
-//  *
-//  * description:
-//  *
-//  */
-// import React, { PureComponent } from 'react';
-// import ReactDOM from 'react-dom';
-// // import { Provider } from 'react-redux';
-// // import configureStore from './dataflow/store/Store';
-// // import Just from './main/context/Just';
-// // import App from './App';
-// //
-// // var store = configureStore();
-
+/**
+ * Created by MeePwn
+ * https://github.com/maybewaityou
+ *
+ * description:
+ *
+ */
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './App';
+import { Provider } from 'react-redux';
 import './assets/stylesheet/style.css';
+import store from './dataflow/store/Store';
+import FunctionalContainer from './demos/functional/FunctionalContainer';
+import ObservableContainer from './demos/redux-observable/ObservableContainer';
 
-ReactDOM.render(( <App /> ), document.getElementById('app'));
+ReactDOM.render((
+    <Provider store={store}>
+        <ObservableContainer />
+    </Provider>
+), document.getElementById('app'));
