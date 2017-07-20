@@ -7,13 +7,12 @@
  */
 import { is } from 'immutable';
 import * as React from 'react';
-import { toString } from '../../../utilities/data/JSONUtility';
 import { log } from '../../../utilities/debug/DebugUtility';
 
 const pureRenderDecorator = (WrappedComponent: React.ComponentClass) => (
     class extends React.PureComponent<any, any> {
 
-        public shouldComponentUpdate(nProps: Readonly<any>, nState: Readonly<any>) {
+        public shouldComponentUpdate(nProps: Readonly<any>, nState: any) {
             const thisProps = this.props || {};
             const thisState = this.state || {};
             const nextProps = nProps || {};
