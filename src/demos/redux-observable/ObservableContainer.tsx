@@ -5,7 +5,7 @@
  * description:
  *
  */
-import { is, Map } from 'immutable';
+import { Map } from 'immutable';
 import * as React from 'react';
 import { bindActionCreators } from 'redux';
 import { CANCEL, PROMISE } from '../../dataflow/actions/Action';
