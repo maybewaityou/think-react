@@ -48,7 +48,15 @@ export async function asyncRequest(subURL: string, params: any = {}) {
 
 function fetchData(subURL: string, params?: any): Promise<Response> {
     return new Promise((resolve: any, reject: any) => {
-        asyncRequest(subURL, params)
+        fetch(subURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: toString(params),
+        })
+            .then(checkStatus)
+            .then(parseJSON)
             .then(resolve)
             .catch((error: any) => {
                 reject({ errorMessage: error.message, errorStack: error.stack });
