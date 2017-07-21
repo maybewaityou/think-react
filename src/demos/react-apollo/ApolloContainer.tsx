@@ -27,7 +27,7 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
     }
 
     public handleTestClick = () => {
-        log('====');
+        log('============================');
     }
 
     public render() {
