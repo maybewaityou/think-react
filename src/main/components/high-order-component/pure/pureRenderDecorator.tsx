@@ -9,7 +9,7 @@ import { is } from 'immutable';
 import * as React from 'react';
 import { log } from '../../../utilities/debug/DebugUtility';
 
-const pureRenderDecorator = (WrappedComponent: React.ComponentClass) => (
+export default (WrappedComponent: React.ComponentClass) => (
     class extends React.PureComponent<any, any> {
 
         constructor(props: Readonly<any>) {
@@ -38,7 +38,7 @@ const pureRenderDecorator = (WrappedComponent: React.ComponentClass) => (
                 }
             }
 
-            log('====== pureRender ======');
+            log('====== pureRenderDecorator pureRender ======');
             return false;
         }
 
@@ -47,5 +47,3 @@ const pureRenderDecorator = (WrappedComponent: React.ComponentClass) => (
         }
     }
 );
-
-export default pureRenderDecorator;

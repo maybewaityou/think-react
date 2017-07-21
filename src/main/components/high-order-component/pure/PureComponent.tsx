@@ -7,7 +7,7 @@
  */
 import { is } from 'immutable';
 import * as React from 'react';
-import { log } from '../../utilities/debug/DebugUtility';
+import { log } from '../../../utilities/debug/DebugUtility';
 
 export default class PureComponent<P, S> extends React.PureComponent<P, S> {
 
