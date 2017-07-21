@@ -12,11 +12,6 @@ import { log } from '../../../utilities/debug/DebugUtility';
 export default (WrappedComponent: React.ComponentClass) => (
     class extends React.PureComponent<any, any> {
 
-        constructor(props: Readonly<any>) {
-            super(props);
-
-        }
-
         public shouldComponentUpdate(nProps: Readonly<any>, nState: any) {
             const thisProps = this.props || {};
             const thisState = this.state || {};

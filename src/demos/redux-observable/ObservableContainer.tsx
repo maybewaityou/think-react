@@ -12,7 +12,6 @@ import { CANCEL, PROMISE } from '../../dataflow/actions/Action';
 import actionCreator from '../../dataflow/actions/ActionCreator';
 import { connection } from '../../dataflow/connect/connection';
 import { PureComponent, pureRender } from '../../main/components/high-order-component/Decorator';
-import { log } from '../../main/utilities/debug/DebugUtility';
 import ObservableView, { ObservableStatelessView } from './ObservableView';
 import { $getError, $getHomeData, $getHomeDataSelector, isSuccess } from './selector/Selectors';
 
@@ -43,12 +42,10 @@ export default class ObservableContainer extends PureComponent<IObservableContai
 
     public handleTestObservableClick = () => {
         this.props.actions(PROMISE, { params: 'mu haha ~ ~' });
-        log(PROMISE);
     }
 
     public handleTestObservableCancelClick = () => {
         this.props.actions(CANCEL);
-        log(CANCEL);
     }
 
     public render() {

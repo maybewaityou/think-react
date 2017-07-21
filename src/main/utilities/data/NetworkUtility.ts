@@ -28,13 +28,13 @@ export function networkObservable(subURL: string, params?: any) {
 /**
  * Promise 形式
  */
-export function fetchData(subURL: string, params?: any): Promise<Response> {
+export function fetchData(subURL: string, params: any = {}): Promise<Response> {
 
     // const URL = `http://10.240.90.212:8088/padServer/${subURL}`;
     const URL = 'http://localhost:3000/pages/showIndexInfo';
 
     log(`== URL ===>>>> ${URL}`);
-    log(`== params ===>>>> ${params}`);
+    log(`== params ===>>>> ${toString(params)}`);
 
     return new Promise((resolve, reject) => {
         fetch(URL, {
@@ -42,7 +42,7 @@ export function fetchData(subURL: string, params?: any): Promise<Response> {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: toString(params && {}),
+            body: toString(params),
         })
             .then(checkStatus)
             .then(parseJSON)
