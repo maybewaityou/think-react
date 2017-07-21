@@ -18,12 +18,11 @@ import IAction, {
 } from '../../../dataflow/actions/Action';
 import { epicCreator } from '../../../dataflow/epic/EpicCreator';
 import Store from '../../../dataflow/store/Store';
-import { asyncObserve, asyncRequest } from '../../../main/utilities/data/NetworkUtility';
 import { log } from '../../../main/utilities/debug/DebugUtility';
 
 // function (action$: ActionsObservable<Action>, store: Store, dependencies: Object?): Observable<Action>;
 // dependencies: 在 Store 中注入的参数
-export const fetchHomeEpic = (action$: ActionsObservable<string>, store: any, dependencies: any) => (
+export const fetchHomeEpic = (action$: ActionsObservable<string>, store: any, { asyncObserve, asyncRequest }: any) => (
     action$.ofType(PROMISE)
         .mergeMap((action) =>
             Observable.fromPromise(asyncRequest('HomePageController/showIndexInfo'))
@@ -41,7 +40,7 @@ export const fetchHomeEpic = (action$: ActionsObservable<string>, store: any, de
 /**
  * Currying 形式
  */
-export const fetchHomeCurryingEpic = (action$: ActionsObservable<string>, store: any, dependencies: any) => (
+export const fetchHomeCurryingEpic = (action$: ActionsObservable<string>, store: any, { asyncObserve, asyncRequest }: any) => (
     epicCreator(action$)(PROMISE)((action: IAction) =>
         asyncObserve('HomePageController/showIndexInfo')
             .flatMap((response: any) => {
