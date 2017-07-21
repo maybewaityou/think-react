@@ -36,7 +36,7 @@ export function fetchData(subURL: string, params: any = {}): Promise<Response> {
     log(`== URL ===>>>> ${URL}`);
     log(`== params ===>>>> ${toString(params)}`);
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve: any, reject: any) => {
         fetch(URL, {
             method: 'POST',
             headers: {
