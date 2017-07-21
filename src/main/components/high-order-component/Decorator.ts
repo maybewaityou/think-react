@@ -5,8 +5,8 @@
  * description:
  *
  */
-import BaseContainer from './Container';
 import pureRenderDecorator from './pure/pureRenderDecorator';
+import PureRenderComponent from './PureComponent';
 
 export const pureRender = pureRenderDecorator;
-export const Container = BaseContainer;
+export const PureComponent = PureRenderComponent;

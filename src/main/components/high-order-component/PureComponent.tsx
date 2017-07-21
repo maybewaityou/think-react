@@ -9,7 +9,7 @@ import { is } from 'immutable';
 import * as React from 'react';
 import { log } from '../../utilities/debug/DebugUtility';
 
-export default class Container<P, S> extends React.PureComponent<P, S> {
+export default class PureComponent<P, S> extends React.PureComponent<P, S> {
 
     public shouldComponentUpdate(nProps: Readonly<any>, nState: any) {
         const thisProps: Readonly<any> = this.props || {};
@@ -32,11 +32,8 @@ export default class Container<P, S> extends React.PureComponent<P, S> {
             }
         }
 
-        log('====== Container pureRender ======');
+        log('====== PureComponent pureRender ======');
         return false;
     }
 
-    public render() {
-        return super.render();
-    }
 }
