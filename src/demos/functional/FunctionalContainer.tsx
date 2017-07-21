@@ -11,6 +11,7 @@ import { bindActionCreators } from 'redux';
 import { Observable } from 'rxjs';
 import actionCreator from '../../dataflow/actions/ActionCreator';
 import { connection } from '../../dataflow/connect/connection';
+import { PureComponent } from '../../main/components/high-order-component/Decorator';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import { add, camelize, capitalize, compose, filter, join, map, match, reduce, replace, split, toLowerCase, toUpperCase, trace } from '../../main/utilities/functional/Functions';
 import FunctionalView from './FunctionalView';
@@ -27,7 +28,7 @@ export interface IFunctionalContainerState {
 }), (dispatch: any) => ({
     actions: bindActionCreators(actionCreator, dispatch),
 }))
-export default class FunctionalContainer extends React.PureComponent<IFunctionalContainerProps, IFunctionalContainerState> {
+export default class FunctionalContainer extends PureComponent<IFunctionalContainerProps, IFunctionalContainerState> {
 
     constructor(props: Readonly<any>) {
         super(props);
