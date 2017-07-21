@@ -9,17 +9,17 @@ import { Map } from 'immutable';
 import * as React from 'react';
 import { PureComponent } from '../../main/components/high-order-component/Decorator';
 import { log } from '../../main/utilities/debug/DebugUtility';
-import RelayView from './RelayView';
+import ApolloView from './ApolloView';
 
-export interface IRelayContainerProps {
-
-}
-
-export interface IRelayContainerState {
+export interface IApolloContainerProps {
 
 }
 
-export default class RelayContainer extends PureComponent<IRelayContainerProps, IRelayContainerState> {
+export interface IApolloContainerState {
+
+}
+
+export default class ApolloContainer extends PureComponent<IApolloContainerProps, IApolloContainerState> {
 
     constructor(props: Readonly<any>) {
         super(props);
@@ -32,7 +32,7 @@ export default class RelayContainer extends PureComponent<IRelayContainerProps, 
 
     public render() {
         return (
-            <RelayView
+            <ApolloView
                 handleTestClick={this.handleTestClick}
             />
         );

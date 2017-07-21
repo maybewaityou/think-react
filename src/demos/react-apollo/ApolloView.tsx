@@ -9,16 +9,16 @@ import { Map } from 'immutable';
 import * as React from 'react';
 import { pureRender } from '../../main/components/high-order-component/Decorator';
 
-export interface IRelayViewProps {
+export interface IApolloViewProps {
     handleTestClick: any;
 }
 
-export interface IRelayViewState {
+export interface IApolloViewState {
 
 }
 
 @pureRender
-export default class RelayView extends React.PureComponent<IRelayViewProps, IRelayViewState> {
+export default class ApolloView extends React.PureComponent<IApolloViewProps, IApolloViewState> {
 
     constructor(props: Readonly<any>) {
         super(props);
