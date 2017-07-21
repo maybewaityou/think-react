@@ -15,7 +15,10 @@ import rootEpic from '../epic/Epic';
 // redux-observable Middleware
 // dependencies: 注入的参数
 const epicMiddleware = createEpicMiddleware(rootEpic as Epic<any, any>, {
-    dependencies: { asyncObserve, asyncRequest },
+    dependencies: {
+        asyncObserve,
+        asyncRequest,
+    },
 });
 
 const store = createStore(
