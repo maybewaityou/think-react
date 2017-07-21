@@ -8,10 +8,7 @@
 import { ActionsObservable, combineEpics } from 'redux-observable';
 import { Observable } from 'rxjs';
 import IAction, {
-    CALLBACK,
     CANCEL,
-    CONCURRENT,
-    CONSECUTIVE,
     ERROR,
     FETCH_HOME_DATA,
     PROMISE,
