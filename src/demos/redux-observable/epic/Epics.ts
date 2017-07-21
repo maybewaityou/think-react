@@ -18,7 +18,7 @@ import IAction, {
 } from '../../../dataflow/actions/Action';
 import { epicCreator } from '../../../dataflow/epic/EpicCreator';
 import Store from '../../../dataflow/store/Store';
-import { fetchData, networkObservable } from '../../../main/utilities/data/NetworkUtility';
+import { asyncObserve, asyncRequest } from '../../../main/utilities/data/NetworkUtility';
 import { log } from '../../../main/utilities/debug/DebugUtility';
 
 // function (action$: ActionsObservable<Action>, store: Store, dependencies: Object?): Observable<Action>;
@@ -26,10 +26,10 @@ import { log } from '../../../main/utilities/debug/DebugUtility';
 export const fetchHomeEpic = (action$: ActionsObservable<string>, store: any, dependencies: any) => (
     action$.ofType(PROMISE)
         .mergeMap((action) =>
-            Observable.fromPromise(fetchData('HomePageController/showIndexInfo'))
+            Observable.fromPromise(asyncRequest('HomePageController/showIndexInfo'))
                 .flatMap((response) => {
                     store.dispatch({ type: FETCH_HOME_DATA, payload: response });
-                    return Observable.fromPromise(fetchData('ImageController/imageTrans'));
+                    return Observable.fromPromise(asyncRequest('ImageController/imageTrans'));
                 })
                 .delay(1000)
                 .map((response) => ({ type: FETCH_HOME_DATA, payload: response }))
@@ -43,10 +43,10 @@ export const fetchHomeEpic = (action$: ActionsObservable<string>, store: any, de
  */
 export const fetchHomeCurryingEpic = (action$: ActionsObservable<string>, store: any, dependencies: any) => (
     epicCreator(action$)(PROMISE)((action: IAction) =>
-        networkObservable('HomePageController/showIndexInfo')
+        asyncObserve('HomePageController/showIndexInfo')
             .flatMap((response: any) => {
                 store.dispatch({ type: FETCH_HOME_DATA, payload: response });
-                return networkObservable('ImageController/imageTrans');
+                return asyncObserve('ImageController/imageTrans');
             })
             .delay(1000)
             .map((response: any) => ({ type: FETCH_HOME_DATA, payload: response }))
