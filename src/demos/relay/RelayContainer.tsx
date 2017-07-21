@@ -7,6 +7,7 @@
  */
 import { Map } from 'immutable';
 import * as React from 'react';
+import Relay from 'react-relay';
 import { PureComponent } from '../../main/components/high-order-component/Decorator';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import RelayView from './RelayView';
@@ -27,7 +28,7 @@ export default class RelayContainer extends PureComponent<IRelayContainerProps, 
     }
 
     public handleTestClick = () => {
-        log('======');
+        log('====');
     }
 
     public render() {
