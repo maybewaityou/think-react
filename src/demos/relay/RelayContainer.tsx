@@ -13,7 +13,7 @@ import { log } from '../../main/utilities/debug/DebugUtility';
 import RelayView from './RelayView';
 
 export interface IRelayContainerProps {
-    actions?: any;
+
 }
 
 export interface IRelayContainerState {
