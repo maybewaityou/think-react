@@ -37,7 +37,7 @@ export const fetchHomeEpic = (action$: ActionsObservable<string>, store: any, { 
  * Currying 形式
  */
 export const fetchHomeCurryingEpic = (action$: ActionsObservable<string>, store: any, { asyncObserve, asyncRequest }: any) => (
-    epicCreator(action$)(PROMISE)((action: IAction) =>
+    epicCreator(action$)('aa ')((action: IAction) =>
         asyncObserve('HomePageController/showIndexInfo')
             .flatMap((response: any) => {
                 store.dispatch({ type: FETCH_HOME_DATA, payload: response });

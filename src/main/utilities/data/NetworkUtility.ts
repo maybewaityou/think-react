@@ -28,27 +28,19 @@ export function asyncObserve(subURL: string, params?: any) {
 /**
  * Promise 形式
  */
-export async function asyncRequest(subURL: string, params: any = {}) {
+export async function asyncRequest(subURL: string, params?: any) {
+    return await fetchData(subURL, params);
+}
+
+function fetchData(subURL: string, params: any = {}): Promise<Response> {
     // const URL = `http://10.240.90.212:8088/padServer/${subURL}`;
     const URL = 'http://localhost:3000/pages/showIndexInfo';
 
     log(`== URL ===>>>> ${URL}`);
     log(`== params ===>>>> ${toString(params)}`);
 
-    return await fetch(URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: toString(params),
-    })
-        .then(checkStatus)
-        .then(parseJSON);
-}
-
-function fetchData(subURL: string, params?: any): Promise<Response> {
     return new Promise((resolve: any, reject: any) => {
-        fetch(subURL, {
+        fetch(URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
