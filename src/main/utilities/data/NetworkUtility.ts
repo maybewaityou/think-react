@@ -46,9 +46,7 @@ export function fetchData(subURL: string, params: any = {}): Promise<Response> {
         })
             .then(checkStatus)
             .then(parseJSON)
-            .then((response) => {
-                resolve(response);
-            })
+            .then(resolve)
             .catch((error) => {
                 reject({ errorMessage: error.message, errorStack: error.stack });
             });
