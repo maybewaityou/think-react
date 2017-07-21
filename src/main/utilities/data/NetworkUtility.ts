@@ -46,7 +46,7 @@ export async function asyncRequest(subURL: string, params: any = {}) {
         .then(parseJSON);
 }
 
-function fetchData(subURL: string, params: any = {}): Promise<Response> {
+function fetchData(subURL: string, params?: any): Promise<Response> {
     return new Promise((resolve: any, reject: any) => {
         asyncRequest(subURL, params)
             .then(resolve)
