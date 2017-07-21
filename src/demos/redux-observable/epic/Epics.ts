@@ -18,7 +18,6 @@ import IAction, {
 } from '../../../dataflow/actions/Action';
 import { epicCreator } from '../../../dataflow/epic/EpicCreator';
 import Store from '../../../dataflow/store/Store';
-import { log } from '../../../main/utilities/debug/DebugUtility';
 
 // function (action$: ActionsObservable<Action>, store: Store, dependencies: Object?): Observable<Action>;
 // dependencies: 在 Store 中注入的参数
