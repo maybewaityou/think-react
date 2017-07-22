@@ -11,11 +11,11 @@ import { Provider } from 'react-redux';
 import './assets/stylesheet/style.css';
 import store from './dataflow/store/Store';
 import FunctionalContainer from './demos/functional/FunctionalContainer';
+import ApolloContainer from './demos/react-apollo/ApolloContainer';
 import ObservableContainer from './demos/redux-observable/ObservableContainer';
-import RelayContainer from './demos/relay/RelayContainer';
 
 ReactDOM.render((
     <Provider store={store}>
-        <RelayContainer />
+        <ApolloContainer />
     </Provider>
 ), document.getElementById('app'));
