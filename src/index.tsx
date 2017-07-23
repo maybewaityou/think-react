@@ -16,6 +16,6 @@ import ObservableContainer from './demos/redux-observable/ObservableContainer';
 
 ReactDOM.render((
     <Provider store={store}>
-        <ApolloContainer />
+        <ObservableContainer />
     </Provider>
 ), document.getElementById('app'));
