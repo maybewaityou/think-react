@@ -37,10 +37,7 @@ export default class StreamContainer extends StreamComponent<IStreamContainerPro
     }
 
     public getStateStream(props: Readonly<any>) {
-        return Observable.of(Observable.of([1, 2, 3]))
-            .map((result: any) => {
-                return { result };
-            });
+        return Observable.of([1, 2, 3]);
     }
 
     public handleTestStreamClick = () => {
