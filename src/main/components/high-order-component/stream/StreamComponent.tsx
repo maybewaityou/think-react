@@ -9,6 +9,7 @@ import { is } from 'immutable';
 import * as React from 'react';
 import { Observable } from 'rxjs';
 import { log } from '../../../utilities/debug/DebugUtility';
+import PureComponent from '../pure/PureComponent';
 
 const stateSubscriptions: any[] = [];
 
@@ -16,7 +17,7 @@ function isObservable(obj: any) {
     return obj && typeof obj.subscribe === 'function';
 }
 
-export default class StreamComponent<P, S> extends React.PureComponent<P, S> {
+export default class StreamComponent<P, S> extends PureComponent<P, S> {
 
     public __stateSubscription: any;
 
