@@ -37,13 +37,15 @@ export default class StreamContainer extends StreamComponent<IStreamContainerPro
     }
 
     public getStateStream(props: Readonly<any>) {
-        return Observable.of([1, 2, 3]);
+        return Observable.create((subscriber: any) => {
+            subscriber.next([1, 2, 3]);
+            subscriber.next({ result: 'mu haha ~' });
+            subscriber.complete();
+        });
     }
 
     public handleTestStreamClick = () => {
-        this.state.result.subscribe((val: any) => {
-            log(val);
-        });
+        log(this.state);
     }
 
     public render() {
