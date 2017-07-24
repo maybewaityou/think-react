@@ -13,9 +13,10 @@ import store from './dataflow/store/Store';
 import FunctionalContainer from './demos/functional/FunctionalContainer';
 import ApolloContainer from './demos/react-apollo/ApolloContainer';
 import ObservableContainer from './demos/redux-observable/ObservableContainer';
+import StreamContainer from './demos/stream/StreamContainer';
 
 ReactDOM.render((
     <Provider store={store}>
-        <ObservableContainer />
+        <StreamContainer />
     </Provider>
 ), document.getElementById('app'));
