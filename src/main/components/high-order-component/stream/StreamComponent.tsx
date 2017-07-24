@@ -5,10 +5,7 @@
  * description:
  *
  */
-import { is } from 'immutable';
 import * as React from 'react';
-import { Observable } from 'rxjs';
-import { log } from '../../../utilities/debug/DebugUtility';
 import PureComponent from '../pure/PureComponent';
 
 const stateSubscriptions: any[] = [];
