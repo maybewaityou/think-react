@@ -17,6 +17,6 @@ import StreamContainer from './demos/stream/StreamContainer';
 
 ReactDOM.render((
     <Provider store={store}>
-        <StreamContainer />
+        <ApolloContainer />
     </Provider>
 ), document.getElementById('app'));
