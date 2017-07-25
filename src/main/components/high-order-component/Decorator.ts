@@ -6,5 +6,5 @@
  *
  */
 
-export { default as pureRender } from './pure/PureComponent';
-export { default as PureComponent } from './pure/pureRenderDecorator';
+export { default as PureComponent } from './pure/PureComponent';
+export { default as pureRender } from './pure/pureRenderDecorator';
