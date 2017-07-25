@@ -6,6 +6,7 @@
  *
  */
 const Router = require('koa-router');
+const graphqlHTTP = require('koa-graphql');
 const App = require('../app/controllers/app');
 const Home = require('../app/controllers/home');
 const Users = require('../app/controllers/users');
@@ -13,6 +14,11 @@ const Users = require('../app/controllers/users');
 const router = new Router({
     prefix: '/pages'
 });
+
+router.all('/graphql', graphqlHTTP({
+    schema: {},
+    graphiql: true
+}));
 
 // 设置路由规则
 router.get('/index', App.index);
