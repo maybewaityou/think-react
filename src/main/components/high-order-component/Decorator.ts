@@ -5,8 +5,6 @@
  * description:
  *
  */
-import PureRenderComponent from './pure/PureComponent';
-import pureRenderDecorator from './pure/pureRenderDecorator';
 
-export const pureRender = pureRenderDecorator;
-export const PureComponent = PureRenderComponent;
+export { default as pureRender } from './pure/PureComponent';
+export { default as PureComponent } from './pure/pureRenderDecorator';
