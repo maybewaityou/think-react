@@ -6,6 +6,7 @@
  *
  */
 import * as React from 'react';
+import { ApolloClient, ApolloProvider } from 'react-apollo';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './assets/stylesheet/style.css';
@@ -15,8 +16,17 @@ import ApolloContainer from './demos/react-apollo/ApolloContainer';
 import ObservableContainer from './demos/redux-observable/ObservableContainer';
 import StreamContainer from './demos/stream/StreamContainer';
 
-ReactDOM.render((
+const App = (
     <Provider store={store}>
-        <ApolloContainer />
+        <ObservableContainer />
     </Provider>
-), document.getElementById('app'));
+);
+
+const client = new ApolloClient();
+const ApolloApp = (
+    <ApolloProvider client={client}>
+        <ApolloContainer />
+    </ApolloProvider>
+);
+
+ReactDOM.render(ApolloApp, document.getElementById('app'));

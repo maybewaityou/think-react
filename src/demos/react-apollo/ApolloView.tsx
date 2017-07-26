@@ -28,7 +28,7 @@ export default class ApolloView extends React.PureComponent<IApolloViewProps, IA
     public render() {
         return (
             <div style={styles.container}>
-                <button style={styles.button} onClick={this.props.handleTestClick}>test observable</button>
+                <button style={styles.button} onClick={this.props.handleTestClick}>test apollo</button>
             </div>
         );
     }
