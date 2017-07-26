@@ -7,7 +7,7 @@
  */
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { componentFromStreamWithConfig, compose, createEventHandler, defaultProps, mapProps, pure, setDisplayName, setPropTypes, withHandlers, withReducer, withState } from 'recompose';
+import { componentFromStreamWithConfig, compose, createEventHandler, defaultProps, lifecycle, mapProps, pure, setDisplayName, setPropTypes, withHandlers, withReducer, withState } from 'recompose';
 import { Observable } from 'rxjs';
 import RecomposeView from './RecomposeView';
 
@@ -43,6 +43,11 @@ export default compose(
     }),
     defaultProps({
         level: 'mu haha ~',
+    }),
+    lifecycle({
+        componentDidMount: () => {
+            console.log('===== componentDidMount =====');
+        },
     }),
     setDisplayName('RecomposeView'),
     withState('name', 'setName', ''),
