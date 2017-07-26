@@ -10,16 +10,6 @@ import * as React from 'react';
 import { pureRender } from '../../main/components/high-order-component/Decorator';
 import { toString } from '../../main/utilities/data/JSONUtility';
 
-export interface IObservableViewProps {
-    $data: Map<string, any>;
-    handleTestObservableClick: any;
-    handleTestObservableCancelClick: any;
-}
-
-export interface IObservableViewState {
-
-}
-
 /**
  * 无状态组件
  */
@@ -31,6 +21,16 @@ export const ObservableStatelessView = (props: Readonly<any>) => (
         <div style={styles.text}>{toString(props.$data.toJS())}</div>
     </div>
 );
+
+export interface IObservableViewProps {
+    $data: Map<string, any>;
+    handleTestObservableClick: any;
+    handleTestObservableCancelClick: any;
+}
+
+export interface IObservableViewState {
+
+}
 
 @pureRender
 export default class ObservableView extends React.PureComponent<IObservableViewProps, IObservableViewState> {

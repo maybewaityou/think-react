@@ -6,11 +6,11 @@
  *
  */
 import { compose, mapProps, pure, withHandlers, withState } from 'recompose';
-import RecomposeView from './RecomposeView';
+import RecomposeView, { RecomposeStatelessView } from './RecomposeView';
 
 export default compose(
     withState('name', 'setName', ''),
     withState('age', 'setAge', 0),
     // mapProps((input) => input),
     // withHandlers(),
-)(RecomposeView);
+)(RecomposeStatelessView);
