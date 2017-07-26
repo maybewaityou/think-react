@@ -38,6 +38,8 @@ const counterReducer = (count: any, action: any) => {
 export default compose(
     setPropTypes({
         level: PropTypes.string,
+        name: PropTypes.string,
+        age: PropTypes.number,
     }),
     defaultProps({
         level: 'mu haha ~',
@@ -48,9 +50,9 @@ export default compose(
     withReducer('count', 'dispatch', counterReducer, 0),
     withHandlers({
         handlePress: (props: Readonly<any>) => (event: any) => {
-            props.dispatch({ type: 'INCREMENT' });
             props.setName('MeePwn');
             props.setAge(25);
+            props.dispatch({ type: 'INCREMENT' });
         },
     }),
     pure,
