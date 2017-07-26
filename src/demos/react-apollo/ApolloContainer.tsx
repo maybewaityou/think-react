@@ -7,6 +7,7 @@
  */
 import { Map } from 'immutable';
 import * as React from 'react';
+import { gql, graphql } from 'react-apollo';
 import { PureComponent } from '../../main/components/high-order-component/Decorator';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import ApolloView from './ApolloView';

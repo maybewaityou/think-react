@@ -12,7 +12,8 @@
             "antd": ["node_modules/antd/lib/index.d.ts"],
             "react-apollo": ["node_modules/react-apollo/index.d.ts"],
             "apollo-client": ["node_modules/react-apollo/node_modules/apollo-client/index.d.ts"],
-            "graphql-tag": ["node_modules/graphql-tag/index.d.ts"]
+            "graphql-tag": ["node_modules/graphql-tag/index.d.ts"],
+            "graphql": ["node_modules/react-apollo/node_modules/graphql/index.d.ts"]
         },
         "target": "es2015",
         "module": "es2015",
