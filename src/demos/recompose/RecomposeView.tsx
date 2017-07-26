@@ -19,6 +19,7 @@ export default (props: Readonly<any>) => (
         <div>name: {props.name}</div>
         <div>age: {props.age}</div>
         <div>level: {props.level}</div>
+        <div>count: {props.count}</div>
     </div>
 );
 

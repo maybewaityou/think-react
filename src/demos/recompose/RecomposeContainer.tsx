@@ -6,7 +6,7 @@
  *
  */
 import * as React from 'react';
-import { componentFromStreamWithConfig, compose, createEventHandler, defaultProps, mapProps, pure, withHandlers, withState } from 'recompose';
+import { componentFromStreamWithConfig, compose, createEventHandler, defaultProps, mapProps, pure, withHandlers, withReducer, withState } from 'recompose';
 import { Observable } from 'rxjs';
 import RecomposeView from './RecomposeView';
 
@@ -22,14 +22,28 @@ import RecomposeView from './RecomposeView';
  * In the future, they will allow React to make performance optimizations by avoiding unnecessary checks and memory allocations.
  * 将来，他们将允许通过避免不必要的检查和内存分配来做出性能优化。
  */
+
+const counterReducer = (count: any, action: any) => {
+    switch (action.type) {
+    case 'INCREMENT':
+        return count + 1;
+    case 'DECREMENT':
+        return count - 1;
+    default:
+        return count;
+    }
+};
+
 export default compose(
     defaultProps({
         level: 'mu haha ~',
     }),
     withState('name', 'setName', ''),
     withState('age', 'setAge', 0),
+    withReducer('count', 'dispatch', counterReducer, 0),
     withHandlers({
         handlePress: (props: Readonly<any>) => (event: any) => {
+            props.dispatch({ type: 'INCREMENT' });
             props.setName('MeePwn');
             props.setAge(25);
         },
