@@ -13,16 +13,18 @@ import { toString } from '../../main/utilities/data/JSONUtility';
 /**
  * 无状态组件
  */
-export const RecomposeStatelessView = (props: Readonly<any>) => (
-    <div style={styles.container}>
-        <button style={styles.button} onClick={() => {
-            props.setName('MeePwn');
-            props.setAge(26);
-        }}>test Recompose</button>
-        <div>name: {props.name}</div>
-        <div>age: {props.age}</div>
-    </div>
-);
+export const RecomposeStatelessView = (props: Readonly<any>) => {
+    return (
+        <div style={styles.container}>
+            <button style={styles.button} onClick={() => {
+                props.setName('MeePwn');
+                props.setAge(26);
+            }}>test Recompose</button>
+            <div>name: {props.name}</div>
+            <div>age: {props.age}</div>
+        </div>
+    );
+};
 
 export interface IRecomposeViewProps {
     name: string;
