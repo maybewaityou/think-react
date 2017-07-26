@@ -6,7 +6,7 @@
  *
  */
 import { compose, mapProps, pure, withHandlers, withState } from 'recompose';
-import RecomposeView, { RecomposeStatelessView } from './RecomposeView';
+import RecomposeView from './RecomposeView';
 
 /**
  * They help prevent abuse of the setState() API, favoring props instead.
@@ -20,11 +20,10 @@ import RecomposeView, { RecomposeStatelessView } from './RecomposeView';
  * In the future, they will allow React to make performance optimizations by avoiding unnecessary checks and memory allocations.
  * 将来，他们将允许通过避免不必要的检查和内存分配来做出性能优化。
  */
-
 export default compose(
     withState('name', 'setName', ''),
     withState('age', 'setAge', 0),
     // mapProps((input) => input),
     // withHandlers(),
     pure,
-)(RecomposeStatelessView);
+)(RecomposeView);
