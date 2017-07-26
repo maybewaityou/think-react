@@ -5,7 +5,9 @@
  * description:
  *
  */
-import { compose, defaultProps, mapProps, pure, withHandlers, withState } from 'recompose';
+import * as React from 'react';
+import { componentFromStreamWithConfig, compose, createEventHandler, defaultProps, mapProps, pure, withHandlers, withState } from 'recompose';
+import { Observable } from 'rxjs';
 import RecomposeView from './RecomposeView';
 
 /**
