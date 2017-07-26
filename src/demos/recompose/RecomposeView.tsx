@@ -15,12 +15,10 @@ import { toString } from '../../main/utilities/data/JSONUtility';
  */
 export default (props: Readonly<any>) => (
     <div style={styles.container}>
-        <button style={styles.button} onClick={() => {
-            props.setName('MeePwn');
-            props.setAge(26);
-        }}>test Recompose</button>
+        <button style={styles.button} onClick={props.handlePress}>test Recompose</button>
         <div>name: {props.name}</div>
         <div>age: {props.age}</div>
+        <div>level: {props.level}</div>
     </div>
 );
 

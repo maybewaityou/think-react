@@ -5,7 +5,7 @@
  * description:
  *
  */
-import { compose, mapProps, pure, withHandlers, withState } from 'recompose';
+import { compose, defaultProps, mapProps, pure, withHandlers, withState } from 'recompose';
 import RecomposeView from './RecomposeView';
 
 /**
@@ -20,10 +20,19 @@ import RecomposeView from './RecomposeView';
  * In the future, they will allow React to make performance optimizations by avoiding unnecessary checks and memory allocations.
  * 将来，他们将允许通过避免不必要的检查和内存分配来做出性能优化。
  */
+// const handles: any = ;
 export default compose(
+    defaultProps({
+        level: 'mu haha ~',
+    }),
+    // mapProps((input) => input),
     withState('name', 'setName', ''),
     withState('age', 'setAge', 0),
-    // mapProps((input) => input),
-    // withHandlers(),
+    withHandlers({
+        handlePress: (props: Readonly<any>) => (event: any) => {
+            props.setName('MeePwn');
+            props.setAge(25);
+        },
+    }),
     pure,
 )(RecomposeView);
