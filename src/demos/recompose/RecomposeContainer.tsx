@@ -36,7 +36,7 @@ const counterReducer = (count: any, action: any) => {
     }
 };
 
-export default compose(
+const enhance = compose(
     setPropTypes({
         level: PropTypes.string,
         name: PropTypes.string,
@@ -62,4 +62,6 @@ export default compose(
         },
     }),
     pure,
-)(RecomposeView);
+);
+
+export default enhance(RecomposeView);
