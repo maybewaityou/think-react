@@ -5,8 +5,9 @@
  * description:
  *
  */
+import PropTypes from 'prop-types';
 import * as React from 'react';
-import { componentFromStreamWithConfig, compose, createEventHandler, defaultProps, mapProps, pure, withHandlers, withReducer, withState } from 'recompose';
+import { componentFromStreamWithConfig, compose, createEventHandler, defaultProps, mapProps, pure, setDisplayName, setPropTypes, withHandlers, withReducer, withState } from 'recompose';
 import { Observable } from 'rxjs';
 import RecomposeView from './RecomposeView';
 
@@ -35,9 +36,13 @@ const counterReducer = (count: any, action: any) => {
 };
 
 export default compose(
+    setPropTypes({
+        level: PropTypes.string,
+    }),
     defaultProps({
         level: 'mu haha ~',
     }),
+    setDisplayName('RecomposeView'),
     withState('name', 'setName', ''),
     withState('age', 'setAge', 0),
     withReducer('count', 'dispatch', counterReducer, 0),
