@@ -5,10 +5,12 @@
  * description:
  *
  */
-import { compose, mapProps, pure, withState /* ... */ } from 'recompose';
+import { compose, mapProps, pure, withHandlers, withState } from 'recompose';
 import RecomposeView from './RecomposeView';
 
 export default compose(
-    withState('name', 'newName', 'zhangsan'),
-    mapProps((input) => input),
+    withState('name', 'setName', ''),
+    withState('age', 'setAge', 0),
+    // mapProps((input) => input),
+    // withHandlers(),
 )(RecomposeView);

@@ -12,21 +12,14 @@ import { toString } from '../../main/utilities/data/JSONUtility';
 
 export interface IRecomposeViewProps {
     name: string;
-    handleTestRecomposeClick: any;
+    age: number;
+    setName: (params: string) => any;
+    setAge: (params: number) => any;
 }
 
 export interface IRecomposeViewState {
 
 }
-
-/**
- * 无状态组件
- */
-export const RecomposeStatelessView = (props: Readonly<any>) => (
-    <div style={styles.container}>
-        <button style={styles.button} onClick={props.handleTestRecomposeClick}>test Recompose</button>
-    </div>
-);
 
 @pureRender
 export default class RecomposeView extends React.PureComponent<IRecomposeViewProps, IRecomposeViewState> {
@@ -39,7 +32,12 @@ export default class RecomposeView extends React.PureComponent<IRecomposeViewPro
     public render() {
         return (
             <div style={styles.container}>
-                <button style={styles.button} onClick={this.props.handleTestRecomposeClick}>test Recompose</button>
+                <button style={styles.button} onClick={() => {
+                    this.props.setName('MeePwn');
+                    this.props.setAge(26);
+                }}>test Recompose</button>
+                <div>name: {this.props.name}</div>
+                <div>age: {this.props.age}</div>
             </div>
         );
     }
