@@ -18,21 +18,15 @@ const router = new Router({
     prefix: '/pages'
 });
 
+// GraphQL
 router.all('/graphql', graphqlHTTP({
-    schema: {},
+    schema: schema,
     graphiql: true
 }));
 
-// 设置路由规则
+// RESTful
 router.get('/index', App.index);
 router.get('/users', Users.users);
 router.post('/showIndexInfo', Home.home);
-
-// koaBody is needed just for POST.
-router.post('/graphql', bodyParser(), graphqlKoa({ schema: schema }));
-router.get('/graphql', graphqlKoa({ schema: schema }));
-
-router.post('/graphiql', graphiqlKoa({ endpointURL: '/graphql' }));
-router.get('/graphiql', graphiqlKoa({ endpointURL: '/graphql' }));
 
 module.exports = router;

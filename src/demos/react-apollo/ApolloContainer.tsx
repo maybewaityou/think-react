@@ -30,7 +30,6 @@ class ApolloContainer extends PureComponent<IApolloContainerProps, IApolloContai
     }
 
     public handleTestClick = () => {
-        log('============================');
         log(this.props.data);
     }
 
