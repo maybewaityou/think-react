@@ -25,9 +25,7 @@ router.all('/graphql', graphqlHTTP({
 
 // 设置路由规则
 router.get('/index', App.index);
-
 router.get('/users', Users.users);
-
 router.post('/showIndexInfo', Home.home);
 
 // koaBody is needed just for POST.
