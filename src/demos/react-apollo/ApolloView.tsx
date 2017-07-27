@@ -10,6 +10,7 @@ import * as React from 'react';
 import { pureRender } from '../../main/components/high-order-component/Decorator';
 
 export interface IApolloViewProps {
+    data: any;
     handleTestClick: any;
 }
 
@@ -29,6 +30,7 @@ export default class ApolloView extends React.PureComponent<IApolloViewProps, IA
         return (
             <div style={styles.container}>
                 <button style={styles.button} onClick={this.props.handleTestClick}>test apollo</button>
+                <div>{this.props.data.Trainer.name}</div>
             </div>
         );
     }
