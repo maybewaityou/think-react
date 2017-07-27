@@ -25,9 +25,7 @@ import StreamContainer from './demos/stream/StreamContainer';
 
 const client = new ApolloClient({
     networkInterface: createNetworkInterface({
-        // uri: 'https://api.graph.cool/simple/v1/cj5llp3l43vdl0122udwc6cma',
         uri: 'http://localhost:3000/pages/graphql',
-        // uri: 'http://localhost:3000/graphql',
     }),
 });
 
