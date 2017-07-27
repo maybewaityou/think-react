@@ -30,7 +30,12 @@ export default class ApolloView extends React.PureComponent<IApolloViewProps, IA
         return (
             <div style={styles.container}>
                 <button style={styles.button} onClick={this.props.handleTestClick}>test apollo</button>
-                <div>{this.props.data.Trainer.name}</div>
+                {this.props.data.users.map((user: any) =>
+                    <span key={user.id}>
+                        <div>{user.id}</div>
+                        <div>{user.firstName} :  {user.lastName}</div>
+                    </span>,
+                )}
             </div>
         );
     }

@@ -61,10 +61,4 @@ const TrainerQuery = gql`
     }
 `;
 
-export default graphql(TrainerQuery, {
-    options: {
-        variables: {
-            name: 'MeePwn',
-        },
-    },
-})(ApolloContainer);
+export default graphql(TrainerQuery)(ApolloContainer);
