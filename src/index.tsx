@@ -17,11 +17,11 @@ import RecomposeContainer from './demos/recompose/RecomposeContainer';
 import ObservableContainer from './demos/redux-observable/ObservableContainer';
 import StreamContainer from './demos/stream/StreamContainer';
 
-// const App = (
-//     <Provider store={store}>
-//         <RecomposeContainer />
-//     </Provider>
-// );
+const App = (
+    <Provider store={store}>
+        <RecomposeContainer />
+    </Provider>
+);
 
 const client = new ApolloClient({
     networkInterface: createNetworkInterface({
@@ -35,4 +35,4 @@ const ApolloApp = (
     </ApolloProvider>
 );
 
-ReactDOM.render(ApolloApp, document.getElementById('app'));
+ReactDOM.render(App, document.getElementById('app'));
