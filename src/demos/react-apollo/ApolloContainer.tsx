@@ -52,15 +52,11 @@ class ApolloContainer extends PureComponent<IApolloContainerProps, IApolloContai
 }
 
 const TrainerQuery = gql`
-    query TrainerQuery($name: String!) {
-        Trainer(name: $name) {
+    query Query {
+        users {
             id
-            name
-            ownedPokemons {
-                id
-                name
-                url
-            }
+            firstName
+            lastName
         }
     }
 `;
