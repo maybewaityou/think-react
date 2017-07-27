@@ -23,14 +23,12 @@ const App = (
     </Provider>
 );
 
-const client = new ApolloClient({
-    networkInterface: createNetworkInterface({
-        uri: 'http://localhost:3000/pages/graphql',
-    }),
-});
-
 const ApolloApp = (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={new ApolloClient({
+        networkInterface: createNetworkInterface({
+            uri: 'http://localhost:3000/pages/graphql',
+        }),
+    })}>
         <ApolloContainer />
     </ApolloProvider>
 );
