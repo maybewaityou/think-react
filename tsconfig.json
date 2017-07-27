@@ -12,6 +12,8 @@
             "antd": ["node_modules/antd/lib/index.d.ts"],
             "react-apollo": ["node_modules/react-apollo/index.d.ts"],
             "apollo-client": ["node_modules/apollo-client/index.d.ts"],
+            "apollo-fetch": ["node_modules/apollo-fetch/dist/src/index.d.ts"],
+            "apollo-link": ["node_modules/apollo-link/dist/src/index.d.ts"],
             "graphql-anywhere": ["node_modules/graphql-anywhere/lib/src/index.d.ts"],
             "graphql-tag": ["node_modules/graphql-tag/index.d.ts"]
         },
