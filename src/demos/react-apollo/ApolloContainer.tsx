@@ -5,11 +5,10 @@
  * description:
  *
  */
-import gql from 'graphql-tag';
 import { Map } from 'immutable';
 import * as React from 'react';
-import { graphql } from 'react-apollo';
 import { PureComponent } from '../../main/components/high-order-component/Decorator';
+import { gql, graphQL } from '../../main/third-party/transform/GraphQL';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import ApolloView from './ApolloView';
 
@@ -22,7 +21,16 @@ export interface IApolloContainerState {
 
 }
 
-class ApolloContainer extends PureComponent<IApolloContainerProps, IApolloContainerState> {
+@graphQL(gql`
+    query Query {
+        users {
+            id
+            firstName
+            lastName
+        }
+    }
+`)
+export default class ApolloContainer extends PureComponent<IApolloContainerProps, IApolloContainerState> {
 
     constructor(props: Readonly<any>) {
         super(props);
@@ -49,15 +57,3 @@ class ApolloContainer extends PureComponent<IApolloContainerProps, IApolloContai
         );
     }
 }
-
-const TrainerQuery = gql`
-    query Query {
-        users {
-            id
-            firstName
-            lastName
-        }
-    }
-`;
-
-export default graphql(TrainerQuery)(ApolloContainer);
