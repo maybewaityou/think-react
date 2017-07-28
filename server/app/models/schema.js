@@ -21,6 +21,11 @@ type Post {
     post: String!
 }
 
+type UsersAndPosts {
+    users: [User]
+    posts: [Post]
+}
+
 # the schema allows the following query:
 type Query {
     users: [User]
@@ -31,6 +36,7 @@ type Query {
 type Mutation {
     createUser(firstName: String!, lastName: String!): User
     createPost(data: String!): Post
+    reset: UsersAndPosts
 }
 `;
 

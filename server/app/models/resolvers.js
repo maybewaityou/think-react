@@ -39,6 +39,11 @@ const resolveFunctions = {
             const post = { id: posts.length, post: args[1].data };
             posts.push(post);
             return post;
+        },
+        reset: (...args) => {
+            users.splice(2, users.length);
+            posts.splice(1, posts.length);
+            return { users, posts };
         }
     },
 };

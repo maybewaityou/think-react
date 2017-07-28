@@ -30,3 +30,19 @@ export const createPost = `
         }
     }
 `;
+
+export const resetUsersAndPosts = `
+    mutation {
+        reset {
+            users {
+                id
+                firstName
+                lastName
+            }
+            posts {
+                id
+                post
+            }
+        }
+    }
+`;

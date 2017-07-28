@@ -25,6 +25,7 @@ export default (props: Readonly<any>) => {
             <button style={styles.button} onClick={props.handleQueryPostClick}>query post</button>
             <button style={styles.button} onClick={props.handleCreateUserClick}>create user</button>
             <button style={styles.button} onClick={props.handleCreatePostClick}>create post</button>
+            <button style={styles.button} onClick={props.handleResetClick}>reset</button>
             {users.map((user: any) =>
                 <span key={user.id}>
                     <div>{user.id}</div>
