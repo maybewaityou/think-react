@@ -22,7 +22,8 @@ type Query {
 }
 # the schema allows the following mutate:
 type Mutation {
-    createUser(id: ID!, firstName: String, lastName: String): User
+    createUser(id: ID!, firstName: String!, lastName: String!): User
+    createRandomUser(id: ID!): User
 }
 `;
 
