@@ -12,6 +12,7 @@ import { PureComponent } from '../../main/components/high-order-component/Decora
 import { gql, graphQL } from '../../main/third-party/transform/graphQL';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import ApolloView from './ApolloView';
+import { createPost, createUser, queryUsersAndPosts } from './graphql/graphqlDSL';
 
 export interface IApolloContainerProps {
     data?: any;
@@ -23,36 +24,9 @@ export interface IApolloContainerState {
 
 }
 
-@graphQL(gql`
-    query {
-        users {
-            id
-            firstName
-            lastName
-        }
-        posts {
-            id
-            post
-        }
-    }
-`)
-@graphQL(gql`
-    mutation($firstName: String!, $lastName: String!) {
-        createUser(firstName: $firstName, lastName: $lastName) {
-            id
-            firstName
-            lastName
-        }
-    }
-`, { name: 'createUser' })
-@graphQL(gql`
-    mutation($data: String!) {
-        createPost(data: $data) {
-            id
-            post
-        }
-    }
-`, { name: 'createPost' })
+@graphQL(gql`${queryUsersAndPosts}`)
+@graphQL(gql`${createUser}`, { name: 'createUser' })
+@graphQL(gql`${createPost}`, { name: 'createPost' })
 export default class ApolloContainer extends PureComponent<IApolloContainerProps, IApolloContainerState> {
 
     constructor(props: Readonly<any>) {

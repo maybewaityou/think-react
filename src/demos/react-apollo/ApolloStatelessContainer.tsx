@@ -11,6 +11,7 @@ import * as React from 'react';
 import { gql, graphQL } from '../../main/third-party/transform/graphQL';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import ApolloStatelessView from './ApolloStatelessView';
+import { createPost, createUser, queryUsersAndPosts } from './graphql/graphqlDSL';
 
 import { componentFromStream, componentFromStreamWithConfig, compose, createEventHandler, defaultProps, lifecycle, mapProps, mapPropsStream, pure, setDisplayName, setObservableConfig, setPropTypes, withHandlers, withReducer, withState } from 'recompose';
 
@@ -20,37 +21,9 @@ export default compose(
         users: [],
         posts: [],
     }),
-    graphQL(gql`
-        query {
-            users {
-                id
-                firstName
-                lastName
-            }
-            posts {
-                id
-                post
-            }
-        }
-    `),
-    graphQL(gql`
-        mutation($firstName: String!, $lastName: String!) {
-            createUser(firstName: $firstName, lastName: $lastName) {
-                id
-                firstName
-                lastName
-            }
-        }
-    `,
-    { name: 'createUser' }),
-    graphQL(gql`
-        mutation($data: String!) {
-            createPost(data: $data) {
-                id
-                post
-            }
-        }
-    `, { name: 'createPost' }),
+    graphQL(gql`${queryUsersAndPosts}`),
+    graphQL(gql`${createUser}`, { name: 'createUser' }),
+    graphQL(gql`${createPost}`, { name: 'createPost' }),
     withHandlers({
         handleQueryUserClick: (props: Readonly<any>) => async (event: any) => {
             const response = await props.data.refetch();

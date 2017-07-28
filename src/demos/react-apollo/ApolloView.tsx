@@ -41,6 +41,7 @@ export default class ApolloView extends React.PureComponent<IApolloViewProps, IA
         const { users, posts } = this.props.data;
         return (
             <div style={styles.container}>
+                <div>ApolloView</div>
                 <button style={styles.button} onClick={this.props.handleQueryUserClick}>query user</button>
                 <button style={styles.button} onClick={this.props.handleQueryPostClick}>query post</button>
                 <button style={styles.button} onClick={this.props.handleCreateUserClick}>create user</button>

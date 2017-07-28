@@ -20,6 +20,7 @@ export default (props: Readonly<any>) => {
     }
     return (
         <div style={styles.container}>
+            <div>ApolloStateless</div>
             <button style={styles.button} onClick={props.handleQueryUserClick}>query user</button>
             <button style={styles.button} onClick={props.handleQueryPostClick}>query post</button>
             <button style={styles.button} onClick={props.handleCreateUserClick}>create user</button>
