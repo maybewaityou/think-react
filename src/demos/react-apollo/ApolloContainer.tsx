@@ -31,11 +31,7 @@ import { compose } from 'react-apollo';
             lastName
         }
     }
-`, {
-    options: {
-        pollInterval: 3 * 1000,
-    },
-})
+`)
 @graphQL(gql`
     mutation Mutation($id: ID!, $firstName: String!, $lastName: String!) {
         createUser(id: $id, firstName: $firstName, lastName: $lastName) {
