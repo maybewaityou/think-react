@@ -20,6 +20,10 @@ type Query {
     users: [User]
     user(id: ID!): User
 }
+# the schema allows the following mutate:
+type Mutation {
+    createUser(id: ID!, firstName: String, lastName: String): User
+}
 `;
 
 module.exports = makeExecutableSchema({

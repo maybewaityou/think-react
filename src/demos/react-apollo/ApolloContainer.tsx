@@ -14,16 +14,27 @@ import ApolloView from './ApolloView';
 
 export interface IApolloContainerProps {
     data?: any;
-
+    mutate?: any;
 }
 
 export interface IApolloContainerState {
 
 }
 
+import { compose } from 'react-apollo';
+
 @graphQL(gql`
     query Query {
         users {
+            id
+            firstName
+            lastName
+        }
+    }
+`)
+@graphQL(gql`
+    mutation Mutation($id: ID!, $firstName: String!, $lastName: String!) {
+        createUser(id: $id, firstName: $firstName, lastName: $lastName) {
             id
             firstName
             lastName
@@ -38,7 +49,16 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
     }
 
     public handleTestClick = () => {
+        log(this.props);
         log(this.props.data);
+        const { users } = this.props.data;
+        this.props.mutate({
+            variables: {
+                id: users.length,
+                firstName: 'MeePwn',
+                lastName: 'maybewaityou',
+            },
+        });
     }
 
     public render() {

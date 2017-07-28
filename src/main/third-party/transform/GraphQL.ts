@@ -5,7 +5,7 @@
  * description:
  *
  */
-import { graphql } from 'react-apollo';
+import { compose, graphql } from 'react-apollo';
 
 export const graphQL: any = graphql;
 export { default as gql } from 'graphql-tag';

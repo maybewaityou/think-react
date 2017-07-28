@@ -7,8 +7,8 @@
  */
 
 const users = [
-    { id: 1, firstName: 'Tom', lastName: 'Coleman' },
-    { id: 2, firstName: 'Sashko', lastName: 'Stubailo' },
+    { id: 0, firstName: 'Tom', lastName: 'Coleman' },
+    { id: 1, firstName: 'Sashko', lastName: 'Stubailo' },
 ];
 
 const resolveFunctions = {
@@ -22,6 +22,12 @@ const resolveFunctions = {
             return user;
         },
     },
+    Mutation: {
+        createUser: (...args) => {
+            users.push({ id: args[1].id, firstName: args[1].firstName, lastName: args[1].lastName });
+            return users[users.length - 1];
+        }
+    }
 };
 
 module.exports = resolveFunctions;
