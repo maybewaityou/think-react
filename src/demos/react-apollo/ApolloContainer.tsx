@@ -41,6 +41,13 @@ import { compose } from 'react-apollo';
         }
     }
 `)
+@graphQL(gql`
+    mutation CreatePost($data: String!) {
+        createPost(data: $data) {
+            post
+        }
+    }
+`)
 export default class ApolloContainer extends PureComponent<IApolloContainerProps, IApolloContainerState> {
 
     constructor(props: Readonly<any>) {
@@ -54,9 +61,10 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
         const { users } = this.props.data;
         this.props.mutate({
             variables: {
-                id: users.length,
-                firstName: 'MeePwn',
-                lastName: 'maybewaityou',
+                data: 'mu haha ~',
+                // id: users.length,
+                // firstName: 'MeePwn',
+                // lastName: 'maybewaityou',
             },
         })
             .then((response: any) => {

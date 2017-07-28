@@ -11,6 +11,12 @@ const users = [
     { id: 1, firstName: 'Sashko', lastName: 'Stubailo' },
 ];
 
+const posts = [
+    {
+        post: 'first post'
+    }
+];
+
 const resolveFunctions = {
     Query: {
         users: () => users,
@@ -27,6 +33,11 @@ const resolveFunctions = {
             users.push({ id: args[1].id, firstName: args[1].firstName, lastName: args[1].lastName });
             return users[users.length - 1];
         },
+        createPost: (...args) => {
+            return {
+                post: args[1].data
+            };
+        }
     },
 };
 
