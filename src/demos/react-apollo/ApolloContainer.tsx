@@ -167,13 +167,6 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
     }
 
     public render() {
-        if (this.props.data.loading) {
-            return (<div>Loading...</div>);
-        }
-        if (this.props.data.error) {
-            log(this.props.data.error);
-            return (<div>Error</div>);
-        }
         return (
             <ApolloView
                 data={this.props.data}
