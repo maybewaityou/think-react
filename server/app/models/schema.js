@@ -24,6 +24,7 @@ type Post {
 type Query {
     users: [User]
     user(id: ID!): User
+    posts: [Post]
 }
 # the schema allows the following mutate:
 type Mutation {

@@ -11,7 +11,10 @@ import { pureRender } from '../../main/components/high-order-component/Decorator
 
 export interface IApolloViewProps {
     data: any;
-    handleTestClick: any;
+    handleQueryUserClick: any;
+    handleQueryPostClick: any;
+    handleCreatePostClick: any;
+    handleCreateUserClick: any;
 }
 
 export interface IApolloViewState {
@@ -27,15 +30,21 @@ export default class ApolloView extends React.PureComponent<IApolloViewProps, IA
     }
 
     public render() {
-        const { users } = this.props.data;
+        const { users, posts } = this.props.data;
         return (
             <div style={styles.container}>
-                <button style={styles.button} onClick={this.props.handleTestClick}>test apollo</button>
+                <button style={styles.button} onClick={this.props.handleQueryUserClick}>query user</button>
+                <button style={styles.button} onClick={this.props.handleQueryPostClick}>query post</button>
+                <button style={styles.button} onClick={this.props.handleCreatePostClick}>create post</button>
+                <button style={styles.button} onClick={this.props.handleCreateUserClick}>create user</button>
                 {users.map((user: any) =>
                     <span key={user.id}>
                         <div>{user.id}</div>
                         <div>{user.firstName} :  {user.lastName}</div>
                     </span>,
+                )}
+                posts : {posts.map((item: any) =>
+                    <div>{item.post}</div>,
                 )}
             </div>
         );

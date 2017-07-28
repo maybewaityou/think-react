@@ -28,6 +28,9 @@ export interface IApolloContainerState {
             firstName
             lastName
         }
+        posts {
+            post
+        }
     }
 `)
 @graphQL(gql`
@@ -53,7 +56,55 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
 
     }
 
-    public handleTestClick = async () => {
+    public handleQueryUserClick = async () => {
+        log(this.props);
+        log(this.props.data);
+        const { users } = this.props.data;
+        const response = await this.props.mutate({
+            variables: {
+                data: 'mu haha ~',
+                // id: users.length,
+                // firstName: 'MeePwn',
+                // lastName: 'maybewaityou',
+            },
+        });
+
+        log(response);
+    }
+
+    public handleQueryPostClick = async () => {
+        log(this.props);
+        log(this.props.data);
+        const { users } = this.props.data;
+        const response = await this.props.mutate({
+            variables: {
+                data: 'mu haha ~',
+                // id: users.length,
+                // firstName: 'MeePwn',
+                // lastName: 'maybewaityou',
+            },
+        });
+
+        log(response);
+    }
+
+    public handleCreateUserClick = async () => {
+        log(this.props);
+        log(this.props.data);
+        const { users } = this.props.data;
+        const response = await this.props.mutate({
+            variables: {
+                data: 'mu haha ~',
+                // id: users.length,
+                // firstName: 'MeePwn',
+                // lastName: 'maybewaityou',
+            },
+        });
+
+        log(response);
+    }
+
+    public handleCreatePostClick = async () => {
         log(this.props);
         log(this.props.data);
         const { users } = this.props.data;
@@ -80,7 +131,10 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
         return (
             <ApolloView
                 data={this.props.data}
-                handleTestClick={this.handleTestClick}
+                handleQueryUserClick={this.handleQueryUserClick}
+                handleQueryPostClick={this.handleQueryPostClick}
+                handleCreatePostClick={this.handleCreatePostClick}
+                handleCreateUserClick={this.handleCreateUserClick}
             />
         );
     }

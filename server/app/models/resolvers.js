@@ -27,6 +27,7 @@ const resolveFunctions = {
             }
             return user;
         },
+        posts: () => posts,
     },
     Mutation: {
         createUser: (...args) => {
@@ -34,9 +35,9 @@ const resolveFunctions = {
             return users[users.length - 1];
         },
         createPost: (...args) => {
-            return {
-                post: args[1].data
-            };
+            const post = { post: args[1].data };
+            posts.push(post);
+            return post;
         }
     },
 };
