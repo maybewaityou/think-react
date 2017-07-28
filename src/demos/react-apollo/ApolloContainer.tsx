@@ -21,10 +21,8 @@ export interface IApolloContainerState {
 
 }
 
-import { compose } from 'react-apollo';
-
 @graphQL(gql`
-    query Query {
+    query {
         users {
             id
             firstName
@@ -33,7 +31,7 @@ import { compose } from 'react-apollo';
     }
 `)
 @graphQL(gql`
-    mutation Mutation($id: ID!, $firstName: String!, $lastName: String!) {
+    mutation($id: ID!, $firstName: String!, $lastName: String!) {
         createUser(id: $id, firstName: $firstName, lastName: $lastName) {
             id
             firstName
@@ -42,7 +40,7 @@ import { compose } from 'react-apollo';
     }
 `)
 @graphQL(gql`
-    mutation CreatePost($data: String!) {
+    mutation($data: String!) {
         createPost(data: $data) {
             post
         }
@@ -55,21 +53,20 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
 
     }
 
-    public handleTestClick = () => {
+    public handleTestClick = async () => {
         log(this.props);
         log(this.props.data);
         const { users } = this.props.data;
-        this.props.mutate({
+        const response = await this.props.mutate({
             variables: {
                 data: 'mu haha ~',
                 // id: users.length,
                 // firstName: 'MeePwn',
                 // lastName: 'maybewaityou',
             },
-        })
-            .then((response: any) => {
-                log(response);
-            });
+        });
+
+        log(response);
     }
 
     public render() {
