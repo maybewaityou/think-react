@@ -14,7 +14,8 @@ import ApolloView from './ApolloView';
 
 export interface IApolloContainerProps {
     data?: any;
-    mutate?: any;
+    createUser?: any;
+    createPost?: any;
 }
 
 export interface IApolloContainerState {
@@ -41,14 +42,15 @@ export interface IApolloContainerState {
             lastName
         }
     }
-`)
+`, { name: 'createUser' })
 @graphQL(gql`
     mutation($data: String!) {
         createPost(data: $data) {
+            id
             post
         }
     }
-`)
+`, { name: 'createPost' })
 export default class ApolloContainer extends PureComponent<IApolloContainerProps, IApolloContainerState> {
 
     constructor(props: Readonly<any>) {
@@ -68,7 +70,7 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
 
     public handleCreateUserClick = async () => {
         const { users } = this.props.data;
-        const response = await this.props.mutate({
+        const response = await this.props.createUser({
             variables: {
                 id: users.length,
                 firstName: 'MeePwn',
@@ -80,10 +82,8 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
     }
 
     public handleCreatePostClick = async () => {
-        log(this.props);
-        log(this.props.data);
         const { users } = this.props.data;
-        const response = await this.props.mutate({
+        const response = await this.props.createPost({
             variables: {
                 data: 'mu haha ~',
             },

@@ -17,6 +17,7 @@ type User {
 }
 
 type Post {
+    id: Int!
     post: String!
 }
 

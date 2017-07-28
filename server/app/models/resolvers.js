@@ -13,6 +13,7 @@ const users = [
 
 const posts = [
     {
+        id: 0,
         post: 'first post'
     }
 ];
@@ -35,7 +36,7 @@ const resolveFunctions = {
             return users[users.length - 1];
         },
         createPost: (...args) => {
-            const post = { post: args[1].data };
+            const post = { id: posts.length, post: args[1].data };
             posts.push(post);
             return post;
         }

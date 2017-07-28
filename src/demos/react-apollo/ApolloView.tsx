@@ -35,8 +35,8 @@ export default class ApolloView extends React.PureComponent<IApolloViewProps, IA
             <div style={styles.container}>
                 <button style={styles.button} onClick={this.props.handleQueryUserClick}>query user</button>
                 <button style={styles.button} onClick={this.props.handleQueryPostClick}>query post</button>
-                <button style={styles.button} onClick={this.props.handleCreatePostClick}>create post</button>
                 <button style={styles.button} onClick={this.props.handleCreateUserClick}>create user</button>
+                <button style={styles.button} onClick={this.props.handleCreatePostClick}>create post</button>
                 {users.map((user: any) =>
                     <span key={user.id}>
                         <div>{user.id}</div>
@@ -44,7 +44,7 @@ export default class ApolloView extends React.PureComponent<IApolloViewProps, IA
                     </span>,
                 )}
                 posts : {posts.map((item: any) =>
-                    <div key={item.post}>{item.post}</div>,
+                    <div key={item.id}>{item.post}</div>,
                 )}
             </div>
         );
