@@ -12,7 +12,7 @@ import { Provider } from 'react-redux';
 import './assets/stylesheet/style.css';
 import store from './dataflow/store/Store';
 import FunctionalContainer from './demos/functional/FunctionalContainer';
-import ApolloContainer from './demos/react-apollo/ApolloContainer';
+import ApolloContainer, { ApolloStatelessContainer } from './demos/react-apollo/ApolloContainer';
 import RecomposeContainer from './demos/recompose/RecomposeContainer';
 import ObservableContainer from './demos/redux-observable/ObservableContainer';
 import StreamContainer from './demos/stream/StreamContainer';
@@ -29,7 +29,7 @@ const ApolloApp = (
             uri: 'http://localhost:3000/pages/graphql',
         }),
     })}>
-        <ApolloContainer />
+        <ApolloStatelessContainer />
     </ApolloProvider>
 );
 
