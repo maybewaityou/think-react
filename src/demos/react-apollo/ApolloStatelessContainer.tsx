@@ -8,10 +8,10 @@
 import { Map } from 'immutable';
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import { gql, graphQL } from '../../main/third-party/transform/graphQL';
+import { graphQL } from '../../main/third-party/transform/graphQL';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import ApolloStatelessView from './ApolloStatelessView';
-import { createPost, createUser, queryUsersAndPosts, resetUsersAndPosts } from './graphql/graphqlDSL';
+import { CREATE_POST, CREATE_USER, QUERY_USERS_AND_POSTS, RESET_USERS_AND_POSTS } from './graphql/graphqlDSL';
 
 import { componentFromStream, componentFromStreamWithConfig, compose, createEventHandler, defaultProps, lifecycle, mapProps, mapPropsStream, pure, setDisplayName, setObservableConfig, setPropTypes, withHandlers, withReducer, withState } from 'recompose';
 
@@ -21,10 +21,10 @@ export default compose(
         users: [],
         posts: [],
     }),
-    graphQL(gql`${queryUsersAndPosts}`),
-    graphQL(gql`${createUser}`, { name: 'createUser' }),
-    graphQL(gql`${createPost}`, { name: 'createPost' }),
-    graphQL(gql`${resetUsersAndPosts}`, { name: 'reset' }),
+    graphQL(QUERY_USERS_AND_POSTS),
+    graphQL(CREATE_USER, { name: 'createUser' }),
+    graphQL(CREATE_POST, { name: 'createPost' }),
+    graphQL(RESET_USERS_AND_POSTS, { name: 'reset' }),
     withHandlers({
         handleQueryUserClick: (props: Readonly<any>) => async (event: any) => {
             const response = await props.data.refetch();

@@ -9,10 +9,10 @@ import { Map } from 'immutable';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 import { PureComponent } from '../../main/components/high-order-component/Decorator';
-import { gql, graphQL } from '../../main/third-party/transform/graphQL';
+import { graphQL } from '../../main/third-party/transform/graphQL';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import ApolloView from './ApolloView';
-import { createPost, createUser, queryUsersAndPosts, resetUsersAndPosts } from './graphql/graphqlDSL';
+import { CREATE_POST, CREATE_USER, QUERY_USERS_AND_POSTS, RESET_USERS_AND_POSTS } from './graphql/graphqlDSL';
 
 export interface IApolloContainerProps {
     data?: any;
@@ -25,10 +25,10 @@ export interface IApolloContainerState {
 
 }
 
-@graphQL(gql`${queryUsersAndPosts}`)
-@graphQL(gql`${createUser}`, { name: 'createUser' })
-@graphQL(gql`${createPost}`, { name: 'createPost' })
-@graphQL(gql`${resetUsersAndPosts}`, { name: 'reset' })
+@graphQL(QUERY_USERS_AND_POSTS)
+@graphQL(CREATE_USER, { name: 'createUser' })
+@graphQL(CREATE_POST, { name: 'createPost' })
+@graphQL(RESET_USERS_AND_POSTS, { name: 'reset' })
 export default class ApolloContainer extends PureComponent<IApolloContainerProps, IApolloContainerState> {
 
     constructor(props: Readonly<any>) {
