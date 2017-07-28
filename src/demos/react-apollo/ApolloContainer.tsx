@@ -33,7 +33,7 @@ import { compose } from 'react-apollo';
     }
 `)
 @graphQL(gql`
-    mutation CreateUser($id: ID!, $firstName: String!, $lastName: String!) {
+    mutation Mutation($id: ID!, $firstName: String!, $lastName: String!) {
         createUser(id: $id, firstName: $firstName, lastName: $lastName) {
             id
             firstName
