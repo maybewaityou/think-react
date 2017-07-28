@@ -13,7 +13,7 @@ import { log } from '../../main/utilities/debug/DebugUtility';
 import ApolloView from './ApolloView';
 
 export interface IApolloContainerProps {
-    data: any;
+    data?: any;
 
 }
 
