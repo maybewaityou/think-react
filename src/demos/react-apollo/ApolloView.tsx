@@ -43,9 +43,9 @@ export default class ApolloView extends React.PureComponent<IApolloViewProps, IA
                         <div>{user.firstName} :  {user.lastName}</div>
                     </span>,
                 )}
-                posts : {posts.map((item: any) =>
-                    <div key={item.id}>{item.post}</div>,
-                )}
+                posts : {posts.map((item: any) => {
+                    return <div key={item.id}>{item.post}</div>;
+                })}
             </div>
         );
     }

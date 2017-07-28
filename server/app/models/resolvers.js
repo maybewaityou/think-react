@@ -32,7 +32,7 @@ const resolveFunctions = {
     },
     Mutation: {
         createUser: (...args) => {
-            users.push({ id: args[1].id, firstName: args[1].firstName, lastName: args[1].lastName });
+            users.push({ id: users.length, firstName: args[1].firstName, lastName: args[1].lastName });
             return users[users.length - 1];
         },
         createPost: (...args) => {

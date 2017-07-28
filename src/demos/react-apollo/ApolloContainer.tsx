@@ -30,13 +30,14 @@ export interface IApolloContainerState {
             lastName
         }
         posts {
+            id
             post
         }
     }
 `)
 @graphQL(gql`
-    mutation($id: ID!, $firstName: String!, $lastName: String!) {
-        createUser(id: $id, firstName: $firstName, lastName: $lastName) {
+    mutation($firstName: String!, $lastName: String!) {
+        createUser(firstName: $firstName, lastName: $lastName) {
             id
             firstName
             lastName
@@ -72,13 +73,13 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
         const { users } = this.props.data;
         const response = await this.props.createUser({
             variables: {
-                id: users.length,
                 firstName: 'MeePwn',
                 lastName: 'maybewaityou',
             },
         });
 
         log(response);
+        this.props.data.refetch();
     }
 
     public handleCreatePostClick = async () => {
@@ -90,6 +91,7 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
         });
 
         log(response);
+        this.props.data.refetch();
     }
 
     public render() {
