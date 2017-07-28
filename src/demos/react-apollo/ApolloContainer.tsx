@@ -57,47 +57,22 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
     }
 
     public handleQueryUserClick = async () => {
-        log(this.props);
-        log(this.props.data);
-        const { users } = this.props.data;
-        const response = await this.props.mutate({
-            variables: {
-                data: 'mu haha ~',
-                // id: users.length,
-                // firstName: 'MeePwn',
-                // lastName: 'maybewaityou',
-            },
-        });
-
+        const response = await this.props.data.refetch();
         log(response);
     }
 
     public handleQueryPostClick = async () => {
-        log(this.props);
-        log(this.props.data);
-        const { users } = this.props.data;
-        const response = await this.props.mutate({
-            variables: {
-                data: 'mu haha ~',
-                // id: users.length,
-                // firstName: 'MeePwn',
-                // lastName: 'maybewaityou',
-            },
-        });
-
+        const response = await this.props.data.refetch();
         log(response);
     }
 
     public handleCreateUserClick = async () => {
-        log(this.props);
-        log(this.props.data);
         const { users } = this.props.data;
         const response = await this.props.mutate({
             variables: {
-                data: 'mu haha ~',
-                // id: users.length,
-                // firstName: 'MeePwn',
-                // lastName: 'maybewaityou',
+                id: users.length,
+                firstName: 'MeePwn',
+                lastName: 'maybewaityou',
             },
         });
 
@@ -111,9 +86,6 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
         const response = await this.props.mutate({
             variables: {
                 data: 'mu haha ~',
-                // id: users.length,
-                // firstName: 'MeePwn',
-                // lastName: 'maybewaityou',
             },
         });
 
