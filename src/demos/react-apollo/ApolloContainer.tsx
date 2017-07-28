@@ -58,7 +58,10 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
                 firstName: 'MeePwn',
                 lastName: 'maybewaityou',
             },
-        });
+        })
+            .then((response: any) => {
+                log(response);
+            });
     }
 
     public render() {
