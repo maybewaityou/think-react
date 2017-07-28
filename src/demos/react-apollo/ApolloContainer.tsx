@@ -12,12 +12,13 @@ import { PureComponent } from '../../main/components/high-order-component/Decora
 import { gql, graphQL } from '../../main/third-party/transform/graphQL';
 import { log } from '../../main/utilities/debug/DebugUtility';
 import ApolloView from './ApolloView';
-import { createPost, createUser, queryUsersAndPosts } from './graphql/graphqlDSL';
+import { createPost, createUser, queryUsersAndPosts, resetUsersAndPosts } from './graphql/graphqlDSL';
 
 export interface IApolloContainerProps {
     data?: any;
     createUser?: any;
     createPost?: any;
+    reset?: any;
 }
 
 export interface IApolloContainerState {
@@ -27,6 +28,7 @@ export interface IApolloContainerState {
 @graphQL(gql`${queryUsersAndPosts}`)
 @graphQL(gql`${createUser}`, { name: 'createUser' })
 @graphQL(gql`${createPost}`, { name: 'createPost' })
+@graphQL(gql`${resetUsersAndPosts}`, { name: 'reset' })
 export default class ApolloContainer extends PureComponent<IApolloContainerProps, IApolloContainerState> {
 
     constructor(props: Readonly<any>) {
@@ -67,6 +69,13 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
         this.props.data.refetch();
     }
 
+    public handleResetClick = async () => {
+        const response = await this.props.reset();
+
+        log(response);
+        this.props.data.refetch();
+    }
+
     public render() {
         return (
             <ApolloView
@@ -75,6 +84,7 @@ export default class ApolloContainer extends PureComponent<IApolloContainerProps
                 handleQueryPostClick={this.handleQueryPostClick}
                 handleCreatePostClick={this.handleCreatePostClick}
                 handleCreateUserClick={this.handleCreateUserClick}
+                handleResetClick={this.handleResetClick}
             />
         );
     }

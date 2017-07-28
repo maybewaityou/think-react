@@ -24,7 +24,7 @@ export default compose(
     graphQL(gql`${queryUsersAndPosts}`),
     graphQL(gql`${createUser}`, { name: 'createUser' }),
     graphQL(gql`${createPost}`, { name: 'createPost' }),
-    graphQL(gql`${resetUsersAndPosts}`, { name: 'resetUsersAndPosts' }),
+    graphQL(gql`${resetUsersAndPosts}`, { name: 'reset' }),
     withHandlers({
         handleQueryUserClick: (props: Readonly<any>) => async (event: any) => {
             const response = await props.data.refetch();
@@ -56,7 +56,7 @@ export default compose(
             props.data.refetch();
         },
         handleResetClick: (props: Readonly<any>) => async (event: any) => {
-            const response = await props.resetUsersAndPosts();
+            const response = await props.reset();
 
             log(response);
             props.data.refetch();

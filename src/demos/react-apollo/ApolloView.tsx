@@ -16,6 +16,7 @@ export interface IApolloViewProps {
     handleQueryPostClick: any;
     handleCreatePostClick: any;
     handleCreateUserClick: any;
+    handleResetClick: any;
 }
 
 export interface IApolloViewState {
@@ -46,6 +47,7 @@ export default class ApolloView extends React.PureComponent<IApolloViewProps, IA
                 <button style={styles.button} onClick={this.props.handleQueryPostClick}>query post</button>
                 <button style={styles.button} onClick={this.props.handleCreateUserClick}>create user</button>
                 <button style={styles.button} onClick={this.props.handleCreatePostClick}>create post</button>
+                <button style={styles.button} onClick={this.props.handleResetClick}>reset</button>
                 {users.map((user: any) =>
                     <span key={user.id}>
                         <div>{user.id}</div>
