@@ -11,6 +11,7 @@ import { pureRender } from '../../main/components/high-order-component/Decorator
 import { log } from '../../main/utilities/debug/DebugUtility';
 
 export default (props: Readonly<any>) => {
+    log('===== ApolloStatelessView render =====');
     const { users, posts, loading, error } = props.data;
     if (loading) {
         return (<div>Loading...</div>);
