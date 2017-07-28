@@ -10,15 +10,13 @@ import * as React from 'react';
 import { pureRender } from '../../main/components/high-order-component/Decorator';
 import { log } from '../../main/utilities/debug/DebugUtility';
 
+export const LoadingView = (props: Readonly<any>) => (<div>Loading...</div>);
+
+export const ErrorView = (props: Readonly<any>) => (<div>Error</div>);
+
 export default (props: Readonly<any>) => {
     log('===== ApolloStatelessView render =====');
-    const { users, posts, loading, error } = props.data;
-    if (loading) {
-        return (<div>Loading...</div>);
-    }
-    if (error) {
-        return (<div>Error</div>);
-    }
+    const { users, posts } = props.data;
     return (
         <div style={styles.container}>
             <div>ApolloStateless</div>

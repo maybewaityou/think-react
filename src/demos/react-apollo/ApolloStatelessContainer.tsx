@@ -8,12 +8,13 @@
 import { Map } from 'immutable';
 import PropTypes from 'prop-types';
 import * as React from 'react';
+import { branch, componentFromStream, componentFromStreamWithConfig, compose, createEventHandler, defaultProps, lifecycle, mapProps, mapPropsStream, pure, renderComponent, setDisplayName, setObservableConfig, setPropTypes, withHandlers, withReducer, withState } from 'recompose';
 import { graphQL } from '../../main/third-party/transform/graphQL';
 import { log } from '../../main/utilities/debug/DebugUtility';
-import ApolloStatelessView from './ApolloStatelessView';
+import ApolloStatelessView, { ErrorView, LoadingView } from './ApolloStatelessView';
 import { CREATE_POST, CREATE_USER, QUERY_USERS_AND_POSTS, RESET_USERS_AND_POSTS } from './graphql/graphqlDSL';
 
-import { componentFromStream, componentFromStreamWithConfig, compose, createEventHandler, defaultProps, lifecycle, mapProps, mapPropsStream, pure, setDisplayName, setObservableConfig, setPropTypes, withHandlers, withReducer, withState } from 'recompose';
+const branchC: any = branch;
 
 export default compose(
     withState('data', 'setData', {
@@ -25,6 +26,8 @@ export default compose(
     graphQL(CREATE_USER, { name: 'createUser' }),
     graphQL(CREATE_POST, { name: 'createPost' }),
     graphQL(RESET_USERS_AND_POSTS, { name: 'reset' }),
+    branchC((props: Readonly<any>) => props.data.loading, renderComponent(LoadingView)),
+    branchC((props: Readonly<any>) => props.data.error, renderComponent(ErrorView)),
     withHandlers({
         handleQueryUserClick: (props: Readonly<any>) => async (event: any) => {
             const response = await props.data.refetch();
