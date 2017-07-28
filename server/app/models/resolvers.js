@@ -22,15 +22,11 @@ const resolveFunctions = {
             return user;
         },
     },
-    Mutation: {
+    CreateUser: {
         createUser: (...args) => {
             users.push({ id: args[1].id, firstName: args[1].firstName, lastName: args[1].lastName });
             return users[users.length - 1];
         },
-        createRandomUser: (...args) => {
-            users.push({ id: args[1].id, firstName: 'random MeePwn', lastName: 'random maybewaityou' });
-            return users[users.length - 1];
-        }
     }
 };
 
