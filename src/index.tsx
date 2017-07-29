@@ -30,7 +30,7 @@ const ApolloApp = (
             uri: 'http://localhost:3000/pages/graphql',
         }),
     })}>
-        <ApolloContainer />
+        <ApolloStatelessContainer />
     </ApolloProvider>
 );
 

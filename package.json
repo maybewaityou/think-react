@@ -19,6 +19,7 @@
   "author": "MeePwn",
   "license": "MIT",
   "dependencies": {
+    "@types/debug": "0.0.29",
     "@types/graphql": "^0.10.1",
     "@types/lodash": "^4.14.68",
     "@types/prop-types": "^15.5.1",
