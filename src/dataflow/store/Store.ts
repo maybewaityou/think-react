@@ -6,11 +6,10 @@
  *
  */
 import { applyMiddleware, createStore, MiddlewareAPI } from 'redux';
-import rootReducer from '../reducer/Reducer';
-
 import { createEpicMiddleware, Epic } from 'redux-observable';
 import { asyncObserve, asyncRequest } from '../../main/utilities/data/NetworkUtility';
 import rootEpic from '../epic/Epic';
+import rootReducer from '../reducer/Reducer';
 
 // redux-observable Middleware
 // dependencies: 注入的参数
