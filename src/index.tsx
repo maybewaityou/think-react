@@ -20,7 +20,7 @@ import StreamContainer from './demos/stream/StreamContainer';
 
 const App = (
     <Provider store={store}>
-        <RecomposeContainer />
+        <ObservableContainer />
     </Provider>
 );
 
