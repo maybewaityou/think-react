@@ -14,18 +14,18 @@ import { toString } from '../../main/utilities/data/JSONUtility';
  * 无状态组件
  */
 export const ObservableStatelessView = (props: Readonly<any>) => (
-    <div style={styles.container}>
-        <button style={styles.button} onClick={props.handleTestObservableClick}>test observable</button>
-        <button style={styles.button} onClick={props.handleTestObservableCancelClick}>test observable cancel</button>
-        <button style={styles.button} onClick={props.handleTestFunctionalClick}>test functional</button>
-        <div style={styles.text}>{toString(props.$data.toJS())}</div>
-    </div>
+  <div style={styles.container}>
+    <button style={styles.button} onClick={props.handleTestObservableClick}>test observable</button>
+    <button style={styles.button} onClick={props.handleTestObservableCancelClick}>test observable cancel</button>
+    <button style={styles.button} onClick={props.handleTestFunctionalClick}>test functional</button>
+    <div style={styles.text}>{toString(props.$data.toJS())}</div>
+  </div>
 );
 
 export interface IObservableViewProps {
-    $data: Map<string, any>;
-    handleTestObservableClick: any;
-    handleTestObservableCancelClick: any;
+  $data: Map<string, any>;
+  handleTestObservableClick: any;
+  handleTestObservableCancelClick: any;
 }
 
 export interface IObservableViewState {
@@ -35,32 +35,32 @@ export interface IObservableViewState {
 @pureRender
 export default class ObservableView extends React.PureComponent<IObservableViewProps, IObservableViewState> {
 
-    constructor(props: Readonly<any>) {
-        super(props);
+  constructor(props: Readonly<any>) {
+    super(props);
 
-    }
+  }
 
-    public render() {
-        return (
-            <div style={styles.container}>
-                <button style={styles.button} onClick={this.props.handleTestObservableClick}>test observable</button>
-                <button style={styles.button} onClick={this.props.handleTestObservableCancelClick}>test observable cancel</button>
-                <div style={styles.text}>{toString(this.props.$data.toJS())}</div>
-            </div>
-        );
-    }
+  public render() {
+    return (
+      <div style={styles.container}>
+        <button style={styles.button} onClick={this.props.handleTestObservableClick}>test observable</button>
+        <button style={styles.button} onClick={this.props.handleTestObservableCancelClick}>test observable cancel</button>
+        <div style={styles.text}>{toString(this.props.$data.toJS())}</div>
+      </div>
+    );
+  }
 }
 
 const styles = {
-    container: {
-        flex: 1,
+  container: {
+    flex: 1,
 
-    },
-    button: {
-        marginTop: 20,
-    },
-    text: {
-        fontSize: 18,
-    },
+  },
+  button: {
+    marginTop: 20,
+  },
+  text: {
+    fontSize: 18,
+  },
 
 };
