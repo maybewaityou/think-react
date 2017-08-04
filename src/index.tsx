@@ -20,7 +20,7 @@ import StreamContainer from './demos/stream/StreamContainer';
 
 const apolloClient = new ApolloClient({
   networkInterface: createNetworkInterface({
-      uri: 'http://localhost:3000/pages/graphql',
+    uri: 'http://localhost:3000/pages/graphql',
   }),
 });
 
