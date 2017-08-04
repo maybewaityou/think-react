@@ -26,42 +26,42 @@ import RecomposeView from './RecomposeView';
  */
 
 const counterReducer = (count: any, action: any) => {
-    switch (action.type) {
-    case 'INCREMENT':
-        return count + 1;
-    case 'DECREMENT':
-        return count - 1;
-    default:
-        return count;
-    }
+  switch (action.type) {
+  case 'INCREMENT':
+    return count + 1;
+  case 'DECREMENT':
+    return count - 1;
+  default:
+    return count;
+  }
 };
 
 const enhance = compose(
-    setPropTypes({
-        level: PropTypes.string,
-        name: PropTypes.string,
-        age: PropTypes.number,
-    }),
-    defaultProps({
-        level: 'mu haha ~',
-    }),
-    lifecycle({
-        componentDidMount: () => {
-            log('===== componentDidMount =====');
-        },
-    }),
-    setDisplayName('RecomposeView'),
-    withState('name', 'setName', ''),
-    withState('age', 'setAge', 0),
-    withReducer('count', 'dispatch', counterReducer, 0),
-    withHandlers({
-        handlePress: (props: Readonly<any>) => (event: any) => {
-            props.setName('MeePwn');
-            props.setAge(25);
-            props.dispatch({ type: 'INCREMENT' });
-        },
-    }),
-    pure,
+  setPropTypes({
+    level: PropTypes.string,
+    name: PropTypes.string,
+    age: PropTypes.number,
+  }),
+  defaultProps({
+    level: 'mu haha ~',
+  }),
+  lifecycle({
+    componentDidMount: () => {
+      log('===== componentDidMount =====');
+    },
+  }),
+  setDisplayName('RecomposeView'),
+  withState('name', 'setName', ''),
+  withState('age', 'setAge', 0),
+  withReducer('count', 'dispatch', counterReducer, 0),
+  withHandlers({
+    handlePress: (props: Readonly<any>) => (event: any) => {
+      props.setName('MeePwn');
+      props.setAge(25);
+      props.dispatch({ type: 'INCREMENT' });
+    },
+  }),
+  pure,
 );
 
 export default enhance(RecomposeView);
