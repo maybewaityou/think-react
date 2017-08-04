@@ -19,19 +19,19 @@ import ObservableContainer from './demos/redux-observable/ObservableContainer';
 import StreamContainer from './demos/stream/StreamContainer';
 
 const App = (
-    <Provider store={store}>
-        <ObservableContainer />
-    </Provider>
+  <Provider store={store}>
+    <ObservableContainer />
+  </Provider>
 );
 
 const ApolloApp = (
-    <ApolloProvider client={new ApolloClient({
-        networkInterface: createNetworkInterface({
-            uri: 'http://localhost:3000/pages/graphql',
-        }),
-    })}>
-        <ApolloStatelessContainer />
-    </ApolloProvider>
+  <ApolloProvider client={new ApolloClient({
+    networkInterface: createNetworkInterface({
+        uri: 'http://localhost:3000/pages/graphql',
+    }),
+  })}>
+    <ApolloStatelessContainer />
+  </ApolloProvider>
 );
 
 ReactDOM.render(ApolloApp, document.getElementById('app'));
