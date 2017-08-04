@@ -18,6 +18,12 @@ import RecomposeContainer from './demos/recompose/RecomposeContainer';
 import ObservableContainer from './demos/redux-observable/ObservableContainer';
 import StreamContainer from './demos/stream/StreamContainer';
 
+const apolloClient = new ApolloClient({
+  networkInterface: createNetworkInterface({
+      uri: 'http://localhost:3000/pages/graphql',
+  }),
+});
+
 const App = (
   <Provider store={store}>
     <ObservableContainer />
@@ -25,11 +31,7 @@ const App = (
 );
 
 const ApolloApp = (
-  <ApolloProvider client={new ApolloClient({
-    networkInterface: createNetworkInterface({
-        uri: 'http://localhost:3000/pages/graphql',
-    }),
-  })}>
+  <ApolloProvider client={apolloClient}>
     <ApolloStatelessContainer />
   </ApolloProvider>
 );
