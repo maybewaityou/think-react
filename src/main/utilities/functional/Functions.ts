@@ -14,7 +14,7 @@ export const match = (what: any) => (str: string) => str.match(what);
 export const split = (s: string) => (str: string) => str.split(s);
 
 export const replace = (what: any) => (replacement: string) => (str: string) =>
-    str.replace(what, replacement);
+  str.replace(what, replacement);
 
 export const head = (s: string) => s[0];
 
@@ -35,18 +35,18 @@ export const toUpperCase = (s: string) => s.toUpperCase();
 export const toLowerCase = (s: string) => s.toLowerCase();
 
 export const capitalize = (s: string) => {
-    return toUpperCase(head(s)) + toLowerCase(tail(s));
+  return toUpperCase(head(s)) + toLowerCase(tail(s));
 };
 
 export const camelize = (s: string) => {
-    return replace(/\s|_|-/ig)(' ')(s)
-        .toLowerCase()
-        .split(' ')
-        .map((x: string) => capitalize(x))
-        .join('');
+  return replace(/\s|_|-/ig)(' ')(s)
+    .toLowerCase()
+    .split(' ')
+    .map((x: string) => capitalize(x))
+    .join('');
 };
 
 export const trace = (tag: any) => (x: any) => {
-    console.log(tag, x);
-    return x;
+  console.log(tag, x);
+  return x;
 };

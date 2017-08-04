@@ -8,18 +8,18 @@
 
 export default class Container {
 
-    public static of(x: any) {
-        return new Container(x);
-    }
+  public static of(x: any) {
+    return new Container(x);
+  }
 
-    private val: any;
+  private val: any;
 
-    constructor(x: any) {
-        this.val = x;
-    }
+  constructor(x: any) {
+    this.val = x;
+  }
 
-    public map(f: any) {
-        return Container.of(f(this.val));
-    }
+  public map(f: any) {
+    return Container.of(f(this.val));
+  }
 
 }
