@@ -19,6 +19,6 @@ export const CONCURRENT = 'CONCURRENT';
 export const ERROR = 'ERROR';
 
 export default interface IAction {
-    type: string;
-    payload: any;
+  type: string;
+  payload: any;
 }

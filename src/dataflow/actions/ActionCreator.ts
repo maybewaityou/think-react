@@ -8,8 +8,8 @@
  *
  */
 export default function actionCreator(actionType: string, payload: any) {
-    return {
-        type: actionType,
-        payload,
-    };
+  return {
+    type: actionType,
+    payload,
+  };
 }
