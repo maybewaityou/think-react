@@ -11,33 +11,33 @@ import PureComponent from '../pure/PureComponent';
 const stateSubscriptions: any[] = [];
 
 function isObservable(obj: any) {
-    return obj && typeof obj.subscribe === 'function';
+  return obj && typeof obj.subscribe === 'function';
 }
 
 export default class StreamComponent<P, S> extends PureComponent<P, S> {
 
-    public __stateSubscription: any;
+  public __stateSubscription: any;
 
-    public child: any;
+  public child: any;
 
-    public componentWillMount() {
-        const stateStream$ = this.child.getStateStream(this.props);
+  public componentWillMount() {
+    const stateStream$ = this.child.getStateStream(this.props);
 
-        this.__stateSubscription = stateStream$.subscribe((val: any) => {
-            this.setState(val);
-        });
+    this.__stateSubscription = stateStream$.subscribe((val: any) => {
+      this.setState(val);
+    });
 
-        stateSubscriptions.push(this.__stateSubscription);
+    stateSubscriptions.push(this.__stateSubscription);
+  }
+
+  public componentWillUnmount() {
+    if (this.__stateSubscription) {
+      this.__stateSubscription.dispose();
+      const index = stateSubscriptions.indexOf(this.__stateSubscription);
+      if (index !== -1) {
+        stateSubscriptions.splice(index, 1);
+      }
     }
-
-    public componentWillUnmount() {
-        if (this.__stateSubscription) {
-            this.__stateSubscription.dispose();
-            const index = stateSubscriptions.indexOf(this.__stateSubscription);
-            if (index !== -1) {
-                stateSubscriptions.splice(index, 1);
-            }
-        }
-    }
+  }
 
 }
