@@ -21,37 +21,37 @@ export interface IStreamContainerProps {
 }
 
 export interface IStreamContainerState {
-    result: any;
+  result: any;
 }
 
 @connection((state: any) => ({
 }), (dispatch: any) => ({
-    actions: bindActionCreators(actionCreator, dispatch),
+  actions: bindActionCreators(actionCreator, dispatch),
 }))
 export default class StreamContainer extends StreamComponent<IStreamContainerProps, IStreamContainerState> {
 
-    constructor(props: Readonly<any>) {
-        super(props);
+  constructor(props: Readonly<any>) {
+    super(props);
 
-        super.child = this;
-    }
+    super.child = this;
+  }
 
-    public getStateStream(props: Readonly<any>) {
-        return Observable.merge(
-            Observable.of({ name: 'MeePwn' }),
-            Observable.of({ age: 25 }),
-        );
-    }
+  public getStateStream(props: Readonly<any>) {
+    return Observable.merge(
+      Observable.of({ name: 'MeePwn' }),
+      Observable.of({ age: 25 }),
+    );
+  }
 
-    public handleTestStreamClick = () => {
-        log(this.state);
-    }
+  public handleTestStreamClick = () => {
+    log(this.state);
+  }
 
-    public render() {
-        return (
-            <StreamView
-                handleTestStreamClick={this.handleTestStreamClick}
-            />
-        );
-    }
+  public render() {
+    return (
+      <StreamView
+        handleTestStreamClick={this.handleTestStreamClick}
+      />
+    );
+  }
 }
