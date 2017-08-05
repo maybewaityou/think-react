@@ -36,4 +36,4 @@ const ApolloApp = (
   </ApolloProvider>
 );
 
-ReactDOM.render(ApolloApp, document.getElementById('app'));
+ReactDOM.render(App, document.getElementById('app'));
