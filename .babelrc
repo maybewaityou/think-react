@@ -1,14 +1,14 @@
 {
-    "presets": [
-        "es2015",
-        "react"
-    ],
-    "plugins": [
-        "import"
-    ],
-    "env": {
-        "production": {
-            "presets": ["react-optimize"]
-        }
+  "presets": [
+    "es2015",
+    "react"
+  ],
+  "plugins": [
+    "import"
+  ],
+  "env": {
+    "production": {
+      "presets": ["react-optimize"]
     }
+  }
 }
