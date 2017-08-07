@@ -20,7 +20,7 @@ gulp.task('default', []);
 
 /* ========================== clean start ========================== */
 gulp.task('clean', () => {
-    return del([reactDistPath]);
+  return del([reactDistPath]);
 });
 /* ========================== clean end ========================== */
 
@@ -30,49 +30,49 @@ gulp.task('clean', () => {
 
 /* ========================== eslint end ========================== */
 gulp.task('lint', () => {
-    return gulp.src([
-        'src/**/*.ts',
-        'src/**/*.tsx',
-        'src/**/*.js',
-        'src/**/*.jsx'
-    ])
-        .pipe(eslint())
-        .pipe(eslint.format());
+  return gulp.src([
+    'src/**/*.ts',
+    'src/**/*.tsx',
+    'src/**/*.js',
+    'src/**/*.jsx'
+  ])
+    .pipe(eslint())
+    .pipe(eslint.format());
 });
 /* ========================== eslint end ========================== */
 
 /* ========================== build start ========================== */
 gulp.task('webpack_build', (callback) => {
-    const webpackConf = require('./webpack.config');
-    webpack(webpackConf, (err, stats) => {
-        if(err) {
-            throw new gulpUtil.PluginError('webpack', err);
-        }
-        gulpUtil.log('[webpack]', stats.toString({colors: true}));
-        callback();
-    });
+  const webpackConf = require('./webpack.config');
+  webpack(webpackConf, (err, stats) => {
+    if(err) {
+      throw new gulpUtil.PluginError('webpack', err);
+    }
+    gulpUtil.log('[webpack]', stats.toString({colors: true}));
+    callback();
+  });
 });
 
 gulp.task('uglify', () => {
-    return gulp.src(reactDistPath + '/app.bundle.js')
-        .pipe(uglify())
-        .pipe(rename('app.bundle.min.js'))
-        .pipe(gulp.dest(reactDistPath));
+  return gulp.src(reactDistPath + '/app.bundle.js')
+    .pipe(uglify())
+    .pipe(rename('app.bundle.min.js'))
+    .pipe(gulp.dest(reactDistPath));
 });
 
 /* 将生成的dist文件夹, 复制到MobileFirst工程中 */
 gulp.task('build', (callback) => {
-    runSequence(
-        'clean',
-        'webpack_build',
-        'uglify',
-        (error) => {
-            if (error) {
-                console.log(error.message);
-            } else {
-                console.log('build success');
-            }
-            callback(error);
-        });
+  runSequence(
+    'clean',
+    'webpack_build',
+    'uglify',
+    (error) => {
+      if (error) {
+        console.log(error.message);
+      } else {
+        console.log('build success');
+      }
+      callback(error);
+    });
 });
 /* ========================== build end ========================== */
