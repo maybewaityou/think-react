@@ -1,48 +1,48 @@
 {
-    "compilerOptions": {
-        "baseUrl": ".",
-        "paths": {
-            "redux": ["node_modules/redux/index.d.ts"],
-            "redux-observable": ["node_modules/redux-observable/index.d.ts"],
-            "immutable": ["node_modules/immutable/dist/immutable.d.ts"],
-            "rxjs": ["node_modules/rxjs/Rx.d.ts"],
-            "reselect": ["node_modules/reselect/src/index.d.ts"],
-            "axios": ["node_modules/axios/index.d.ts"],
-            "normalizr": ["node_modules/normalizr/index.d.ts"],
-            "antd": ["node_modules/antd/lib/index.d.ts"],
-            "react-apollo": ["node_modules/react-apollo/index.d.ts"],
-            "apollo-client": ["node_modules/apollo-client/index.d.ts"],
-            "apollo-fetch": ["node_modules/apollo-fetch/dist/src/index.d.ts"],
-            "apollo-link": ["node_modules/apollo-link/dist/src/index.d.ts"],
-            "graphql-anywhere": ["node_modules/graphql-anywhere/lib/src/index.d.ts"],
-            "graphql-tag": ["node_modules/graphql-tag/index.d.ts"]
-        },
-        "target": "es2015",
-        "module": "es2015",
-        "jsx": "react",
-        "outDir": "./dist/",
-        "rootDir": "src",
-        "allowSyntheticDefaultImports": true,
-        "noImplicitAny": true,
-        "experimentalDecorators": true,
-        "preserveConstEnums": true,
-        "allowJs": false,
-        "sourceMap": true,
-        "lib": [
-            "es5",
-            "es2015.core",
-            "es2015.iterable",
-            "es2015.collection",
-            "es2015.promise",
-            "dom"
-        ]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "redux": ["node_modules/redux/index.d.ts"],
+      "redux-observable": ["node_modules/redux-observable/index.d.ts"],
+      "immutable": ["node_modules/immutable/dist/immutable.d.ts"],
+      "rxjs": ["node_modules/rxjs/Rx.d.ts"],
+      "reselect": ["node_modules/reselect/src/index.d.ts"],
+      "axios": ["node_modules/axios/index.d.ts"],
+      "normalizr": ["node_modules/normalizr/index.d.ts"],
+      "antd": ["node_modules/antd/lib/index.d.ts"],
+      "react-apollo": ["node_modules/react-apollo/index.d.ts"],
+      "apollo-client": ["node_modules/apollo-client/index.d.ts"],
+      "apollo-fetch": ["node_modules/apollo-fetch/dist/src/index.d.ts"],
+      "apollo-link": ["node_modules/apollo-link/dist/src/index.d.ts"],
+      "graphql-anywhere": ["node_modules/graphql-anywhere/lib/src/index.d.ts"],
+      "graphql-tag": ["node_modules/graphql-tag/index.d.ts"]
     },
-    "include": [
-        "./src/**/*"
-    ],
-    "exclude": [
-        "dist",
-        "node_modules"
-    ],
-    "compileOnSave": false
+    "target": "es2015",
+    "module": "es2015",
+    "jsx": "react",
+    "outDir": "./dist/",
+    "rootDir": "src",
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "allowJs": false,
+    "sourceMap": true,
+    "lib": [
+      "es5",
+      "es2015.core",
+      "es2015.iterable",
+      "es2015.collection",
+      "es2015.promise",
+      "dom"
+    ]
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ],
+  "compileOnSave": false
 }
