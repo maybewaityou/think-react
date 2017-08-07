@@ -3,6 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "redux": ["node_modules/redux/index.d.ts"],
+      "redux-logic": ["node_modules/redux-logic/index.d.ts"],
       "redux-observable": ["node_modules/redux-observable/index.d.ts"],
       "immutable": ["node_modules/immutable/dist/immutable.d.ts"],
       "rxjs": ["node_modules/rxjs/Rx.d.ts"],
@@ -13,9 +14,13 @@
       "react-apollo": ["node_modules/react-apollo/index.d.ts"],
       "apollo-client": ["node_modules/apollo-client/index.d.ts"],
       "apollo-fetch": ["node_modules/apollo-fetch/dist/src/index.d.ts"],
-      "apollo-link": ["node_modules/apollo-link/dist/src/index.d.ts"],
+      "apollo-link-core": ["node_modules/apollo-link-core/lib/index.d.ts"],
       "graphql-anywhere": ["node_modules/graphql-anywhere/lib/src/index.d.ts"],
-      "graphql-tag": ["node_modules/graphql-tag/index.d.ts"]
+      "graphql-tag": ["node_modules/graphql-tag/index.d.ts"],
+      "styled-components": ["node_modules/styled-components/typings/styled-components.d.ts"],
+      "zen-observable-ts": [
+        "node_modules/zen-observable-ts/lib/zenObservable.d.ts"
+      ]
     },
     "target": "es2015",
     "module": "es2015",
@@ -28,6 +33,8 @@
     "preserveConstEnums": true,
     "allowJs": false,
     "sourceMap": true,
+    "removeComments": true,
+    "pretty": true,
     "lib": [
       "es5",
       "es2015.core",
@@ -42,7 +49,8 @@
   ],
   "exclude": [
     "dist",
-    "node_modules"
+    "node_modules",
+    "./src/declare"
   ],
   "compileOnSave": false
 }
