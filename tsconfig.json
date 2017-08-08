@@ -35,6 +35,7 @@
     "sourceMap": true,
     "removeComments": true,
     "pretty": true,
+    "skipLibCheck": true,
     "lib": [
       "es5",
       "es2015.core",
