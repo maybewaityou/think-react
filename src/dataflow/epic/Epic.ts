@@ -6,7 +6,7 @@
  *
  */
 import { combineEpics } from 'redux-observable';
-import { fetchHomeCurryingEpic, fetchHomeEpic } from '../../demos/redux-observable/epic/Epics';
+import { fetchHomeCurryingEpic, fetchHomeEpic } from '../../simple/redux-observable/epic/Epics';
 
 export default combineEpics(
   fetchHomeEpic,

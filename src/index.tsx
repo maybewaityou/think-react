@@ -11,12 +11,12 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import './assets/stylesheet/style.css';
 import store from './dataflow/store/Store';
-import FunctionalContainer from './demos/functional/FunctionalContainer';
-import ApolloContainer from './demos/react-apollo/ApolloContainer';
-import ApolloStatelessContainer from './demos/react-apollo/ApolloStatelessContainer';
-import RecomposeContainer from './demos/recompose/RecomposeContainer';
-import ObservableContainer from './demos/redux-observable/ObservableContainer';
-import StreamContainer from './demos/stream/StreamContainer';
+import FunctionalContainer from './simple/functional/FunctionalContainer';
+import ApolloContainer from './simple/react-apollo/ApolloContainer';
+import ApolloStatelessContainer from './simple/react-apollo/ApolloStatelessContainer';
+import RecomposeContainer from './simple/recompose/RecomposeContainer';
+import ObservableContainer from './simple/redux-observable/ObservableContainer';
+import StreamContainer from './simple/stream/StreamContainer';
 
 const apolloClient = new ApolloClient({
   networkInterface: createNetworkInterface({
