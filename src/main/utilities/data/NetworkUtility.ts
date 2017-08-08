@@ -9,6 +9,38 @@ import { Observable } from 'rxjs';
 import { log } from '../debug/DebugUtility';
 import { toString } from './JSONUtility';
 
+export interface INetworkClient {
+  asyncObserve: (url: string, params?: any) => typeof Observable;
+  asyncRequest: (url: string, params?: any) => Promise<Response>;
+}
+
+export class NetworkClient implements INetworkClient {
+
+  /**
+   * Observable 形式
+   */
+  public asyncObserve(url: string, params?: any): typeof Observable {
+    return Observable.create((subscriber: any) => {
+      fetchData(url, params)
+        .then((response: any) => {
+          subscriber.next(response);
+          subscriber.complete();
+        })
+        .catch((error: any) => {
+          subscriber.error(error);
+        });
+    });
+  }
+
+  /**
+   * Promise 形式
+   */
+  public async asyncRequest(url: string, params?: any): Promise<Response> {
+    return await fetchData(url, params);
+  }
+
+}
+
 /**
  * Rx 形式
  */
