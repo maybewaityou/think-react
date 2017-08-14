@@ -5,7 +5,4 @@
  * description:
  *
  */
-import { graphql } from 'mario-ducks';
-
-export const graphQL: any = graphql;
-export { gql } from 'mario-ducks';
+export { graphql, gql } from 'mario-ducks';
