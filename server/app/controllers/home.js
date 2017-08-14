@@ -8,11 +8,11 @@
 
 module.exports = {
 
-    async home(ctx, next) {
-        ctx.body = {
-            name: 'zhangsan'
-        };
-        await next();
-    }
+  async home(ctx, next) {
+    ctx.body = {
+      name: 'zhangsan'
+    };
+    await next();
+  }
 
 };

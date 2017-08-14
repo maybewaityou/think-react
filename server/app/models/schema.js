@@ -11,36 +11,36 @@ const resolvers = require('./resolvers');
 
 const typeDefs = `
 type User {
-    id: Int!
-    firstName: String
-    lastName: String
+  id: Int!
+  firstName: String
+  lastName: String
 }
 
 type Post {
-    id: Int!
-    post: String!
+  id: Int!
+  post: String!
 }
 
 type UsersAndPosts {
-    users: [User]
-    posts: [Post]
+  users: [User]
+  posts: [Post]
 }
 
 # the schema allows the following query:
 type Query {
-    users: [User]
-    user(id: ID!): User
-    posts: [Post]
+  users: [User]
+  user(id: ID!): User
+  posts: [Post]
 }
 # the schema allows the following mutate:
 type Mutation {
-    createUser(firstName: String!, lastName: String!): User
-    createPost(data: String!): Post
-    reset: UsersAndPosts
+  createUser(firstName: String!, lastName: String!): User
+  createPost(data: String!): Post
+  reset: UsersAndPosts
 }
 `;
 
 module.exports = makeExecutableSchema({
-    typeDefs,
-    resolvers,
+  typeDefs,
+  resolvers,
 });

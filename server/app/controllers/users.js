@@ -8,11 +8,11 @@
 
 module.exports = {
 
-    async users(ctx, next) {
-        await ctx.render('index', {
-            title: 'Hello ' + ctx.request.querystring
-        });
-        await next();
-    }
+  async users(ctx, next) {
+    await ctx.render('index', {
+      title: 'Hello ' + ctx.request.querystring
+    });
+    await next();
+  }
 
 };

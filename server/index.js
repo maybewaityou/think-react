@@ -27,22 +27,22 @@ app.use(logger());
 app.use(session(app));
 app.use(cors());
 app.use(bodyParser({
-    enableTypes: ['json', 'form', 'text']
+  enableTypes: ['json', 'form', 'text']
 }));
 app.use(json());
 app.use(require('koa-static')(__dirname + '/public'));
 
 // template
 app.use(views(__dirname + '/views', {
-    extension: 'pug'
+  extension: 'pug'
 }));
 
 // logger
 app.use(async (ctx, next) => {
-    const start = new Date();
-    await next();
-    const ms = new Date() - start;
-    console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
+  const start = new Date();
+  await next();
+  const ms = new Date() - start;
+  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 
 // routes

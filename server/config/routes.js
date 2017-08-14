@@ -15,13 +15,13 @@ const Users = require('../app/controllers/users');
 const schema = require('../app/models/schema');
 
 const router = new Router({
-    prefix: '/pages'
+  prefix: '/pages'
 });
 
 // GraphQL
 router.all('/graphql', graphqlHTTP({
-    schema: schema,
-    graphiql: true
+  schema: schema,
+  graphiql: true
 }));
 
 // RESTful
