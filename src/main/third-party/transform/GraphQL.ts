@@ -8,4 +8,4 @@
 import { graphql } from 'mario-ducks';
 
 export const graphQL: any = graphql;
-export { default as gql } from 'mario-ducks';
+export { gql } from 'mario-ducks';
