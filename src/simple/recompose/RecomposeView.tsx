@@ -6,8 +6,8 @@
  *
  */
 import { Map } from 'immutable';
+import { toString } from 'mario-utilities';
 import * as React from 'react';
-import { toString } from '../../main/utilities/data/JSONUtility';
 
 /**
  * 无状态组件

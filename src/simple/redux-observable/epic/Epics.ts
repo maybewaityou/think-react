@@ -17,13 +17,13 @@ import { epicCreator } from '../../../dataflow/epic/EpicCreator';
 
 // function (action$: ActionsObservable<Action>, store: Store, dependencies: Object?): Observable<Action>;
 // dependencies: 在 Store 中注入的参数
-export const fetchHomeEpic = (action$: ActionsObservable<string>, store: any, { asyncObserve, asyncRequest }: any) => (
+export const fetchHomeEpic = (action$: ActionsObservable<string>, store: any, { network }: any) => (
   action$.ofType(PROMISE)
     .mergeMap((action) =>
-      Observable.fromPromise(asyncRequest('HomePageController/showIndexInfo'))
+      Observable.fromPromise(network.asyncRequest('HomePageController/showIndexInfo'))
         .flatMap((response) => {
           store.dispatch({ type: FETCH_HOME_DATA, payload: response });
-          return Observable.fromPromise(asyncRequest('ImageController/imageTrans'));
+          return Observable.fromPromise(network.asyncRequest('ImageController/imageTrans'));
         })
         .delay(1000)
         .map((response) => ({ type: FETCH_HOME_DATA, payload: response }))
@@ -35,12 +35,12 @@ export const fetchHomeEpic = (action$: ActionsObservable<string>, store: any, { 
 /**
  * Currying 形式
  */
-export const fetchHomeCurryingEpic = (action$: ActionsObservable<string>, store: any, { asyncObserve, asyncRequest }: any) => (
+export const fetchHomeCurryingEpic = (action$: ActionsObservable<string>, store: any, { network }: any) => (
   epicCreator(action$)(PROMISE)((action: IAction) =>
-    asyncObserve('HomePageController/showIndexInfo')
+    network.asyncObserve('HomePageController/showIndexInfo')
         .flatMap((response: any) => {
           store.dispatch({ type: FETCH_HOME_DATA, payload: response });
-          return asyncObserve('ImageController/imageTrans');
+          return network.asyncObserve('ImageController/imageTrans');
         })
         .delay(1000)
         .map((response: any) => ({ type: FETCH_HOME_DATA, payload: response }))

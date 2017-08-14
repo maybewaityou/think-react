@@ -6,13 +6,13 @@
  *
  */
 import { ApolloClient, configureApolloStore, createNetworkInterface, MarioProvider, Provider } from 'mario-ducks';
+import { NetworkClient } from 'mario-utilities';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import './assets/stylesheet/style.css';
 import rootEpic from './dataflow/epic/Epic';
 import rootLogic from './dataflow/logic/Logic';
 import rootReducer from './dataflow/reducer/Reducer';
-import { NetworkClient } from './main/utilities/data/NetworkUtility';
 import FunctionalContainer from './simple/functional/FunctionalContainer';
 import ApolloContainer from './simple/react-apollo/ApolloContainer';
 import ApolloStatelessContainer from './simple/react-apollo/ApolloStatelessContainer';

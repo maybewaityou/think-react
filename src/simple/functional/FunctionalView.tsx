@@ -6,9 +6,9 @@
  *
  */
 import { Map } from 'immutable';
+import { toString } from 'mario-utilities';
 import * as React from 'react';
 import { pureRender } from '../../main/components/high-order-component/Decorator';
-import { toString } from '../../main/utilities/data/JSONUtility';
 
 export interface IFunctionalViewProps {
   handleTestObservableClick: any;

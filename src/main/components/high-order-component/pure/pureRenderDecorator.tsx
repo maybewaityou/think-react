@@ -6,8 +6,8 @@
  *
  */
 import { is } from 'immutable';
+import { log } from 'mario-utilities';
 import * as React from 'react';
-import { log } from '../../../utilities/debug/DebugUtility';
 
 export default (WrappedComponent: React.ComponentClass) => (
   class extends React.PureComponent<any, any> {
