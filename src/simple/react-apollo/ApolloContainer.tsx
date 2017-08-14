@@ -6,11 +6,11 @@
  *
  */
 import { Map } from 'immutable';
+import { graphql } from 'mario-ducks';
+import { log } from 'mario-utilities';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 import { PureComponent } from '../../main/components/high-order-component/Decorator';
-import { graphql } from '../../main/third-party/transform/graphQL';
-import { log } from '../../main/utilities/debug/DebugUtility';
 import ApolloView from './ApolloView';
 import { CREATE_POST, CREATE_USER, QUERY_USERS_AND_POSTS, RESET_USERS_AND_POSTS } from './graphql/graphqlDSL';
 

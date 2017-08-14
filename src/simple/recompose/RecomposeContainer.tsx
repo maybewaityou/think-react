@@ -5,11 +5,11 @@
  * description:
  *
  */
+import { log } from 'mario-utilities';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 import { componentFromStream, componentFromStreamWithConfig, compose, createEventHandler, defaultProps, lifecycle, mapProps, mapPropsStream, pure, setDisplayName, setObservableConfig, setPropTypes, withHandlers, withReducer, withState } from 'recompose';
 import { Observable } from 'rxjs';
-import { log } from '../../main/utilities/debug/DebugUtility';
 import RecomposeView from './RecomposeView';
 
 /**

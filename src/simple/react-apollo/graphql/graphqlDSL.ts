@@ -5,7 +5,7 @@
  * description:
  *
  */
-import { gql } from '../../../main/third-party/transform/graphQL';
+import { gql } from 'mario-ducks';
 
 export const QUERY_USERS_AND_POSTS = gql`
   query {

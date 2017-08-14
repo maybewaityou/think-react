@@ -6,11 +6,11 @@
  *
  */
 import { Map } from 'immutable';
+import { bind } from 'mario-ducks';
 import * as React from 'react';
 import { bindActionCreators } from 'redux';
 import { CANCEL, PROMISE } from '../../dataflow/actions/Action';
 import actionCreator from '../../dataflow/actions/ActionCreator';
-import { connection } from '../../dataflow/connect/connection';
 import { PureComponent, pureRender } from '../../main/components/high-order-component/Decorator';
 import ObservableView, { ObservableStatelessView } from './ObservableView';
 import { $getError, $getHomeData, $getHomeDataSelector, isSuccess } from './selector/Selectors';
@@ -26,7 +26,7 @@ export interface IObservableContainerState {
 
 }
 
-@connection((state: any) => ({
+@bind((state: any) => ({
   $data: $getHomeDataSelector(state),
   $error: $getError(state),
   success: isSuccess(state),

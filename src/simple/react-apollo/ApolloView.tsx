@@ -6,9 +6,9 @@
  *
  */
 import { Map } from 'immutable';
+import { log } from 'mario-utilities';
 import * as React from 'react';
 import { pureRender } from '../../main/components/high-order-component/Decorator';
-import { log } from '../../main/utilities/debug/DebugUtility';
 
 export interface IApolloViewProps {
   data: any;

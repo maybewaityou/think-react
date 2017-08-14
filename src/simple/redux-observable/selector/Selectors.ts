@@ -6,10 +6,9 @@
  *
  */
 import { Map } from 'immutable';
+import { log, toString } from 'mario-utilities';
 import { normalize, schema } from 'normalizr';
 import { createSelector } from 'reselect';
-import { toString } from '../../../main/utilities/data/JSONUtility';
-import { log } from '../../../main/utilities/debug/DebugUtility';
 
 const originData = {
   id: '123',
