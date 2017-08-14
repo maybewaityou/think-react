@@ -5,7 +5,7 @@
  * description:
  *
  */
-import { compose, graphql } from 'react-apollo';
+import { graphql } from 'mario-ducks';
 
 export const graphQL: any = graphql;
-export { default as gql } from 'graphql-tag';
+export { default as gql } from 'mario-ducks';

@@ -11,16 +11,9 @@
       "axios": ["node_modules/axios/index.d.ts"],
       "normalizr": ["node_modules/normalizr/index.d.ts"],
       "antd": ["node_modules/antd/lib/index.d.ts"],
-      "react-apollo": ["node_modules/react-apollo/index.d.ts"],
-      "apollo-client": ["node_modules/apollo-client/index.d.ts"],
-      "apollo-fetch": ["node_modules/apollo-fetch/dist/src/index.d.ts"],
-      "apollo-link-core": ["node_modules/apollo-link-core/lib/index.d.ts"],
-      "graphql-anywhere": ["node_modules/graphql-anywhere/lib/src/index.d.ts"],
-      "graphql-tag": ["node_modules/graphql-tag/index.d.ts"],
-      "styled-components": ["node_modules/styled-components/typings/styled-components.d.ts"],
-      "zen-observable-ts": [
-        "node_modules/zen-observable-ts/lib/zenObservable.d.ts"
-      ]
+      "mario-ducks": ["node_modules/mario-ducks/index.d.ts"],
+      "mario-utilities": ["node_modules/mario-utilities/index.d.ts"],
+      "styled-components": ["node_modules/styled-components/typings/styled-components.d.ts"]
     },
     "target": "es2015",
     "module": "es2015",

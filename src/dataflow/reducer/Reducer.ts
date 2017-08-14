@@ -6,7 +6,7 @@
  *
  */
 import Immutable, { fromJS, Map } from 'immutable';
-import { combineReducers, ReducersMapObject } from 'redux';
+import { ReducersMapObject } from 'redux';
 import IAction, { DECREMENT, ERROR, FETCH_HOME_DATA, INCREMENT } from '../actions/Action';
 
 const $initializeNetworkState: Map<string, any> = fromJS({
@@ -30,6 +30,6 @@ function $networkReducer($state: Map<string, any> = $initializeNetworkState, act
   }
 }
 
-export default combineReducers({
+export default {
   $networkReducer,
-} as ReducersMapObject);
+};

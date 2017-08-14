@@ -5,12 +5,14 @@
  * description:
  *
  */
+import { ApolloClient, configureApolloStore, createNetworkInterface, MarioProvider, Provider } from 'mario-ducks';
 import * as React from 'react';
-import { ApolloClient, ApolloProvider, createNetworkInterface } from 'react-apollo';
 import * as ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import './assets/stylesheet/style.css';
-import store from './dataflow/store/Store';
+import rootEpic from './dataflow/epic/Epic';
+import rootLogic from './dataflow/logic/Logic';
+import rootReducer from './dataflow/reducer/Reducer';
+import { NetworkClient } from './main/utilities/data/NetworkUtility';
 import FunctionalContainer from './simple/functional/FunctionalContainer';
 import ApolloContainer from './simple/react-apollo/ApolloContainer';
 import ApolloStatelessContainer from './simple/react-apollo/ApolloStatelessContainer';
@@ -24,6 +26,10 @@ const apolloClient = new ApolloClient({
   }),
 });
 
+const networkClient = new NetworkClient();
+
+const store = configureApolloStore({}, apolloClient, networkClient, rootReducer, rootLogic, rootEpic);
+
 const App = (
   <Provider store={store}>
     <ObservableContainer />
@@ -31,9 +37,9 @@ const App = (
 );
 
 const ApolloApp = (
-  <ApolloProvider client={apolloClient}>
+  <MarioProvider client={apolloClient} store={store}>
     <ApolloStatelessContainer />
-  </ApolloProvider>
+  </MarioProvider>
 );
 
 ReactDOM.render(ApolloApp, document.getElementById('app'));
