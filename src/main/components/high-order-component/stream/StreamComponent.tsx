@@ -18,7 +18,11 @@ export default class StreamComponent<P, S> extends PureComponent<P, S> {
 
   public __stateSubscription: any;
 
-  public child: any;
+  private child: any;
+
+  public setChild(child: any) {
+    this.child = child;
+  }
 
   public componentWillMount() {
     const stateStream$ = this.child.getStateStream(this.props);

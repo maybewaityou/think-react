@@ -33,7 +33,7 @@ export default class StreamContainer extends StreamComponent<IStreamContainerPro
   constructor(props: Readonly<any>) {
     super(props);
 
-    super.child = this;
+    super.setChild(this);
   }
 
   public getStateStream(props: Readonly<any>) {
