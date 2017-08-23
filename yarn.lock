@@ -5466,10 +5466,11 @@ map-visit@^0.1.5:
     lazy-cache "^2.0.1"
     object-visit "^0.3.4"
 
-mario-ducks@^0.0.40:
-  version "0.0.40"
-  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.40.tgz#2fc9b53310c7827e02f0aa8a5f3eb387f85c1538"
+mario-ducks@^0.0.42:
+  version "0.0.42"
+  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.42.tgz#8ed96d41345d7b527bd4d2325a6ef5cc7c026c3e"
   dependencies:
+    immutable "^3.8.1"
     mario-utilities "^0.0.9"
     ramda "^0.24.1"
     react-apollo "^1.4.14"
@@ -5477,6 +5478,7 @@ mario-ducks@^0.0.40:
     redux "^3.7.2"
     redux-logic "^0.12.2"
     redux-observable "^0.14.1"
+    reselect "^3.0.1"
     rxjs "^5.4.2"
 
 mario-utilities@^0.0.9:
