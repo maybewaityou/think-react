@@ -9,9 +9,7 @@ import { Map } from 'immutable';
 import { bind } from 'mario-ducks';
 import { log } from 'mario-utilities';
 import * as React from 'react';
-import { bindActionCreators } from 'redux';
 import { Observable } from 'rxjs';
-import actionCreator from '../../dataflow/actions/ActionCreator';
 import { PureComponent } from '../../main/components/high-order-component/Decorator';
 import { add, camelize, capitalize, compose, filter, join, map, match, reduce, replace, split, toLowerCase, toUpperCase, trace } from '../../main/utilities/functional/Functions';
 import FunctionalView from './FunctionalView';
@@ -25,8 +23,6 @@ export interface IFunctionalContainerState {
 }
 
 @bind((state: any) => ({
-}), (dispatch: any) => ({
-  actions: bindActionCreators(actionCreator, dispatch),
 }))
 export default class FunctionalContainer extends PureComponent<IFunctionalContainerProps, IFunctionalContainerState> {
 
