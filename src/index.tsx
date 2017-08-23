@@ -15,7 +15,7 @@ import rootLogic from './dataflow/logic/Logic';
 import rootReducer from './dataflow/reducer/Reducer';
 import FunctionalContainer from './simple/functional/FunctionalContainer';
 import ApolloContainer from './simple/react-apollo/ApolloContainer';
-import ApolloStatelessContainer from './simple/react-apollo/ApolloStatelessContainer';
+// import ApolloStatelessContainer from './simple/react-apollo/ApolloStatelessContainer';
 import RecomposeContainer from './simple/recompose/RecomposeContainer';
 import ObservableContainer from './simple/redux-observable/ObservableContainer';
 import StreamContainer from './simple/stream/StreamContainer';
@@ -38,7 +38,7 @@ const App = (
 
 const ApolloApp = (
   <MarioProvider client={apolloClient} store={store}>
-    <ApolloStatelessContainer />
+    <ApolloContainer />
   </MarioProvider>
 );
 

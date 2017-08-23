@@ -70,7 +70,7 @@
     "@types/react-router": "^4.0.14",
     "@types/recompose": "^0.23.3",
     "@types/underscore": "^1.8.1",
-    "awesome-typescript-loader": "^3.2.2",
+    "awesome-typescript-loader": "^3.2.3",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
