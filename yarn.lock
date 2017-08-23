@@ -3782,6 +3782,15 @@ graphql-tools@^1.1.0:
   optionalDependencies:
     "@types/graphql" "^0.9.0"
 
+graphql-tools@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/graphql-tools/-/graphql-tools-1.2.1.tgz#8d462abaa7b0f3bb2aa633df1e7a848720197671"
+  dependencies:
+    deprecated-decorator "^0.1.6"
+    uuid "^3.0.1"
+  optionalDependencies:
+    "@types/graphql" "^0.9.0"
+
 graphql@^0.10.0, graphql@^0.10.3:
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/graphql/-/graphql-0.10.5.tgz#c9be17ca2bdfdbd134077ffd9bbaa48b8becd298"
@@ -5466,9 +5475,9 @@ map-visit@^0.1.5:
     lazy-cache "^2.0.1"
     object-visit "^0.3.4"
 
-mario-ducks@^0.0.42:
-  version "0.0.42"
-  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.42.tgz#8ed96d41345d7b527bd4d2325a6ef5cc7c026c3e"
+mario-ducks@^0.0.43:
+  version "0.0.43"
+  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.43.tgz#993e73a2c4247b23e4043db2e62cd56bcf707b32"
   dependencies:
     immutable "^3.8.1"
     mario-utilities "^0.0.9"
@@ -5479,7 +5488,6 @@ mario-ducks@^0.0.42:
     redux-logic "^0.12.2"
     redux-observable "^0.14.1"
     reselect "^3.0.1"
-    rxjs "^5.4.2"
 
 mario-utilities@^0.0.9:
   version "0.0.9"
