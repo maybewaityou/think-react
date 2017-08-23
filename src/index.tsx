@@ -38,7 +38,7 @@ const App = (
 
 const ApolloApp = (
   <MarioProvider client={apolloClient} store={store}>
-    <ApolloContainer />
+    <ApolloStatelessContainer />
   </MarioProvider>
 );
 
