@@ -22,8 +22,7 @@ export interface IFunctionalContainerState {
 
 }
 
-@bind((state: any) => ({
-}))
+@bind((state: any) => ({}))
 export default class FunctionalContainer extends PureComponent<IFunctionalContainerProps, IFunctionalContainerState> {
 
   constructor(props: Readonly<any>) {
