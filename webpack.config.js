@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CheckerPlugin } = require('awesome-typescript-loader');
 
 const env = process.env.NODE_ENV;
 
@@ -39,7 +40,8 @@ const webpackConfig = {
     new HtmlWebpackPlugin({
       title: 'think-react',
       template: templatePath,
-    })
+    }),
+    new CheckerPlugin()
   ],
   module: {
     rules: [
@@ -54,7 +56,7 @@ const webpackConfig = {
       },
       /* Loading Typescript */
       {
-        test: /\.(ts|tsx)?$/,
+        test: /\.tsx?$/,
         use: [
           'awesome-typescript-loader'
         ],
