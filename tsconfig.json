@@ -25,7 +25,7 @@
     "experimentalDecorators": true,
     "preserveConstEnums": true,
     "allowJs": false,
-    "sourceMap": false,
+    "sourceMap": true,
     "removeComments": true,
     "pretty": true,
     "skipLibCheck": true,
