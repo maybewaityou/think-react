@@ -58,7 +58,8 @@ const webpackConfig = {
       {
         test: /\.tsx?$/,
         use: [
-          'awesome-typescript-loader'
+          'awesome-typescript-loader',
+          // 'ts-loader'
         ],
         exclude: /node_modules/
       },
