@@ -54,7 +54,7 @@ const webpackConfig = {
       },
       /* Loading Typescript */
       {
-        test: /\.tsx?$/,
+        test: /\.(ts|tsx)?$/,
         use: [
           'awesome-typescript-loader'
         ],
