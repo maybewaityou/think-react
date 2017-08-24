@@ -5,10 +5,11 @@
  * description:
  *
  */
-import { ApolloClient, configureApolloStore, createNetworkInterface, MarioProvider, Provider } from 'mario-ducks';
+import { ApolloClient, configureApolloStore, createNetworkInterface, MarioProvider  } from 'mario-ducks';
 import { NetworkClient } from 'mario-utilities';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import './assets/stylesheet/style.css';
 import rootEpic from './dataflow/epic/Epic';
 import rootLogic from './dataflow/logic/Logic';
@@ -42,4 +43,4 @@ const ApolloApp = (
   </MarioProvider>
 );
 
-ReactDOM.render(ApolloApp, document.getElementById('app'));
+ReactDOM.render(App, document.getElementById('app'));
