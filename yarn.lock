@@ -5475,9 +5475,9 @@ map-visit@^0.1.5:
     lazy-cache "^2.0.1"
     object-visit "^0.3.4"
 
-mario-ducks@^0.0.43:
-  version "0.0.43"
-  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.43.tgz#993e73a2c4247b23e4043db2e62cd56bcf707b32"
+mario-ducks@^0.0.44:
+  version "0.0.44"
+  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.44.tgz#1ca3265d3d57b858bed2ec9adbb71f3fa48fc819"
   dependencies:
     immutable "^3.8.1"
     mario-utilities "^0.0.9"
