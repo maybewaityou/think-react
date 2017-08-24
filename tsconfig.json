@@ -17,7 +17,7 @@
     },
     "target": "es2015",
     "module": "es2015",
-    "jsx": "preserve",
+    "jsx": "react",
     "outDir": "./dist/",
     "rootDir": "src",
     "allowSyntheticDefaultImports": true,
