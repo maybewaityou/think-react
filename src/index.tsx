@@ -9,7 +9,6 @@ import { ApolloClient, configureApolloStore, createNetworkInterface, MarioProvid
 import { NetworkClient } from 'mario-utilities';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
 import './assets/stylesheet/style.css';
 import rootEpic from './dataflow/epic/Epic';
 import rootLogic from './dataflow/logic/Logic';
@@ -31,16 +30,10 @@ const networkClient = new NetworkClient();
 
 const store = configureApolloStore({}, apolloClient, networkClient, rootReducer, rootLogic, rootEpic);
 
-const App = (
-  <Provider store={store}>
-    <ObservableContainer />
-  </Provider>
-);
-
 const ApolloApp = (
   <MarioProvider client={apolloClient} store={store}>
     <ApolloStatelessContainer />
   </MarioProvider>
 );
 
-ReactDOM.render(App, document.getElementById('app'));
+ReactDOM.render(ApolloApp, document.getElementById('app'));
