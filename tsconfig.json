@@ -15,8 +15,8 @@
       "mario-utilities": ["node_modules/mario-utilities/index.d.ts"],
       "styled-components": ["node_modules/styled-components/typings/styled-components.d.ts"]
     },
-    "target": "esnext",
-    "module": "esnext",
+    "target": "es2015",
+    "module": "es2015",
     "jsx": "react",
     "outDir": "./dist/",
     "rootDir": "src",

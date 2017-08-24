@@ -41,7 +41,7 @@ const webpackConfig = {
       title: 'think-react',
       template: templatePath,
     }),
-    new CheckerPlugin()
+    // new CheckerPlugin()
   ],
   module: {
     rules: [
