@@ -5,7 +5,6 @@
  * description:
  *
  */
-import { log } from 'mario-utilities';
 import ViewModel from './ViewModel';
 import ViewModelStore from './ViewModelStore';
 
