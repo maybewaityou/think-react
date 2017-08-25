@@ -15,14 +15,14 @@ import ObservableView, { ObservableStatelessView } from './ObservableView';
 import { $getError, $getHomeData, $getHomeDataSelector, isSuccess } from './selector/Selectors';
 import ObservableViewModel from './view-model/ObservableViewModel';
 
-export interface IObservableContainerProps {
+export interface IProps {
   actions?: any;
   success?: any;
   $data?: Map<string, any>;
   $error?: Map<string, any>;
 }
 
-export interface IObservableContainerState {
+export interface IState {
 
 }
 
@@ -32,12 +32,12 @@ export interface IObservableContainerState {
   success: isSuccess(state),
 }))
 @inject(ObservableView)
-export default class ObservableContainer extends ViewModelComponent<IObservableContainerProps, IObservableContainerState, ObservableViewModel> {
+export default class ObservableContainer extends ViewModelComponent<IProps, IState, ObservableViewModel> {
 
   constructor(props: Readonly<any>) {
     super(props);
 
-    this.viewModel = ViewModelProviders.of(this).get(ObservableViewModel).init(props);
+    this.viewModel = ViewModelProviders.of(this).get(ObservableViewModel).init<IProps>(props);
   }
 
 }
