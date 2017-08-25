@@ -41,6 +41,10 @@ export default class ObservableContainer extends PureComponent<IObservableContai
     this.viewModel = ViewModelProviders.of(this).get(ObservableViewModel).init(props);
   }
 
+  public componentWillReceiveProps(nextProps: Readonly<any>) {
+    this.viewModel.update(nextProps);
+  }
+
   public render() {
     return (
       <ObservableView

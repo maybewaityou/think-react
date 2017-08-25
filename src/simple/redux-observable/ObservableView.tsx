@@ -15,9 +15,8 @@ import { pureRender } from '../../main/components/high-order-component/Decorator
  */
 export const ObservableStatelessView = (props: Readonly<any>) => (
   <div style={styles.container}>
-    <button style={styles.button} onClick={props.handleTestObservableClick}>test observable</button>
-    <button style={styles.button} onClick={props.handleTestObservableCancelClick}>test observable cancel</button>
-    <button style={styles.button} onClick={props.handleTestFunctionalClick}>test functional</button>
+    <button style={styles.button} onClick={props.testObservableClick}>test observable</button>
+    <button style={styles.button} onClick={props.testObservableCancelClick}>test observable cancel</button>
     <div style={styles.text}>{toString(props.$data.toJS())}</div>
   </div>
 );
