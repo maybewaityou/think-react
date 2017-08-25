@@ -24,8 +24,8 @@ export const ObservableStatelessView = (props: Readonly<any>) => (
 
 export interface IObservableViewProps {
   $data: Map<string, any>;
-  handleTestObservableClick: any;
-  handleTestObservableCancelClick: any;
+  testObservableClick: any;
+  testObservableCancelClick: any;
 }
 
 export interface IObservableViewState {
@@ -43,8 +43,8 @@ export default class ObservableView extends React.PureComponent<IObservableViewP
   public render() {
     return (
       <div style={styles.container}>
-        <button style={styles.button} onClick={this.props.handleTestObservableClick}>test observable</button>
-        <button style={styles.button} onClick={this.props.handleTestObservableCancelClick}>test observable cancel</button>
+        <button style={styles.button} onClick={this.props.testObservableClick}>test observable</button>
+        <button style={styles.button} onClick={this.props.testObservableCancelClick}>test observable cancel</button>
         <div style={styles.text}>{toString(this.props.$data.toJS())}</div>
       </div>
     );
