@@ -9,7 +9,7 @@ import { Map } from 'immutable';
 import { bind } from 'mario-ducks';
 import { log } from 'mario-utilities';
 import * as React from 'react';
-import { ViewModel, ViewModelProviders } from '../../arch/index';
+import { ViewModel, ViewModelComponent, ViewModelProviders } from '../../arch/index';
 import { PureComponent } from '../../main/components/high-order-component/Decorator';
 import ObservableView, { ObservableStatelessView } from './ObservableView';
 import { $getError, $getHomeData, $getHomeDataSelector, isSuccess } from './selector/Selectors';
@@ -31,18 +31,12 @@ export interface IObservableContainerState {
   $error: $getError(state),
   success: isSuccess(state),
 }))
-export default class ObservableContainer extends PureComponent<IObservableContainerProps, IObservableContainerState> {
-
-  private viewModel: ObservableViewModel;
+export default class ObservableContainer extends ViewModelComponent<IObservableContainerProps, IObservableContainerState, ObservableViewModel> {
 
   constructor(props: Readonly<any>) {
     super(props);
 
     this.viewModel = ViewModelProviders.of(this).get(ObservableViewModel).init(props);
-  }
-
-  public componentWillReceiveProps(nextProps: Readonly<any>) {
-    this.viewModel.update(nextProps);
   }
 
   public render() {

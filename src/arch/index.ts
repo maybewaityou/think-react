@@ -11,3 +11,4 @@ export { default as ViewModelProvider, IFactory } from './view-model/ViewModelPr
 export { default as ViewModelProviders } from './view-model/ViewModelProviders';
 export { default as ViewModelStore } from './view-model/ViewModelStore';
 export { default as ViewModelStores } from './view-model/ViewModelStores';
+export { default as ViewModelComponent } from './view-model/ViewModelComponent';

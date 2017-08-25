@@ -10,32 +10,25 @@ import { CANCEL, PROMISE } from '../../../dataflow/actions/Action';
 
 export default class ObservableViewModel extends ViewModel {
 
-  private props: Readonly<any>;
+  public test = 'aaaaa';
 
-  public init = (props: Readonly<any>): ObservableViewModel => {
-    this.props = props;
-    return this;
-  }
-
-  public update = (props: Readonly<any>) => {
-    this.props = props;
-  }
-
-  public model = () => {
+  public model() {
     const { success, $data, $error } = this.props;
     return {
       $data: success ? $data : $error,
     };
   }
 
-  public handlers = () => ({
-    testObservableClick: () => {
-      this.props.actions(PROMISE, { params: 'mu haha ~ ~' });
-    },
-    testObservableCancelClick: () => {
-      this.props.actions(CANCEL);
-    },
-  })
+  public handlers() {
+    return ({
+      testObservableClick: () => {
+        this.props.actions(PROMISE, { params: 'mu haha ~ ~' });
+      },
+      testObservableCancelClick: () => {
+        this.props.actions(CANCEL);
+      },
+    });
+  }
 
   public onCleared() {}
 
