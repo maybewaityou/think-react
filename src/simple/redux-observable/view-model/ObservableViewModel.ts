@@ -6,6 +6,7 @@
  *
  */
 import { ViewModel } from '../../../arch/index';
+import { CANCEL, PROMISE } from '../../../dataflow/actions/Action';
 
 export default class ObservableViewModel extends ViewModel {
 
@@ -19,6 +20,7 @@ export default class ObservableViewModel extends ViewModel {
   public datas = () => {
     const { success, $data, $error } = this.props;
     return {
+      test: '',
       $data: this.props.success ? this.props.$data : this.props.$error,
     };
   }
