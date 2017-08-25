@@ -20,6 +20,8 @@ import RecomposeContainer from './simple/recompose/RecomposeContainer';
 import ObservableContainer from './simple/redux-observable/ObservableContainer';
 import StreamContainer from './simple/stream/StreamContainer';
 
+console.warn = () => ({});
+
 const apolloClient = new ApolloClient({
   networkInterface: createNetworkInterface({
     uri: 'http://localhost:3000/pages/graphql',
@@ -32,7 +34,7 @@ const store = configureApolloStore({}, apolloClient, networkClient, rootReducer,
 
 const ApolloApp = (
   <MarioProvider client={apolloClient} store={store}>
-    <ApolloStatelessContainer />
+    <ObservableContainer />
   </MarioProvider>
 );
 

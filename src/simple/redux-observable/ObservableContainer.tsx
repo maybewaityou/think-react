@@ -7,11 +7,14 @@
  */
 import { Map } from 'immutable';
 import { bind } from 'mario-ducks';
+import { log } from 'mario-utilities';
 import * as React from 'react';
+import { ViewModel, ViewModelProviders } from '../../arch/index';
 import { CANCEL, PROMISE } from '../../dataflow/actions/Action';
 import { PureComponent, pureRender } from '../../main/components/high-order-component/Decorator';
 import ObservableView, { ObservableStatelessView } from './ObservableView';
 import { $getError, $getHomeData, $getHomeDataSelector, isSuccess } from './selector/Selectors';
+import ObservableViewModel from './view-model/ObservableViewModel';
 
 export interface IObservableContainerProps {
   actions?: any;
@@ -31,9 +34,14 @@ export interface IObservableContainerState {
 }))
 export default class ObservableContainer extends PureComponent<IObservableContainerProps, IObservableContainerState> {
 
+  private viewModel: ObservableViewModel;
+
   constructor(props: Readonly<any>) {
     super(props);
 
+    this.viewModel = ViewModelProviders.of(this).get(ObservableViewModel);
+    this.viewModel.test();
+    this.viewModel.onCleared();
   }
 
   public handleTestObservableClick = () => {

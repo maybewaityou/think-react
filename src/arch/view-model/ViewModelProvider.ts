@@ -39,7 +39,7 @@ export default class ViewModelProvider {
 
       viewModel = this.mFactory.create(modelClass);
       this.mViewModelStore.put(key, viewModel);
-      return viewModel;
+      return viewModel as T;
     }
   }
 

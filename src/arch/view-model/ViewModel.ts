@@ -6,8 +6,8 @@
  *
  */
 
-export default class ViewModel {
+export default abstract class ViewModel {
 
-  public onCleared() {}
+  public abstract onCleared(): any;
 
 }
