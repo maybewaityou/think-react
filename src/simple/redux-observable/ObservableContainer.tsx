@@ -43,10 +43,9 @@ export default class ObservableContainer extends PureComponent<IObservableContai
   }
 
   public render() {
-    const { success, $data, $error } = this.props;
     return (
       <ObservableView
-        $data={success ? $data : $error}
+        {...this.viewModel.datas()}
         {...this.viewModel.handlers()}
       />
     );

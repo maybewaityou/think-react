@@ -16,6 +16,13 @@ export default class ObservableViewModel extends ViewModel {
     return this;
   }
 
+  public datas = () => {
+    const { success, $data, $error } = this.props;
+    return {
+      $data: this.props.success ? this.props.$data : this.props.$error,
+    };
+  }
+
   public handlers = () => ({
     handleTestObservableClick: () => {
       this.props.actions('PROMISE', { params: 'mu haha ~ ~' });
