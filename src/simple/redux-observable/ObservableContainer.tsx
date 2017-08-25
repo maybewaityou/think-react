@@ -31,13 +31,7 @@ export interface IState {
   $error: $getError(state),
   success: isSuccess(state),
 }))
-@inject(ObservableView)
+@inject<IProps, ObservableViewModel>(ObservableView, ObservableViewModel)
 export default class ObservableContainer extends ViewModelComponent<IProps, IState, ObservableViewModel> {
-
-  constructor(props: Readonly<any>) {
-    super(props);
-
-    this.viewModel = ViewModelProviders.of(this).get(ObservableViewModel).init<IProps>(props);
-  }
 
 }

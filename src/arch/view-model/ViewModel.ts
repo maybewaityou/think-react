@@ -15,7 +15,7 @@ export default abstract class ViewModel {
     return this;
   }
 
-  public update = (props: Readonly<any>) => {
+  public update = <P>(props: Readonly<P>) => {
     this.props = props;
   }
 
