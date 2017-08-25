@@ -6,7 +6,6 @@
  *
  */
 import * as React from 'react';
-import ObservableContainer from '../../simple/redux-observable/ObservableContainer';
 import { ViewModel, ViewModelComponent, ViewModelProviders } from '../view-model/index';
 
 export default <P, VM extends ViewModel>(RenderedView: React.ComponentClass, ViewModelClass: new () => VM) => (WrappedComponent: any) => (
