@@ -9,6 +9,7 @@ import { Map } from 'immutable';
 import { toString } from 'mario-utilities';
 import * as React from 'react';
 import { pureRender } from '../../main/components/high-order-component/Decorator';
+import ObservableViewModel from './view-model/ObservableViewModel';
 
 /**
  * 无状态组件
@@ -23,6 +24,7 @@ export const ObservableStatelessView = (props: Readonly<any>) => (
 );
 
 export interface IObservableViewProps {
+  // viewModel: typeof ObservableViewModel;
   $data: Map<string, any>;
   handleTestObservableClick: any;
   handleTestObservableCancelClick: any;

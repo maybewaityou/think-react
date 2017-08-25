@@ -40,16 +40,7 @@ export default class ObservableContainer extends PureComponent<IObservableContai
     super(props);
 
     this.viewModel = ViewModelProviders.of(this).get(ObservableViewModel);
-    this.viewModel.test();
-    this.viewModel.onCleared();
-  }
-
-  public handleTestObservableClick = () => {
-    this.props.actions(PROMISE, { params: 'mu haha ~ ~' });
-  }
-
-  public handleTestObservableCancelClick = () => {
-    this.props.actions(CANCEL);
+    this.viewModel.init(props);
   }
 
   public render() {
@@ -57,8 +48,7 @@ export default class ObservableContainer extends PureComponent<IObservableContai
     return (
       <ObservableView
         $data={success ? $data : $error}
-        handleTestObservableClick={this.handleTestObservableClick}
-        handleTestObservableCancelClick={this.handleTestObservableCancelClick}
+        {...this.viewModel.handlers()}
       />
     );
   }

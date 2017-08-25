@@ -9,13 +9,20 @@ import { ViewModel } from '../../../arch/index';
 
 export default class ObservableViewModel extends ViewModel {
 
-  // public init = (props: Readonly<any>) => {
-  //
-  // }
+  private props: Readonly<any>;
 
-  public test() {
-    console.log('=========');
+  public init = (props: Readonly<any>) => {
+    this.props = props;
   }
+
+  public handlers = () => ({
+    handleTestObservableClick: () => {
+      this.props.actions('PROMISE', { params: 'mu haha ~ ~' });
+    },
+    handleTestObservableCancelClick: () => {
+      this.props.actions('CANCEL');
+    },
+  })
 
   public onCleared() {}
 
