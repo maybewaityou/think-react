@@ -21,6 +21,8 @@ export default class ViewModelStore {
 
   public get = (key: string) => mMap.get(key);
 
+  public remove = (key: string) => mMap.delete(key);
+
   public clear = () => {
     mMap.forEach((value, key) => {
       value.onCleared();

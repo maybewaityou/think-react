@@ -6,6 +6,7 @@
  *
  */
 import * as React from 'react';
+import ViewModelProviders from 'ViewModelProviders';
 import ViewModel from './ViewModel';
 
 export default abstract class ViewModelComponent<P, S, VM extends ViewModel<P>> extends React.PureComponent<P, S> {

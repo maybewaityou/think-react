@@ -43,4 +43,10 @@ export default class ViewModelProvider {
     }
   }
 
+  public remove = <P, VM extends ViewModel<P>>(modelClass: new () => VM, key: string =  defaultKey(modelClass)) => this.mViewModelStore.remove(key);
+
+  public clear = () => this.mViewModelStore.clear();
+
+  public testLog = () => this.mViewModelStore.testLog();
+
 }
