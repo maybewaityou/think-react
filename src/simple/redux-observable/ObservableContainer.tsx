@@ -44,7 +44,7 @@ export default class ObservableContainer extends PureComponent<IObservableContai
   public render() {
     return (
       <ObservableView
-        {...this.viewModel.datas()}
+        {...this.viewModel.model()}
         {...this.viewModel.handlers()}
       />
     );

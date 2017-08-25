@@ -17,7 +17,7 @@ export default class ObservableViewModel extends ViewModel {
     return this;
   }
 
-  public datas = () => {
+  public model = () => {
     const { success, $data, $error } = this.props;
     return {
       test: '',
