@@ -11,6 +11,8 @@ import ViewModelStore from './ViewModelStore';
 
 const DEFAULT_KEY = 'android.arch.lifecycle.ViewModelProvider.DefaultKey';
 
+const defaultKey = (modelClass: any) => `${DEFAULT_KEY}:${`${modelClass}`.split('extends')[0].replace(/class/, '').replace(/\s/g, '')}`;
+
 export interface IFactory {
 
   create<T extends ViewModel>(modelClass: new () => T): any;
@@ -27,7 +29,7 @@ export default class ViewModelProvider {
     this.mViewModelStore = store;
   }
 
-  public get = <T extends ViewModel>(modelClass: new () => T, key: string = `${DEFAULT_KEY}:${`${modelClass}`.split('extends')[0].replace(/class/, '').replace(/\s/g, '')}`) => {
+  public get = <T extends ViewModel>(modelClass: new () => T, key: string =  defaultKey(modelClass)) => {
     let viewModel = this.mViewModelStore.get(key);
     if (viewModel && viewModel instanceof modelClass) {
       return viewModel;
