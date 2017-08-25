@@ -11,8 +11,9 @@ export default class ObservableViewModel extends ViewModel {
 
   private props: Readonly<any>;
 
-  public init = (props: Readonly<any>) => {
+  public init = (props: Readonly<any>): ObservableViewModel => {
     this.props = props;
+    return this;
   }
 
   public handlers = () => ({
