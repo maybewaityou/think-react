@@ -32,6 +32,4 @@ export interface IState {
   success: isSuccess(state),
 }))
 @inject(ObservableView, ObservableViewModel)
-export default class ObservableContainer extends ViewModelComponent<IProps, IState, ObservableViewModel> {
-
-}
+export default class ObservableContainer extends ViewModelComponent<IProps, IState, ObservableViewModel> {}
