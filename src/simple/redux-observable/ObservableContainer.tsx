@@ -31,7 +31,7 @@ export interface IState {
   $error: $getError(state),
   success: isSuccess(state),
 }))
-@inject<IProps, ObservableViewModel>(ObservableView, ObservableViewModel)
+@inject(ObservableView, ObservableViewModel)
 export default class ObservableContainer extends ViewModelComponent<IProps, IState, ObservableViewModel> {
 
 }
