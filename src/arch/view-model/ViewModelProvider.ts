@@ -47,6 +47,4 @@ export default class ViewModelProvider {
 
   public clear = () => this.mViewModelStore.clear();
 
-  public testLog = () => this.mViewModelStore.testLog();
-
 }
