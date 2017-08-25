@@ -8,13 +8,13 @@
 import * as React from 'react';
 import { ViewModel, ViewModelComponent, ViewModelProviders } from '../view-model/index';
 
-export default <P, VM extends ViewModel>(RenderedView: React.ComponentClass, ViewModelClass: new () => VM) => (WrappedComponent: any) => (
+export default <P, VM extends ViewModel<P>>(RenderedView: React.ComponentClass, ViewModelClass: new () => VM) =>  (
   class extends ViewModelComponent<any, any, any> {
 
     constructor(props: Readonly<any>) {
       super(props);
 
-      this.viewModel = ViewModelProviders.of(this).get(ViewModelClass).init<P>(props);
+      this.viewModel = ViewModelProviders.of(this).get(ViewModelClass).init(props);
     }
 
     public render() {

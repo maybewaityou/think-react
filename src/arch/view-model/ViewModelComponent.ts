@@ -8,12 +8,12 @@
 import * as React from 'react';
 import ViewModel from './ViewModel';
 
-export default abstract class ViewModelComponent<P, S, VM extends ViewModel> extends React.PureComponent<P, S> {
+export default abstract class ViewModelComponent<P, S, VM extends ViewModel<P>> extends React.PureComponent<P, S> {
 
   public viewModel: VM;
 
   public componentWillReceiveProps(nextProps: Readonly<P>) {
-    this.viewModel.update<P>(nextProps);
+    this.viewModel.update(nextProps);
   }
 
 }

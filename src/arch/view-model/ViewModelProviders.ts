@@ -29,7 +29,7 @@ export default class ViewModelProviders {
 
 class DefaultFactory implements IFactory {
 
-  public create<T extends ViewModel>(modelClass: new () => T) {
+  public create<P, VM extends ViewModel<P>>(modelClass: new () => VM) {
     return new modelClass();
   }
 

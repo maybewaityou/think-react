@@ -8,7 +8,14 @@
 import { ViewModel } from '../../../arch/index';
 import { CANCEL, PROMISE } from '../../../dataflow/actions/Action';
 
-export default class ObservableViewModel extends ViewModel {
+export interface IProps {
+  actions?: any;
+  success?: any;
+  $data?: Map<string, any>;
+  $error?: Map<string, any>;
+}
+
+export default class ObservableViewModel extends ViewModel<IProps> {
 
   public model() {
     const { success, $data, $error } = this.props;

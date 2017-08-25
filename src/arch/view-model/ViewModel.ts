@@ -6,16 +6,16 @@
  *
  */
 
-export default abstract class ViewModel {
+export default abstract class ViewModel<P> {
 
-  protected props: Readonly<any>;
+  protected props: Readonly<P>;
 
-  public init = <P>(props: Readonly<P>) => {
+  public init = (props: Readonly<P>) => {
     this.props = props;
     return this;
   }
 
-  public update = <P>(props: Readonly<P>) => {
+  public update = (props: Readonly<P>) => {
     this.props = props;
   }
 

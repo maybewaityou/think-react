@@ -7,11 +7,11 @@
  */
 import ViewModel from './ViewModel';
 
-const mMap: Map<string, ViewModel> = new Map();
+const mMap: Map<string, ViewModel<any>> = new Map();
 
 export default class ViewModelStore {
 
-  public put = (key: string, viewModel: ViewModel) => {
+  public put = <P>(key: string, viewModel: ViewModel<P>) => {
     const oldViewModel = mMap.get(key);
     if (oldViewModel) {
         oldViewModel.onCleared();

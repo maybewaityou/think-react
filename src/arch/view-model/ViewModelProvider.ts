@@ -14,7 +14,7 @@ const defaultKey = (modelClass: any) => `${DEFAULT_KEY}:${`${modelClass}`.split(
 
 export interface IFactory {
 
-  create<T extends ViewModel>(modelClass: new () => T): any;
+  create<P, VM extends ViewModel<P>>(modelClass: new () => VM): any;
 
 }
 
@@ -28,7 +28,7 @@ export default class ViewModelProvider {
     this.mViewModelStore = store;
   }
 
-  public get = <T extends ViewModel>(modelClass: new () => T, key: string =  defaultKey(modelClass)) => {
+  public get = <P, VM extends ViewModel<P>>(modelClass: new () => VM, key: string =  defaultKey(modelClass)) => {
     let viewModel = this.mViewModelStore.get(key);
     if (viewModel && viewModel instanceof modelClass) {
       return viewModel;
@@ -39,7 +39,7 @@ export default class ViewModelProvider {
 
       viewModel = this.mFactory.create(modelClass);
       this.mViewModelStore.put(key, viewModel);
-      return viewModel as T;
+      return viewModel as VM;
     }
   }
 
