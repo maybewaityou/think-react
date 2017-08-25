@@ -10,8 +10,6 @@ import { CANCEL, PROMISE } from '../../../dataflow/actions/Action';
 
 export default class ObservableViewModel extends ViewModel {
 
-  public test = 'aaaaa';
-
   public model() {
     const { success, $data, $error } = this.props;
     return {

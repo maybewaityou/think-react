@@ -32,7 +32,7 @@ export interface IObservableViewState {
 }
 
 @pureRender
-export default class ObservableView extends React.PureComponent<IObservableViewProps, IObservableViewState> {
+export default class ObservableView extends React.PureComponent<any, IObservableViewState> {
 
   constructor(props: Readonly<any>) {
     super(props);
