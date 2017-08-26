@@ -6,9 +6,9 @@
  *
  */
 import { Map } from 'immutable';
+import { pureRender } from 'mario-pure';
 import { toString } from 'mario-utilities';
 import * as React from 'react';
-import { pureRender } from '../../main/components/high-order-component/Decorator';
 
 /**
  * 无状态组件
