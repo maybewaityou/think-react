@@ -6,13 +6,13 @@
  *
  */
 import { Map } from 'immutable';
+import { PureComponent } from 'mario-pure';
 import { log } from 'mario-utilities';
 import * as React from 'react';
 import { bindActionCreators } from 'redux';
 import { Observable } from 'rxjs';
 import actionCreator from '../../dataflow/actions/ActionCreator';
 import { connection } from '../../dataflow/connect/connection';
-import { PureComponent } from '../../main/components/high-order-component/Decorator';
 import StreamComponent from '../../main/components/high-order-component/stream/StreamComponent';
 import StreamView from './StreamView';
 

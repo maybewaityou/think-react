@@ -6,9 +6,9 @@
  *
  */
 import { Map } from 'immutable';
+import { pureRender } from 'mario-pure';
 import { log } from 'mario-utilities';
 import * as React from 'react';
-import { pureRender } from '../../main/components/high-order-component/Decorator';
 
 export const LoadingView = (props: Readonly<any>) => (<div>Loading...</div>);
 

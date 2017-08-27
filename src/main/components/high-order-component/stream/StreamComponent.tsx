@@ -5,8 +5,8 @@
  * description:
  *
  */
+import { PureComponent } from 'mario-pure';
 import * as React from 'react';
-import PureComponent from '../pure/PureComponent';
 
 const stateSubscriptions: any[] = [];
 
