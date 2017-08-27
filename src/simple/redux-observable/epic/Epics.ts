@@ -20,10 +20,10 @@ import { epicCreator } from '../../../dataflow/epic/EpicCreator';
 export const fetchHomeEpic = (action$: ActionsObservable<string>, store: any, { network }: any) => (
   action$.ofType(PROMISE)
     .mergeMap((action) =>
-      Observable.fromPromise(network.asyncRequest('HomePageController/showIndexInfo'))
+      Observable.fromPromise(network.asyncRequest('http://localhost:3000/pages/showIndexInfo'))
         .flatMap((response) => {
           store.dispatch({ type: FETCH_HOME_DATA, payload: response });
-          return Observable.fromPromise(network.asyncRequest('ImageController/imageTrans'));
+          return Observable.fromPromise(network.asyncRequest('http://localhost:3000/pages/showIndexInfo'));
         })
         .delay(1000)
         .map((response) => ({ type: FETCH_HOME_DATA, payload: response }))
@@ -37,10 +37,10 @@ export const fetchHomeEpic = (action$: ActionsObservable<string>, store: any, { 
  */
 export const fetchHomeCurryingEpic = (action$: ActionsObservable<string>, store: any, { network }: any) => (
   epicCreator(action$)(PROMISE)((action: IAction) =>
-    network.asyncObserve('HomePageController/showIndexInfo')
+    network.asyncObserve('http://localhost:3000/pages/showIndexInfo')
         .flatMap((response: any) => {
           store.dispatch({ type: FETCH_HOME_DATA, payload: response });
-          return network.asyncObserve('ImageController/imageTrans');
+          return network.asyncObserve('http://localhost:3000/pages/showIndexInfo');
         })
         .delay(1000)
         .map((response: any) => ({ type: FETCH_HOME_DATA, payload: response }))
