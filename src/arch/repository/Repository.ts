@@ -5,3 +5,7 @@
  * description:
  *
  */
+
+export default class Repository {
+
+}
