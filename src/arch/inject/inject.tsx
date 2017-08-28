@@ -8,21 +8,6 @@
 import * as React from 'react';
 import { ViewModel, ViewModelComponent, ViewModelProviders } from '../view-model/index';
 
-class Test extends ViewModel<any> {
-  public model() {
-    return {
-    };
-  }
-
-  public handlers() {
-    return ({
-    });
-  }
-
-  public onCleared() {}
-
-}
-
 export default <P, VM extends ViewModel<P>>(RenderedView: React.ComponentClass, ViewModelClass: new () => VM) =>  (
   class extends ViewModelComponent<any, any, any> {
 
