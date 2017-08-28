@@ -21,9 +21,11 @@ import RecomposeContainer from './simple/recompose/RecomposeContainer';
 import ObservableContainer from './simple/redux-observable/ObservableContainer';
 import StreamContainer from './simple/stream/StreamContainer';
 
+/* 性能分析 */
 const win: any = window;
 win.Perf = Perf;
 
+/* 清除 warning */
 console.warn = () => ({});
 
 const apolloClient = new ApolloClient({
