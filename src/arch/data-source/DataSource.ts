@@ -5,10 +5,13 @@
  * description:
  *
  */
-import { Observable } from 'rxjs';
 
 export default abstract class DataSource<T> {
 
-  public abstract getModelObservable(): Observable<T>;
+  public abstract getData(): T;
+  public abstract saveData(): T;
+  public abstract complete(): void;
+  public abstract refreshData(): any;
+  public abstract delete(): void;
 
 }

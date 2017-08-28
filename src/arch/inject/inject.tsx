@@ -19,13 +19,27 @@ class TestDataSource extends DataSource<any> {
     this.props = props;
   }
 
-  public getModelObservable() {
-    return Observable.create((subscribe: any) => {
-      const { success, $data, $error } = this.props;
-      subscribe.next({ $data: success ? $data : $error });
-      subscribe.complete();
-    });
+  public getData() {
+    const { success, $data, $error } = this.props;
+    return { $data: success ? $data : $error };
   }
+
+  public saveData() {
+
+  }
+
+  public complete() {
+
+  }
+
+  public refreshData() {
+
+  }
+
+  public delete() {
+
+  }
+
 }
 
 export default <P, VM extends ViewModel<P>>(RenderedView: React.ComponentClass, ViewModelClass: new () => VM) =>  (
