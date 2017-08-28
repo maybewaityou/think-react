@@ -8,6 +8,7 @@
 import { ApolloClient, configureApolloStore, createNetworkInterface, MarioProvider  } from 'mario-ducks';
 import { NetworkClient } from 'mario-utilities';
 import * as React from 'react';
+import Perf from 'react-addons-perf';
 import * as ReactDOM from 'react-dom';
 import './assets/stylesheet/style.css';
 import rootEpic from './dataflow/epic/Epic';
@@ -19,6 +20,9 @@ import ApolloStatelessContainer from './simple/react-apollo/ApolloStatelessConta
 import RecomposeContainer from './simple/recompose/RecomposeContainer';
 import ObservableContainer from './simple/redux-observable/ObservableContainer';
 import StreamContainer from './simple/stream/StreamContainer';
+
+const win: any = window;
+win.Perf = Perf;
 
 console.warn = () => ({});
 
