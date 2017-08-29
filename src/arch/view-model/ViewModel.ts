@@ -15,6 +15,10 @@ export default abstract class ViewModel<P> {
     return this;
   }
 
+  public onMount = () => {
+
+  }
+
   public update = (props: Readonly<P>) => {
     this.props = props;
   }

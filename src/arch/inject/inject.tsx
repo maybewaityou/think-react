@@ -51,6 +51,10 @@ export default <P, VM extends ViewModel<P>>(RenderedView: React.ComponentClass, 
       this.viewModel = ViewModelProviders.of(this).get(ViewModelClass).init(props);
     }
 
+    public componentDidMount() {
+      this.viewModel.onMount();
+    }
+
     public componentWillUnmount() {
       this.viewModel.onCleared();
       ViewModelProviders.of(this).remove(ViewModelClass);
