@@ -14,6 +14,10 @@ export default abstract class ViewModelComponent<P, S, VM extends ViewModel<P>> 
 
   public viewModel: VM;
 
+  public componentDidMount() {
+    this.viewModel.onMount();
+  }
+
   public componentWillReceiveProps(nextProps: Readonly<P>) {
     this.viewModel.update(nextProps);
   }
