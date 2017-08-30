@@ -6,8 +6,8 @@
  *
  */
 import { Map } from 'immutable';
+import { createSelector } from 'mario-ducks';
 import { log, toString } from 'mario-utilities';
-import { createSelector } from 'reselect';
 
 export default (state: any) => ({
 
