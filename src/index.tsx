@@ -20,6 +20,7 @@ import ApolloStatelessContainer from './simple/react-apollo/ApolloStatelessConta
 import RecomposeContainer from './simple/recompose/RecomposeContainer';
 import ObservableContainer from './simple/redux-observable/ObservableContainer';
 import StreamContainer from './simple/stream/StreamContainer';
+import { Container } from './simple/test/index';
 
 /* 性能分析 */
 const win: any = window;
@@ -40,7 +41,7 @@ const store = configureApolloStore({}, apolloClient, networkClient, rootReducer,
 
 const ApolloApp = (
   <MarioProvider client={apolloClient} store={store}>
-    <ObservableContainer />
+    <Container />
   </MarioProvider>
 );
 
