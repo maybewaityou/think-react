@@ -14,6 +14,7 @@
       "mario-ducks": ["node_modules/mario-ducks/index.d.ts"],
       "mario-utilities": ["node_modules/mario-utilities/index.d.ts"],
       "mario-pure": ["node_modules/mario-pure/index.d.ts"],
+      "mario-architecture-components": ["node_modules/mario-architecture-components/index.d.ts"],
       "react-addons-perf": ["node_modules/react-addons-perf/index.d.ts"],
       "styled-components": ["node_modules/styled-components/typings/styled-components.d.ts"]
     },

@@ -5475,6 +5475,13 @@ map-visit@^0.1.5:
     lazy-cache "^2.0.1"
     object-visit "^0.3.4"
 
+mario-architecture-components@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/mario-architecture-components/-/mario-architecture-components-0.0.2.tgz#93a0bac9628e5cd96cb7856517d272d370e9b029"
+  dependencies:
+    mario-pure "^0.0.2"
+    rxjs "^5.4.3"
+
 mario-ducks@^0.0.47:
   version "0.0.47"
   resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.47.tgz#5eeba4e53f3b6454c636baaaa672946aa8f8308d"
@@ -7917,7 +7924,7 @@ rx-lite@*, rx-lite@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
 
-rxjs@^5.4.2:
+rxjs@^5.4.2, rxjs@^5.4.3:
   version "5.4.3"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.4.3.tgz#0758cddee6033d68e0fd53676f0f3596ce3d483f"
   dependencies:
