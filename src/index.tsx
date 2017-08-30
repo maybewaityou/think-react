@@ -41,7 +41,7 @@ const store = configureApolloStore({}, apolloClient, networkClient, rootReducer,
 
 const ApolloApp = (
   <MarioProvider client={apolloClient} store={store}>
-    <Container />
+    <ObservableContainer />
   </MarioProvider>
 );
 
