@@ -6,9 +6,9 @@
  *
  */
 import { Map } from 'immutable';
+import { createSelector } from 'mario-ducks';
 import { log, toString } from 'mario-utilities';
 import { normalize, schema } from 'normalizr';
-import { createSelector } from 'reselect';
 
 const originData = {
   id: '123',
