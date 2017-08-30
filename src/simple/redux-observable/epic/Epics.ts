@@ -5,6 +5,7 @@
  * description:
  *
  */
+import { epicCreator } from 'mario-ducks';
 import { ActionsObservable, combineEpics } from 'redux-observable';
 import { Observable } from 'rxjs';
 import IAction, {
@@ -13,7 +14,6 @@ import IAction, {
   FETCH_HOME_DATA,
   PROMISE,
 } from '../../../dataflow/actions/Action';
-import { epicCreator } from '../../../dataflow/epic/EpicCreator';
 
 // function (action$: ActionsObservable<string>, store: Store, dependencies: Object?): Observable<IAction>;
 // dependencies: 在 Store 中注入的参数
@@ -35,7 +35,7 @@ export const fetchHomeEpic = (action$: ActionsObservable<string>, store: any, { 
 /**
  * Currying 形式
  */
-export const fetchHomeCurryingEpic = (action$: ActionsObservable<string>, store: any, { network }: any): Observable<IAction> => (
+export const fetchHomeCurryingEpic = (action$: ActionsObservable<string>, store: any, { network }: any): typeof Observable => (
   epicCreator(action$)(PROMISE)((action: IAction) =>
     network.asyncObserve('http://localhost:3000/pages/showIndexInfo')
         .flatMap((response: any) => {
