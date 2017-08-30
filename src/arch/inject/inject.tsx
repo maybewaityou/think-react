@@ -19,20 +19,16 @@ class TestDataSource extends DataSource<any> {
     this.props = props;
   }
 
-  public getData() {
+  public save() {
+
+  }
+
+  public get() {
     const { success, $data, $error } = this.props;
     return { $data: success ? $data : $error };
   }
 
-  public saveData() {
-
-  }
-
-  public complete() {
-
-  }
-
-  public refreshData() {
+  public refresh() {
 
   }
 
@@ -40,12 +36,16 @@ class TestDataSource extends DataSource<any> {
 
   }
 
+  public complete() {
+
+  }
+
 }
 
 export default <P, VM extends ViewModel<P>>(RenderedView: React.ComponentClass, ViewModelClass: new () => VM) =>  (
-  class extends ViewModelComponent<any, any, any> {
+  class extends ViewModelComponent<P, any, VM> {
 
-    constructor(props: Readonly<any>) {
+    constructor(props: Readonly<P>) {
       super(props);
 
       this.viewModel = ViewModelProviders.of(this).get(ViewModelClass).init(props);
