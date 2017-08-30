@@ -5,7 +5,7 @@
  * description:
  *
  */
-import { ViewModel } from '../../../arch/index';
+import { ViewModel } from 'mario-architecture-components';
 import { CANCEL, PROMISE } from '../../../dataflow/actions/Action';
 
 export interface IProps {
