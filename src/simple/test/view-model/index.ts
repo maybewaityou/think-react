@@ -6,4 +6,4 @@
  *
  */
 
-export { default as ViewModel, IProps } from './ViewModel';
+export { default as TestViewModel, IProps } from './TestViewModel';

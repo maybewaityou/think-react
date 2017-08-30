@@ -10,7 +10,7 @@ import { inject } from 'mario-architecture-components';
 import { bind } from 'mario-ducks';
 import * as React from 'react';
 import { mapStateToProps } from '../ducks/selector/index';
-import { IProps, ViewModel } from '../view-model/index';
-import { View } from '../view/index';
+import { IProps, TestViewModel } from '../view-model/index';
+import { TestView } from '../view/index';
 
-export default bind(mapStateToProps)(inject<IProps, ViewModel>(View, ViewModel));
+export default bind(mapStateToProps)(inject<IProps, TestViewModel>(TestView, TestViewModel));

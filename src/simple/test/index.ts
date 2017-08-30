@@ -6,4 +6,4 @@
  *
  */
 
-export { Container } from './container/index';
+export { TestContainer } from './container/index';
