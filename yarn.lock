@@ -5482,14 +5482,14 @@ mario-architecture-components@^0.0.2:
     mario-pure "^0.0.2"
     rxjs "^5.4.3"
 
-mario-ducks@^0.0.47:
-  version "0.0.47"
-  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.47.tgz#5eeba4e53f3b6454c636baaaa672946aa8f8308d"
+mario-ducks@^0.0.48:
+  version "0.0.48"
+  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.48.tgz#5ee7390138121dc36a8e4f00f33615ebc35b1be7"
   dependencies:
     immutable "^3.8.1"
-    mario-utilities "^0.0.10"
+    mario-utilities "^0.0.11"
     ramda "^0.24.1"
-    react-apollo "^1.4.14"
+    react-apollo "^1.4.15"
     react-redux "^5.0.5"
     redux "^3.7.2"
     redux-logic "^0.12.2"
@@ -5502,9 +5502,9 @@ mario-pure@^0.0.2:
   dependencies:
     immutable "^3.8.1"
 
-mario-utilities@^0.0.10:
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/mario-utilities/-/mario-utilities-0.0.10.tgz#f4d3cbf19d94b4c858ea3399b72977e73ffa94a9"
+mario-utilities@^0.0.11:
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/mario-utilities/-/mario-utilities-0.0.11.tgz#3f75eb900154f98a11fd8b6d2b73954c38943bb8"
   dependencies:
     rxjs "^5.4.2"
 
@@ -7354,9 +7354,9 @@ react-addons-perf@^15.4.2:
     fbjs "^0.8.4"
     object-assign "^4.1.0"
 
-react-apollo@^1.4.14:
-  version "1.4.14"
-  resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-1.4.14.tgz#86af913887e447710e4e5d85ca6277b35f1a3b82"
+react-apollo@^1.4.15:
+  version "1.4.15"
+  resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-1.4.15.tgz#3a213d11b847da7db03c4619ac640df734f9c4b5"
   dependencies:
     apollo-client "^1.4.0"
     graphql-tag "^2.0.0"
