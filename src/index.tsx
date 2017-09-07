@@ -5,7 +5,7 @@
  * description:
  *
  */
-import { ApolloClient, configureApolloStore, createNetworkInterface, MarioProvider, Provider } from 'mario-ducks';
+import { ApolloClient, configureApolloStore, createNetworkInterface, MarioProvider } from 'mario-ducks';
 import { NetworkClient } from 'mario-utilities';
 import * as React from 'react';
 import Perf from 'react-addons-perf';
