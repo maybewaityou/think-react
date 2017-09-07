@@ -9,8 +9,8 @@ import { Map } from 'immutable';
 import { inject } from 'mario-architecture-components';
 import { bind } from 'mario-ducks';
 import * as React from 'react';
-import ObservableView, { ObservableStatelessView } from './ObservableView';
+import ObservableView, { IViewProps } from './ObservableView';
 import mapStateToProps from './selector/Selectors';
-import ObservableViewModel, { IProps } from './view-model/ObservableViewModel';
+import ObservableViewModel, { IViewModelProps } from './view-model/ObservableViewModel';
 
-export default bind(mapStateToProps)(inject<IProps, ObservableViewModel>(ObservableView, ObservableViewModel));
+export default bind(mapStateToProps)(inject<IViewProps, IViewModelProps, ObservableViewModel>(ObservableView, ObservableViewModel));

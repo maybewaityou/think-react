@@ -8,14 +8,14 @@
 import { ViewModel } from 'mario-architecture-components';
 import { CANCEL, PROMISE } from '../../../dataflow/actions/Action';
 
-export interface IProps {
+export interface IViewModelProps {
   actions?: any;
   success?: any;
   $data?: Map<string, any>;
   $error?: Map<string, any>;
 }
 
-export default class ObservableViewModel extends ViewModel<IProps> {
+export default class extends ViewModel<IViewModelProps> {
 
   public model() {
     const { success, $data, $error } = this.props;

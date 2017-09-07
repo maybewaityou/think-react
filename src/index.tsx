@@ -20,7 +20,6 @@ import ApolloStatelessContainer from './simple/react-apollo/ApolloStatelessConta
 import RecomposeContainer from './simple/recompose/RecomposeContainer';
 import ObservableContainer from './simple/redux-observable/ObservableContainer';
 import StreamContainer from './simple/stream/StreamContainer';
-import { TestContainer } from './simple/test/index';
 
 /* 性能分析 */
 const win: any = window;
