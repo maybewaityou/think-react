@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const { CheckerPlugin } = require('awesome-typescript-loader');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 const env = process.env.NODE_ENV;
 
@@ -41,6 +42,7 @@ const webpackConfig = {
       title: 'think-react',
       template: templatePath,
     }),
+    new ProgressBarPlugin()
     // new CheckerPlugin()
   ],
   module: {

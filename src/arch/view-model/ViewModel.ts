@@ -19,6 +19,10 @@ export default abstract class ViewModel<P> {
 
   }
 
+  public onReceiveProps = (props: Readonly<P>) => {
+
+  }
+
   public update = (props: Readonly<P>) => {
     this.props = props;
   }
