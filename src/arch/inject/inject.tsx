@@ -42,10 +42,10 @@ class TestDataSource extends DataSource<any> {
 
 }
 
-export default <P, VM extends ViewModel<P>>(RenderedView: React.ComponentClass, ViewModelClass: new () => VM) =>  (
-  class extends ViewModelComponent<P, any, VM> {
+export default <VP, VMP, VM extends ViewModel<VMP>>(RenderedView: React.ComponentClass<VP> | React.StatelessComponent<VP>, ViewModelClass: new () => VM | any) =>  (
+  class extends ViewModelComponent<VMP, any, VM> {
 
-    constructor(props: Readonly<P>) {
+    constructor(props: Readonly<VMP>) {
       super(props);
 
       this.viewModel = ViewModelProviders.of(this).get(ViewModelClass).init(props);

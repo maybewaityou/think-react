@@ -24,9 +24,11 @@ export default class extends ViewModel<IViewModelProps> {
   }
 
   public handlers() {
-    return ({
-
-    });
+    return {
+      handleClick: () => {
+        console.log('=================');
+      },
+    };
   }
 
   public onCleared() {
