@@ -8,6 +8,9 @@
 
 export default abstract class ViewModel<P> {
 
+  public abstract model: () => any;
+  public abstract handlers: () => any;
+
   protected props: Readonly<P>;
 
   public init = (props: Readonly<P>) => {
@@ -15,20 +18,13 @@ export default abstract class ViewModel<P> {
     return this;
   }
 
-  public onMount = () => {
-
-  }
-
-  public onReceiveProps = (props: Readonly<P>) => {
-
-  }
+  public onMount = () => {};
+  public onReceiveProps = (props: Readonly<P>) => {};
 
   public update = (props: Readonly<P>) => {
     this.props = props;
   }
 
-  public abstract model(): any;
-  public abstract handlers(): any;
   public abstract onCleared(): any;
 
 }

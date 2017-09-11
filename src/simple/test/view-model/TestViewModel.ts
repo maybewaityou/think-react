@@ -18,19 +18,15 @@ export default class extends ViewModel<IViewModelProps> {
 
   }
 
-  public model() {
-    return {
+  public model = () => ({
 
-    };
-  }
+  })
 
-  public handlers() {
-    return {
-      handleClick: () => {
-        log('=================');
-      },
-    };
-  }
+  public handlers = () => ({
+    handleClick: () => {
+      log('=================');
+    },
+  })
 
   public onCleared() {
 

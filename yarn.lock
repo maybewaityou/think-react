@@ -5475,9 +5475,9 @@ map-visit@^0.1.5:
     lazy-cache "^2.0.1"
     object-visit "^0.3.4"
 
-mario-architecture-components@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/mario-architecture-components/-/mario-architecture-components-0.0.4.tgz#f77984558eb71ebda6c3631201133ccf44dacd4f"
+mario-architecture-components@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/mario-architecture-components/-/mario-architecture-components-0.0.5.tgz#d5a88b4b904b78e712e6b2bafcac800bf0ded67a"
   dependencies:
     mario-pure "^0.0.2"
     rxjs "^5.4.3"

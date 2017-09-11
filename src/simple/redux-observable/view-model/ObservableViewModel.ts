@@ -17,23 +17,21 @@ export interface IViewModelProps {
 
 export default class extends ViewModel<IViewModelProps> {
 
-  public model() {
+  public model = () => {
     const { success, $data, $error } = this.props;
     return {
       $data: success ? $data : $error,
     };
   }
 
-  public handlers() {
-    return ({
-      testObservableClick: () => {
-        this.props.actions(PROMISE, { params: 'mu haha ~ ~' });
-      },
-      testObservableCancelClick: () => {
-        this.props.actions(CANCEL);
-      },
-    });
-  }
+  public handlers = () => ({
+    testObservableClick: () => {
+      this.props.actions(PROMISE, { params: 'mu haha ~ ~' });
+    },
+    testObservableCancelClick: () => {
+      this.props.actions(CANCEL);
+    },
+  })
 
   public onCleared() {}
 
