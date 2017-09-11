@@ -6,6 +6,7 @@
  *
  */
 import { ViewModel } from 'mario-architecture-components';
+import { log } from 'mario-utilities';
 
 export interface IViewModelProps {
 
@@ -26,7 +27,7 @@ export default class extends ViewModel<IViewModelProps> {
   public handlers() {
     return {
       handleClick: () => {
-        console.log('=================');
+        log('=================');
       },
     };
   }
