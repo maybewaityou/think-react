@@ -14,10 +14,6 @@ export interface IViewModelProps {
 
 export default class extends ViewModel<IViewModelProps> {
 
-  public onMount() {
-
-  }
-
   public model = () => ({
 
   })
@@ -28,8 +24,6 @@ export default class extends ViewModel<IViewModelProps> {
     },
   })
 
-  public onCleared() {
-
-  }
+  public onCleared() {}
 
 }
