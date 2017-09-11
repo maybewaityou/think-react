@@ -20,7 +20,7 @@ export default class extends ViewModel<IViewModelProps> {
 
   public handlers = () => ({
     handleClick: () => {
-      log('=================');
+      log('=======');
     },
   })
 
