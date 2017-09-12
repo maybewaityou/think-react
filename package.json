@@ -38,7 +38,7 @@
     "koa-views": "^6.0.2",
     "lodash": "^4.17.4",
     "mario-architecture-components": "^0.0.5",
-    "mario-ducks": "^0.0.54",
+    "mario-ducks": "^0.0.55",
     "mario-pure": "^0.0.3",
     "normalizr": "^3.2.3",
     "pug": "^2.0.0-rc.3",
