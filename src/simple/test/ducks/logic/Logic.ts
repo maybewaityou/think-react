@@ -5,7 +5,7 @@
  * description:
  *
  */
-import { createLogic } from 'redux-logic';
+import { createLogic } from 'mario-ducks';
 import {  } from '../actions/index';
 
 function fetchDataSuccess(response: any) {
