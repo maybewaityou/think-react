@@ -17,13 +17,15 @@ export interface IViewProps {
 export default (props: Readonly<IViewProps>) => {
   return (
     <div style={styles.container}>
-      <div style={styles.button} onClick={props.handleTest00Click}>
+      <button onClick={props.handleTest00Click}>
         press button 1
-      </div>
-      <div style={styles.button} onClick={props.handleTest01Click}>
+      </button>
+      <button onClick={props.handleTest01Click}>
         press button 2
+      </button>
+      <div>
+        {toString(props.$model.toJS())}
       </div>
-      {toString(props.$model.toJS())}
     </div>
   );
 };
@@ -32,9 +34,6 @@ const styles = {
   container: {
     flex: 1,
 
-  },
-  button: {
-    backgroundColor: 'blue',
   },
 
 };
