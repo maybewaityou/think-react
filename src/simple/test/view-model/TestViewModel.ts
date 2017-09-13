@@ -11,7 +11,7 @@ import { TEST_ACTION, TEST_ACTION_UNACCEPT } from '../ducks/actions/index';
 
 export interface IViewModelProps {
   actions?: any;
-  model: any;
+  $model: any;
 }
 
 export default class extends ViewModel<IViewModelProps> {
@@ -22,7 +22,7 @@ export default class extends ViewModel<IViewModelProps> {
 
   public model = () => {
     return ({
-      model: this.props.model,
+      $model: this.props.$model,
     });
   }
 
