@@ -11,7 +11,7 @@ import { TEST_ACTION, TEST_ACTION_UNACCEPT } from '../ducks/actions/index';
 
 export interface IViewModelProps {
   actions?: any;
-  test00: any;
+  model: any;
 }
 
 export default class extends ViewModel<IViewModelProps> {
@@ -20,17 +20,19 @@ export default class extends ViewModel<IViewModelProps> {
 
   }
 
-  public model = () => ({
-    model: this.props.test00,
-  })
+  public model = () => {
+    return ({
+      model: this.props.model,
+    });
+  }
 
   public handlers = () => ({
     handleTest00Click: () => {
-      log('handlerClick');
+      log('handlerClick test 00');
       this.props.actions(TEST_ACTION, { name: 'zhangsan' });
     },
     handleTest01Click: () => {
-      log('handlerClick');
+      log('handlerClick test 01');
       this.props.actions(TEST_ACTION_UNACCEPT);
     },
   })

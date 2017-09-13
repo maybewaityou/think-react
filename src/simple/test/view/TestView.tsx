@@ -5,6 +5,7 @@
  * description:
  *
  */
+import { log, toString } from 'mario-utilities';
 import * as React from 'react';
 
 export interface IViewProps {
@@ -22,7 +23,7 @@ export default (props: Readonly<IViewProps>) => {
       <div style={styles.button} onClick={props.handleTest01Click}>
         press button 2
       </div>
-      {props.model}
+      {toString(props.model.toJS())}
     </div>
   );
 };
