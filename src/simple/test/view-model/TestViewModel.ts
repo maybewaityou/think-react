@@ -10,7 +10,7 @@ import { log } from 'mario-utilities';
 import { TEST_ACTION, TEST_ACTION_UNACCEPT } from '../ducks/actions/index';
 
 export interface IViewModelProps {
-  actions: any;
+  actions: (type: string, payload?: any) => any;
   $model: any;
 }
 
