@@ -5,6 +5,7 @@
  * description:
  *
  */
+import 'babel-polyfill';
 import { ApolloClient, configureApolloStore, createNetworkInterface, MarioProvider } from 'mario-ducks';
 import { NetworkClient } from 'mario-utilities';
 import * as React from 'react';
