@@ -6,7 +6,7 @@
  *
  */
 import 'babel-polyfill';
-import { ApolloClient, configureApolloStore, createImmutableActionMiddleware, createNetworkInterface, MarioProvider } from 'mario-ducks';
+import { ApolloClient, configureApolloStore, configureStore, createImmutableActionMiddleware, createNetworkInterface, MarioProvider } from 'mario-ducks';
 import { NetworkClient } from 'mario-utilities';
 import * as React from 'react';
 import Perf from 'react-addons-perf';
