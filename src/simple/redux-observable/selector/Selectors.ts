@@ -39,26 +39,26 @@ const article = new schema.Entity('articles', {
 
 const normalizeData = normalize(originData, article);
 
-const $getHomeData = (state: any) => state.networkReducer.get('homeData');
+const getHomeData = (state: any) => state.networkReducer.get('homeData');
 
-const $getError = (state: any) => state.networkReducer.get('error');
+const getError = (state: any) => state.networkReducer.get('error');
 
 const isSuccess = (state: any) => state.networkReducer.get('isSuccess');
 
 /**
  * 计算或组装state
  */
-const $getHomeDataSelector = createSelector(
-  [ $getHomeData, isSuccess ],
-  ($homeData: Map<string, any>, success: boolean) => {
-    log(`== homeData ===>>>> ${toString($homeData)}`);
+const getHomeDataSelector = createSelector(
+  [ getHomeData, isSuccess ],
+  (homeData: Map<string, any>, success: boolean) => {
+    log(`== homeData ===>>>> ${toString(homeData)}`);
     log(`== isSuccess ===>>>> ${toString(success)}`);
-    return $homeData;
+    return homeData;
   },
 );
 
 export default (state: any) => ({
-  $data: $getHomeDataSelector(state),
-  $error: $getError(state),
+  data: getHomeDataSelector(state),
+  error: getError(state),
   success: isSuccess(state),
 });
