@@ -6,4 +6,4 @@
  *
  */
 
-export { default as $testReducer } from './Reducer';
+export { default as testReducer } from './Reducer';

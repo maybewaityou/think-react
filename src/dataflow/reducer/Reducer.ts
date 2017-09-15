@@ -7,7 +7,7 @@
  */
 import Immutable, { fromJS, Map } from 'immutable';
 import { ReducersMapObject } from 'redux';
-import { $testReducer } from '../../simple/test/index';
+import { testReducer } from '../../simple/test/index';
 import IAction, { DECREMENT, ERROR, FETCH_HOME_DATA, INCREMENT } from '../actions/Action';
 
 const $initializeNetworkState: Map<string, any> = fromJS({
@@ -16,7 +16,7 @@ const $initializeNetworkState: Map<string, any> = fromJS({
   error: {},
 });
 
-function $networkReducer($state: Map<string, any> = $initializeNetworkState, action: IAction) {
+function networkReducer($state: Map<string, any> = $initializeNetworkState, action: IAction) {
   switch (action.type) {
   case FETCH_HOME_DATA:
     return $state
@@ -32,6 +32,6 @@ function $networkReducer($state: Map<string, any> = $initializeNetworkState, act
 }
 
 export default {
-  $networkReducer,
-  $testReducer,
+  networkReducer,
+  testReducer,
 };
