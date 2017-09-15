@@ -28,7 +28,12 @@ export default class extends ViewModel<IViewModelProps> {
 
   public handlers = () => ({
     handleTest00Click: () => {
-      this.props.actions(TEST_ACTION, { name: 'zhangsan' });
+      this.props.actions(TEST_ACTION, {
+        name: 'zhangsan',
+        dog: {
+          name: 'wangcai',
+        },
+      });
     },
     handleTest01Click: () => {
       this.props.actions(TEST_ACTION_UNACCEPT);

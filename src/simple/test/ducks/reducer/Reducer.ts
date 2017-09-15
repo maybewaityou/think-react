@@ -19,10 +19,10 @@ export default acceptActions((state: Map<string, any> = $initialState, action: I
   switch (action.type) {
     case TEST_ACTION:
       log('accept');
-      return state.set('test00', fromJS(action.payload));
+      return state.set('test00', action.payload);
     case TEST_ACTION_UNACCEPT:
       log('unaccept');
-      return state.set('test01', fromJS(action.payload));
+      return state.set('test01', action.payload);
     default:
       return state;
   }

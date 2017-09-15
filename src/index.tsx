@@ -14,6 +14,7 @@ import * as ReactDOM from 'react-dom';
 import './assets/stylesheet/style.css';
 import rootEpic from './dataflow/epic/Epic';
 import rootLogic from './dataflow/logic/Logic';
+import { createImmutableActionMiddleware } from './dataflow/middleware/index';
 import rootReducer from './dataflow/reducer/Reducer';
 import FunctionalContainer from './simple/functional/FunctionalContainer';
 import ApolloContainer from './simple/react-apollo/ApolloContainer';
@@ -38,7 +39,7 @@ const apolloClient = new ApolloClient({
 
 const networkClient = new NetworkClient();
 
-const store = configureApolloStore({}, apolloClient, networkClient, rootReducer, rootLogic, rootEpic);
+const store = configureApolloStore({}, apolloClient, networkClient, rootReducer, rootLogic, rootEpic, [ createImmutableActionMiddleware() ]);
 
 const ApolloApp = (
   <MarioProvider client={apolloClient} store={store}>
