@@ -15,7 +15,6 @@ export default (ingoreActionTypes: string[] = []) => {
     }
 
     if (action.payload && typeof action.payload === 'object' && !contains(ingoreActionTypes, action.type)) {
-      console.log('========');
       return next({
         type: action.type,
         payload: fromJS(action.payload),

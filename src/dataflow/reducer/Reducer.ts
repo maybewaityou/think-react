@@ -21,11 +21,11 @@ function networkReducer($state: Map<string, any> = $initializeNetworkState, acti
   case FETCH_HOME_DATA:
     return $state
       .set('isSuccess', true)
-      .set('homeData', fromJS(action.payload));
+      .set('homeData', action.payload);
   case ERROR:
     return $state
       .set('isSuccess', false)
-      .set('error', fromJS(action.payload));
+      .set('error', action.payload);
   default:
     return $state;
   }
