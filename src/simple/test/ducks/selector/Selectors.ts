@@ -11,7 +11,7 @@ import { log, toString } from 'mario-utilities';
 
 const test00Selector = createSelector([
   (state: any) => state.testReducer.get('test00'),
-], (result: any) => result.toJS());
+], (result: any) => result);
 
 export default (state: any) => ({
   model: test00Selector(state),
