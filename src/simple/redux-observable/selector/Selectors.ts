@@ -39,11 +39,11 @@ const article = new schema.Entity('articles', {
 
 const normalizeData = normalize(originData, article);
 
-const $getHomeData = (state: any) => state.$networkReducer.get('homeData');
+const $getHomeData = (state: any) => state.networkReducer.get('homeData');
 
-const $getError = (state: any) => state.$networkReducer.get('error');
+const $getError = (state: any) => state.networkReducer.get('error');
 
-const isSuccess = (state: any) => state.$networkReducer.get('isSuccess');
+const isSuccess = (state: any) => state.networkReducer.get('isSuccess');
 
 /**
  * 计算或组装state
