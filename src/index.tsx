@@ -6,7 +6,7 @@
  *
  */
 import 'babel-polyfill';
-import { ApolloClient, configureApolloStore, createNetworkInterface, MarioProvider } from 'mario-ducks';
+import { ApolloClient, configureApolloStore, createImmutableActionMiddleware, createNetworkInterface, MarioProvider } from 'mario-ducks';
 import { NetworkClient } from 'mario-utilities';
 import * as React from 'react';
 import Perf from 'react-addons-perf';
@@ -14,7 +14,6 @@ import * as ReactDOM from 'react-dom';
 import './assets/stylesheet/style.css';
 import rootEpic from './dataflow/epic/Epic';
 import rootLogic from './dataflow/logic/Logic';
-import { createImmutableActionMiddleware } from './dataflow/middleware/index';
 import rootReducer from './dataflow/reducer/Reducer';
 import FunctionalContainer from './simple/functional/FunctionalContainer';
 import ApolloContainer from './simple/react-apollo/ApolloContainer';

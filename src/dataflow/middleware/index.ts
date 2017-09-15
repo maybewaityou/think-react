@@ -5,5 +5,3 @@
  * description:
  *
  */
-
-export { default as createImmutableActionMiddleware } from './immutable-action/ImmutableActionMiddleware';
