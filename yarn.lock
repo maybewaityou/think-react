@@ -5657,19 +5657,19 @@ map-visit@^0.1.5:
     lazy-cache "^2.0.1"
     object-visit "^0.3.4"
 
-mario-architecture-components@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/mario-architecture-components/-/mario-architecture-components-0.0.5.tgz#d5a88b4b904b78e712e6b2bafcac800bf0ded67a"
+mario-architecture-components@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/mario-architecture-components/-/mario-architecture-components-0.0.6.tgz#2aab8c5010cfcbfcfd0320e5069921e2ff897331"
   dependencies:
-    mario-pure "^0.0.2"
+    mario-pure "^0.0.4"
     rxjs "^5.4.3"
 
-mario-ducks@^0.0.61:
-  version "0.0.61"
-  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.61.tgz#84f3fd597d7f34eec0d0e54a32d0731178cba8a5"
+mario-ducks@^0.0.63:
+  version "0.0.63"
+  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.63.tgz#3723e131f6ec2ffc226cb375c69c4445ee5e8ab0"
   dependencies:
     immutable "^3.8.1"
-    mario-utilities "^0.0.17"
+    mario-utilities "^0.0.19"
     ramda "^0.24.1"
     react-apollo "^1.4.15"
     react-redux "^5.0.5"
@@ -5677,21 +5677,21 @@ mario-ducks@^0.0.61:
     redux-logic "^0.12.2"
     redux-observable "^0.14.1"
 
-mario-pure@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/mario-pure/-/mario-pure-0.0.2.tgz#762edf1bc1e47898dfe7cc9c94a2dc3f7a14bbc4"
-  dependencies:
-    immutable "^3.8.1"
-
 mario-pure@^0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/mario-pure/-/mario-pure-0.0.4.tgz#30229b4e45a019e3319238db330890e6321ab689"
   dependencies:
     immutable "^3.8.1"
 
-mario-utilities@^0.0.17:
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/mario-utilities/-/mario-utilities-0.0.17.tgz#d8e3b94eb921d3ba0dda925c2bf77915bcec0f7e"
+mario-pure@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/mario-pure/-/mario-pure-0.0.5.tgz#cc87211d1a0f5f5f0fd80df1a6a0b75489f4f73e"
+  dependencies:
+    immutable "^3.8.1"
+
+mario-utilities@^0.0.19:
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/mario-utilities/-/mario-utilities-0.0.19.tgz#cd762126eb7cf4da45b5a86cebe2a1d503342ea1"
   dependencies:
     rxjs "^5.4.2"
 
