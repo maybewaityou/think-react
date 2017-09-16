@@ -5683,9 +5683,9 @@ mario-pure@^0.0.2:
   dependencies:
     immutable "^3.8.1"
 
-mario-pure@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/mario-pure/-/mario-pure-0.0.3.tgz#c1ee41a7fd72b8424926d2222e2bbb28d7e078f4"
+mario-pure@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/mario-pure/-/mario-pure-0.0.4.tgz#30229b4e45a019e3319238db330890e6321ab689"
   dependencies:
     immutable "^3.8.1"
 
