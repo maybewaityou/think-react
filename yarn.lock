@@ -5657,7 +5657,7 @@ map-visit@^0.1.5:
     lazy-cache "^2.0.1"
     object-visit "^0.3.4"
 
-mario-architecture-components@^0.0.6:
+mario-architecture-components@0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/mario-architecture-components/-/mario-architecture-components-0.0.6.tgz#2aab8c5010cfcbfcfd0320e5069921e2ff897331"
   dependencies:
@@ -5680,12 +5680,6 @@ mario-ducks@^0.0.63:
 mario-pure@^0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/mario-pure/-/mario-pure-0.0.4.tgz#30229b4e45a019e3319238db330890e6321ab689"
-  dependencies:
-    immutable "^3.8.1"
-
-mario-pure@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/mario-pure/-/mario-pure-0.0.5.tgz#cc87211d1a0f5f5f0fd80df1a6a0b75489f4f73e"
   dependencies:
     immutable "^3.8.1"
 
