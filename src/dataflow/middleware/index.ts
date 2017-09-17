@@ -5,3 +5,8 @@
  * description:
  *
  */
+import { createImmutableActionMiddleware } from 'mario-ducks';
+
+export default [
+  createImmutableActionMiddleware(),
+];
