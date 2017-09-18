@@ -20,11 +20,9 @@ export default class extends ViewModel<IViewModelProps> {
 
   }
 
-  public model = () => {
-    return ({
-      model: this.props.model,
-    });
-  }
+  public model = () => ({
+    model: this.props.model,
+  })
 
   public handlers = () => ({
     handleTest00Click: () => {
