@@ -40,6 +40,7 @@
     "lodash": "^4.17.4",
     "mario-architecture-components": "^0.0.7",
     "mario-ducks": "^0.0.63",
+    "mario-extension": "^0.0.3",
     "normalizr": "^3.2.3",
     "pug": "^2.0.0-rc.3",
     "react": "^15.6.1",

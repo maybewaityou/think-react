@@ -6,12 +6,14 @@
  *
  */
 import 'babel-polyfill';
+import 'mario-extension';
+import './assets/stylesheet/style.css';
+
 import { ApolloClient, configureApolloStore, configureStore, createNetworkInterface, MarioProvider } from 'mario-ducks';
 import { NetworkClient } from 'mario-utilities';
 import * as React from 'react';
 import Perf from 'react-addons-perf';
 import * as ReactDOM from 'react-dom';
-import './assets/stylesheet/style.css';
 import rootEpic from './dataflow/epic/Epic';
 import rootLogic from './dataflow/logic/Logic';
 import middlewares from './dataflow/middleware/index';
