@@ -18,7 +18,6 @@ import rootEpic from './dataflow/epic/Epic';
 import rootLogic from './dataflow/logic/Logic';
 import middlewares from './dataflow/middleware/index';
 import rootReducer from './dataflow/reducer/Reducer';
-import { compose } from './main/utilities/functional/Functions';
 import FunctionalContainer from './simple/functional/FunctionalContainer';
 import ApolloContainer from './simple/react-apollo/ApolloContainer';
 import ApolloStatelessContainer from './simple/react-apollo/ApolloStatelessContainer';
@@ -26,17 +25,6 @@ import RecomposeContainer from './simple/recompose/RecomposeContainer';
 import ObservableContainer from './simple/redux-observable/ObservableContainer';
 import StreamContainer from './simple/stream/StreamContainer';
 import { TestContainer } from './simple/test/index';
-
-function sum(x: any, y: any) {
-  return x + y;
-}
-function multiply(x: any) {
-  return (y: any) => x * y;
-}
-function add(x: any) {
-  return x + 1;
-}
-console.log(compose(add, multiply(2), sum)(1, 1));
 
 /* 性能分析 */
 const win: any = window;
