@@ -26,7 +26,16 @@ export const map = (f: any) => (array: any[]) => array.map(f);
 
 export const join = (s: string) => (array: any[]) => array.join(s);
 
-export const compose = R.compose;
+// export const compose = R.compose;
+export const compose = (...funcs: any[]) => {
+  if (funcs.length === 0) {
+    return (args: any) => args;
+  }
+  if (funcs.length === 1) {
+    return funcs[0];
+  }
+  return funcs.reduce((f, g) => (...args: any[]) => f(g(...args)));
+};
 
 export const reduce = (f: any, x: any) => (array: any[]) => array.reduce(f, x);
 
