@@ -5393,6 +5393,10 @@ mario-extension@^0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/mario-extension/-/mario-extension-0.0.5.tgz#17f89d10146f13aa24e78812cd01e727b937e2fb"
 
+mario-functional@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/mario-functional/-/mario-functional-0.0.2.tgz#90e62c9fd2d1dea378b4509a01c783c292fc34bc"
+
 mario-pure@^0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/mario-pure/-/mario-pure-0.0.8.tgz#268673273c22e8a8fd9d7ab00c574c947c991e07"
