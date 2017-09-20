@@ -7,7 +7,7 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 const env = process.env.NODE_ENV;
 
-const distPath = 'dist';
+const buildPath = 'build';
 const publicDirName = '/';
 const templatePath = 'src/assets/template/index.html';
 
@@ -20,11 +20,11 @@ const webpackConfig = {
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, distPath),
+    path: path.resolve(__dirname, buildPath),
   },
   devServer: {
     hot: true, // Tell the dev-server we're using HMR
-    contentBase: path.resolve(__dirname, distPath),
+    contentBase: path.resolve(__dirname, buildPath),
     port: 9000
   },
   devtool: 'source-map',
@@ -37,7 +37,7 @@ const webpackConfig = {
       __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false'))
     }),
     new webpack.HotModuleReplacementPlugin(), // Enable HMR
-    new CleanWebpackPlugin([distPath]),
+    new CleanWebpackPlugin([buildPath]),
     new HtmlWebpackPlugin({
       title: 'think-react',
       template: templatePath,

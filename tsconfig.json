@@ -23,7 +23,7 @@
     "target": "es2015",
     "module": "es2015",
     "jsx": "react",
-    "outDir": "./dist/",
+    "outDir": "./build/",
     "rootDir": "src",
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
@@ -47,7 +47,7 @@
     "./src/**/*"
   ],
   "exclude": [
-    "dist",
+    "build",
     "node_modules",
     "./src/declare"
   ],
