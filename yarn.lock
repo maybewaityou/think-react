@@ -5376,12 +5376,12 @@ mario-architecture-components@^0.0.8:
     mario-pure "^0.0.8"
     rxjs "^5.4.3"
 
-mario-ducks@^0.0.64:
-  version "0.0.64"
-  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.64.tgz#1ba0f3162fdfdd7ec8cb52daca4c81c800f43eb4"
+mario-ducks@^0.0.65:
+  version "0.0.65"
+  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.65.tgz#cdc09abd123ff276ef7028239447c9e7abc1d7d8"
   dependencies:
     immutable "^3.8.1"
-    mario-utilities "^0.0.19"
+    mario-utilities "^0.0.20"
     ramda "^0.24.1"
     react-apollo "^1.4.15"
     react-redux "^5.0.5"
@@ -5393,9 +5393,9 @@ mario-extension@^0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/mario-extension/-/mario-extension-0.0.5.tgz#17f89d10146f13aa24e78812cd01e727b937e2fb"
 
-mario-functional@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/mario-functional/-/mario-functional-0.0.2.tgz#90e62c9fd2d1dea378b4509a01c783c292fc34bc"
+mario-functional@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/mario-functional/-/mario-functional-0.0.3.tgz#eeb45c701fa8fc6d80a960bd3622f179cb76f295"
 
 mario-pure@^0.0.8:
   version "0.0.8"
@@ -5403,9 +5403,9 @@ mario-pure@^0.0.8:
   dependencies:
     immutable "^3.8.1"
 
-mario-utilities@^0.0.19:
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/mario-utilities/-/mario-utilities-0.0.19.tgz#cd762126eb7cf4da45b5a86cebe2a1d503342ea1"
+mario-utilities@^0.0.20:
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/mario-utilities/-/mario-utilities-0.0.20.tgz#0a836e9a2f498e16307d56fff2c25bfdd4a81ab6"
   dependencies:
     rxjs "^5.4.2"
 
