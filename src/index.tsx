@@ -6,7 +6,7 @@
  *
  */
 import 'babel-polyfill';
-// import 'mario-extension';
+import 'mario-extension';
 import './assets/stylesheet/style.css';
 
 import { ApolloClient, configureApolloStore, configureStore, createNetworkInterface, MarioProvider } from 'mario-ducks';

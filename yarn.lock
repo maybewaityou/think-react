@@ -5389,9 +5389,9 @@ mario-ducks@^0.0.68:
     redux-logic "^0.12.2"
     redux-observable "^0.14.1"
 
-mario-extension@^0.0.14:
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/mario-extension/-/mario-extension-0.0.14.tgz#7f2f37c8370f7d5f67f0f267ba7961c1ef618fdc"
+mario-extension@^0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/mario-extension/-/mario-extension-0.0.16.tgz#c5dc14ef13770c7758b9d15cedb8d24a817c259f"
 
 mario-functional@^0.0.3:
   version "0.0.3"
