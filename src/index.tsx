@@ -44,7 +44,7 @@ const networkClient = new NetworkClient();
 const store = configureApolloStore({}, apolloClient, networkClient, rootReducer, rootLogic, rootEpic, middlewares);
 
 const ApolloApp = (
-  <MarioProvider client={apolloClient} store={store}>
+  <MarioProvider store={store} client={apolloClient}>
     <TestContainer />
   </MarioProvider>
 );
