@@ -6,7 +6,7 @@
  *
  */
 import 'babel-polyfill';
-import 'mario-extension';
+// import 'mario-extension';
 import './assets/stylesheet/style.css';
 
 import { ApolloClient, configureApolloStore, configureStore, createNetworkInterface, MarioProvider } from 'mario-ducks';
@@ -39,7 +39,7 @@ const apolloClient = new ApolloClient({
   }),
 });
 
-const networkClient = new NetworkClient();
+const networkClient = NetworkClient.getInstance();
 
 const store = configureApolloStore({}, apolloClient, networkClient, rootReducer, rootLogic, rootEpic, middlewares);
 
