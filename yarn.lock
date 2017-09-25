@@ -5376,12 +5376,12 @@ mario-architecture-components@^0.0.8:
     mario-pure "^0.0.8"
     rxjs "^5.4.3"
 
-mario-ducks@^0.0.68:
-  version "0.0.68"
-  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.68.tgz#3d8c6a53473537a1b48f1874584270592fbfc57f"
+mario-ducks@^0.0.70:
+  version "0.0.70"
+  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.70.tgz#f568f005259bdf1782255909d190e8696cfc55eb"
   dependencies:
     immutable "^3.8.1"
-    mario-utilities "^0.0.23"
+    mario-utilities "^0.0.25"
     ramda "^0.24.1"
     react-apollo "^1.4.15"
     react-redux "^5.0.5"
@@ -5403,9 +5403,9 @@ mario-pure@^0.0.8:
   dependencies:
     immutable "^3.8.1"
 
-mario-utilities@^0.0.23:
-  version "0.0.23"
-  resolved "https://registry.yarnpkg.com/mario-utilities/-/mario-utilities-0.0.23.tgz#73cac7ddcae7ea28866fb2ec74ac274ffaa25471"
+mario-utilities@^0.0.25:
+  version "0.0.25"
+  resolved "https://registry.yarnpkg.com/mario-utilities/-/mario-utilities-0.0.25.tgz#92e61976149c0c0a116691e83d93e37e785d068c"
   dependencies:
     rxjs "^5.4.2"
 
