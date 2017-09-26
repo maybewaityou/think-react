@@ -6,8 +6,10 @@
  *
  */
 import { fetchHomeCurryingEpic, fetchHomeEpic } from '../../simple/redux-observable/epic/Epics';
+import { testEpics } from '../../simple/test/index';
 
 export default [
   fetchHomeEpic,
   fetchHomeCurryingEpic,
+  ...testEpics,
 ];
