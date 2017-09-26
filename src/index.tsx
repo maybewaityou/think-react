@@ -11,7 +11,7 @@ import './assets/stylesheet/style.css';
 import { ApolloClient, configureApolloStore, configureStore, createNetworkInterface, MarioProvider } from 'mario-ducks';
 import { NetworkClient } from 'mario-utilities';
 import * as React from 'react';
-import Perf from 'react-addons-perf';
+// import Perf from 'react-addons-perf';
 import * as ReactDOM from 'react-dom';
 import rootEpic from './dataflow/epic/Epic';
 import rootLogic from './dataflow/logic/Logic';
@@ -26,8 +26,8 @@ import StreamContainer from './simple/stream/StreamContainer';
 import { TestContainer } from './simple/test/index';
 
 /* 性能分析 */
-const win: any = window;
-win.Perf = Perf;
+// const win: any = window;
+// win.Perf = Perf;
 
 /* 清除 warning */
 console.warn = () => ({});
