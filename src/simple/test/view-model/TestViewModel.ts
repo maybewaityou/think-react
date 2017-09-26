@@ -5,9 +5,8 @@
  * description:
  *
  */
-// import { ViewModel } from 'mario-architecture-components';
+import { Event, ViewModel } from 'mario-architecture-components';
 import { log } from 'mario-utilities';
-import { Event, ViewModel } from '../../../arch/index';
 import { TEST_ACTION, TEST_ACTION_UNACCEPT } from '../ducks/actions/index';
 
 export interface IViewModelProps {
