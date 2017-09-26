@@ -42,10 +42,10 @@ const networkClient = NetworkClient.getInstance();
 
 const store = configureApolloStore({}, apolloClient, networkClient, rootReducer, rootLogic, rootEpic, middlewares);
 
-const ApolloApp = (
+const App = (
   <MarioProvider store={store} client={apolloClient}>
     <TestContainer />
   </MarioProvider>
 );
 
-ReactDOM.render(ApolloApp, document.getElementById('app'));
+ReactDOM.render(App, document.getElementById('app'));
