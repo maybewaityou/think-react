@@ -18,9 +18,22 @@ export default abstract class Lifecycle {
   public abstract didUpdate(): any;
   public abstract willUnmount(): any;
 
+  public abstract getCurrentState(): State;
+
 }
 
 export enum Event {
+  ON_CREATE,
+  WILL_MOUNT,
+  DID_MOUNT,
+  RECEIVE_PROPS,
+  SHOULD_UPDATE,
+  WILL_UPDATE,
+  DID_UPDATE,
+  WILL_UNMOUNT,
+}
+
+export enum State {
   ON_CREATE,
   WILL_MOUNT,
   DID_MOUNT,

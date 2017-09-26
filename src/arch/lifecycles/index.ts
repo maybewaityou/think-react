@@ -6,4 +6,4 @@
  *
  */
 
-export { default as Lifecycle, Event  } from './Lifecycle';
+export { default as Lifecycle, Event, State } from './Lifecycle';
