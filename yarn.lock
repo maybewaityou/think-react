@@ -5369,9 +5369,9 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-mario-architecture-components@^0.0.8:
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/mario-architecture-components/-/mario-architecture-components-0.0.8.tgz#76899cf234f16294bd6fd16cdeca4d9b5a930534"
+mario-architecture-components@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/mario-architecture-components/-/mario-architecture-components-0.0.10.tgz#b2730e436ede34f310efca3d0762fabc088896d4"
   dependencies:
     mario-pure "^0.0.8"
     rxjs "^5.4.3"
