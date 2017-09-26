@@ -6,4 +6,4 @@
  *
  */
 
-export {  } from './Epics';
+export { default as testEpics } from './Epics';

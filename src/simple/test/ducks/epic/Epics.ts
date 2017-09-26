@@ -8,3 +8,7 @@
 import { epicCreator } from 'mario-ducks';
 import { ActionsObservable, combineEpics } from 'redux-observable';
 import { Observable } from 'rxjs';
+
+export default [
+
+];

@@ -8,6 +8,6 @@
 
 export { TestContainer } from './container/index';
 export {  } from './task/index';
-export {  } from './ducks/epic/index';
-export {  } from './ducks/logic/index';
+export { testEpics } from './ducks/epic/index';
+export { testLogics } from './ducks/logic/index';
 export { testReducer } from './ducks/reducer/index';
