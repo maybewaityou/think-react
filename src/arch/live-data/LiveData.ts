@@ -30,7 +30,7 @@ export default class LiveData<P> implements Lifecycle {
 
   public onCreate(props: Readonly<P>, context?: any) {
     this.lifecycleObserver ? this.lifecycleObserver.next(Event.ON_CREATE) : emptyFunction();
-    this.mCurrentState = State.ON_CREATE;
+    this.mCurrentState = State.CREATEED;
   }
 
   public willMount() {
@@ -40,18 +40,16 @@ export default class LiveData<P> implements Lifecycle {
 
   public didMount() {
     this.lifecycleObserver ? this.lifecycleObserver.next(Event.DID_MOUNT) : emptyFunction();
-    this.mCurrentState = State.DID_MOUNT;
+    this.mCurrentState = State.MOUNTED;
   }
 
   public receiveProps(props: Readonly<P>) {
     this.props$ = Observable.of(props);
     this.lifecycleObserver ? this.lifecycleObserver.next(Event.RECEIVE_PROPS) : emptyFunction();
-    this.mCurrentState = State.RECEIVE_PROPS;
   }
 
   public shouldUpdate(nextProps: Readonly<P>, nextState: Readonly<P>) {
     this.lifecycleObserver ? this.lifecycleObserver.next(Event.SHOULD_UPDATE) : emptyFunction();
-    this.mCurrentState = State.SHOULD_UPDATE;
     return true;
   }
 
@@ -62,7 +60,7 @@ export default class LiveData<P> implements Lifecycle {
 
   public didUpdate() {
     this.lifecycleObserver ? this.lifecycleObserver.next(Event.DID_UPDATE) : emptyFunction();
-    this.mCurrentState = State.DID_UPDATE;
+    this.mCurrentState = State.UPDATED;
   }
 
   public willUnmount() {

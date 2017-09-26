@@ -41,7 +41,6 @@ export default class extends ViewModel<IViewModelProps> {
       this.liveData.props$.subscribe((value: any) => {
         log(value);
       });
-      log(this.liveData.getCurrentState());
     },
   })
 

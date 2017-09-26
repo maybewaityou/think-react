@@ -34,12 +34,10 @@ export enum Event {
 }
 
 export enum State {
-  ON_CREATE,
+  CREATEED,
   WILL_MOUNT,
-  DID_MOUNT,
-  RECEIVE_PROPS,
-  SHOULD_UPDATE,
+  MOUNTED,
   WILL_UPDATE,
-  DID_UPDATE,
+  UPDATED,
   WILL_UNMOUNT,
 }
