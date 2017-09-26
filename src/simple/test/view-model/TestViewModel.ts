@@ -5,8 +5,9 @@
  * description:
  *
  */
-import { ViewModel } from 'mario-architecture-components';
+// import { ViewModel } from 'mario-architecture-components';
 import { log } from 'mario-utilities';
+import { ViewModel } from '../../../arch/index';
 import { TEST_ACTION, TEST_ACTION_UNACCEPT } from '../ducks/actions/index';
 
 export interface IViewModelProps {
@@ -17,7 +18,9 @@ export interface IViewModelProps {
 export default class extends ViewModel<IViewModelProps> {
 
   public onMount() {
-
+    this.liveData.lifecycle$.subscribe((value) => {
+      log(value);
+    });
   }
 
   public model = () => ({
@@ -35,6 +38,9 @@ export default class extends ViewModel<IViewModelProps> {
     },
     handleTest01Click: () => {
       this.props.actions(TEST_ACTION_UNACCEPT);
+      this.liveData.props$.subscribe((value: any) => {
+        log(value);
+      });
     },
   })
 

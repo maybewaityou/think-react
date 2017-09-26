@@ -10,9 +10,9 @@ import { createSelector } from 'mario-ducks';
 import { log, toString } from 'mario-utilities';
 
 const test00Selector = createSelector([
-  (state: any) => state.testReducer.get('test00'),
+  (testReducer: any) => testReducer.get('test00'),
 ], (test00Result: any) => test00Result);
 
 export default (state: any) => ({
-  model: test00Selector(state),
+  model: test00Selector(state.testReducer),
 });

@@ -5,8 +5,9 @@
  * description:
  *
  */
-import { inject, ViewModel } from 'mario-architecture-components';
+// import { inject, ViewModel } from 'mario-architecture-components';
 import { bind } from 'mario-ducks';
+import { inject, ViewModel } from '../../../arch/index';
 import { mapStateToProps } from '../ducks/selector/index';
 import { IViewModelProps, TestViewModel } from '../view-model/index';
 import { IViewProps, TestView } from '../view/index';
