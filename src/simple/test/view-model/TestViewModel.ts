@@ -7,7 +7,7 @@
  */
 // import { ViewModel } from 'mario-architecture-components';
 import { log } from 'mario-utilities';
-import { ViewModel } from '../../../arch/index';
+import { Event, ViewModel } from '../../../arch/index';
 import { TEST_ACTION, TEST_ACTION_UNACCEPT } from '../ducks/actions/index';
 
 export interface IViewModelProps {
@@ -17,9 +17,9 @@ export interface IViewModelProps {
 
 export default class extends ViewModel<IViewModelProps> {
 
-  public onMount() {
-    this.liveData.lifecycle$.subscribe((value) => {
-      log(value);
+  public onCreate(props: Readonly<any>, context?: any) {
+    this.liveData.lifecycle$.subscribe((eventType: Event) => {
+      log(eventType);
     });
   }
 

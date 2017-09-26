@@ -5,53 +5,52 @@
  * description:
  *
  */
+import { PureComponent } from 'mario-pure';
 import * as React from 'react';
-import { Observable } from 'rxjs';
-import { DataSource } from '../data-source/index';
-import { ViewModel, ViewModelComponent, ViewModelProviders } from '../view-model/index';
-
-class TestDataSource extends DataSource<any> {
-
-  private props: Readonly<any>;
-
-  constructor(props: Readonly<any>) {
-    super();
-    this.props = props;
-  }
-
-  public save() {
-
-  }
-
-  public get() {
-    const { success, $data, $error } = this.props;
-    return { $data: success ? $data : $error };
-  }
-
-  public refresh() {
-
-  }
-
-  public delete() {
-
-  }
-
-  public complete() {
-
-  }
-
-}
+import { ViewModel, ViewModelProviders } from '../view-model/index';
 
 export default <VP, VMP, VM extends ViewModel<VMP>>(RenderedView: React.ComponentClass<VP> | React.StatelessComponent<VP>, ViewModelClass: new () => VM | any) =>  (
-  class extends ViewModelComponent<VMP, any, VM> {
+  class extends PureComponent<VMP, any> {
 
-    constructor(props: Readonly<VMP>) {
-      super(props);
+    public viewModel: VM;
+
+    constructor(props: Readonly<VMP>, context?: any) {
+      super(props, context);
 
       this.viewModel = ViewModelProviders.of(this).get(ViewModelClass).init(props);
+      this.viewModel.onCreate(props, context);
+    }
+
+    public componentWillMount() {
+      this.viewModel.willMount();
+      this.viewModel.liveData.willMount();
+    }
+
+    public componentDidMount() {
+      this.viewModel.didMount();
+      this.viewModel.liveData.didMount();
+    }
+
+    public componentWillReceiveProps(nextProps: Readonly<VMP>) {
+      this.viewModel.receiveProps(nextProps);
+      this.viewModel.liveData.receiveProps(nextProps);
+    }
+
+    public shouldComponentUpdate(nextProps: Readonly<any>, nextState: Readonly<any>) {
+      this.viewModel.liveData.shouldUpdate(nextProps, nextState);
+      return super.shouldComponentUpdate(nextProps, nextState);
+    }
+
+    public componentWillUpdate(nextProps: Readonly<any>, nextState: Readonly<any>) {
+      this.viewModel.liveData.willUpdate(nextProps, nextState);
+    }
+
+    public componentDidUpdate() {
+      this.viewModel.liveData.didUpdate();
     }
 
     public componentWillUnmount() {
+      this.viewModel.liveData.willUnmount();
       this.viewModel.onCleared();
       ViewModelProviders.of(this).remove(ViewModelClass);
     }

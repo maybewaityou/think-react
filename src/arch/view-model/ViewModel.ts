@@ -12,8 +12,8 @@ export default abstract class ViewModel<P> {
   public abstract model: () => any;
   public abstract handlers: () => any;
 
+  public liveData: LiveData<Readonly<P>>;
   protected props: Readonly<P>;
-  protected liveData: LiveData<Readonly<P>>;
 
   public init = (props: Readonly<P>) => {
     this.props = props;
@@ -21,12 +21,11 @@ export default abstract class ViewModel<P> {
     return this;
   }
 
-  public onMount() {}
-  public onReceiveProps(props: Readonly<P>) {}
-
-  public update = (props: Readonly<P>) => {
+  public onCreate(props: Readonly<any>, context?: any) {}
+  public willMount() {}
+  public didMount() {}
+  public receiveProps(props: Readonly<P>) {
     this.props = props;
-    this.liveData.update(props);
   }
 
   public abstract onCleared(): any;

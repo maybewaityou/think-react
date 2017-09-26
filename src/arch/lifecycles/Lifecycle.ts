@@ -9,25 +9,24 @@ import ILifecycleObserver from './ILifecycleObserver';
 
 export default abstract class Lifecycle {
 
+  public abstract onCreate(props: Readonly<any>, context?: any): any;
   public abstract willMount(): any;
   public abstract didMount(): any;
   public abstract receiveProps(props: Readonly<any>): any;
-
-  public abstract addObserver(o: ILifecycleObserver): any;
-  public abstract removeObserver(o: ILifecycleObserver): any;
-  public abstract getCurrentState(): State;
+  public abstract shouldUpdate(nextProps: Readonly<any>, nextState: Readonly<any>): boolean;
+  public abstract willUpdate(nextProps: Readonly<any>, nextState: Readonly<any>): any;
+  public abstract didUpdate(): any;
+  public abstract willUnmount(): any;
 
 }
 
 export enum Event {
+  ON_CREATE,
   WILL_MOUNT,
   DID_MOUNT,
   RECEIVE_PROPS,
-}
-
-export enum State {
-  DESTROYED = 1,
-  INITIALIZED,
-  MOUNTED,
-  RECEIVED_PROPS,
+  SHOULD_UPDATE,
+  WILL_UPDATE,
+  DID_UPDATE,
+  WILL_UNMOUNT,
 }

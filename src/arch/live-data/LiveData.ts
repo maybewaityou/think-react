@@ -6,26 +6,58 @@
  *
  */
 import { Observable, Observer } from 'rxjs';
-import { Event, Lifecycle, State } from '../lifecycles/index';
+import { Event, Lifecycle } from '../lifecycles/index';
 
-export default class LiveData<P> {
+const emptyFunction = () => {
 
-  public lifecycle$: Observable<Lifecycle>;
+};
+
+export default class LiveData<P> implements Lifecycle {
+
+  public lifecycle$: Observable<Event>;
   public props$: Observable<Readonly<P>>;
+  public lifecycleObserver: Observer<Event> | any;
 
-  private lifecycleObserver: Observer<Event>;
-
-  public constructor(props: Readonly<P>) {
+  public constructor(props: Readonly<P>, context?: any) {
     this.props$ = Observable.of(props);
     this.lifecycle$ = Observable.create((observer: Observer<Event>) => {
       this.lifecycleObserver = observer;
-      observer.next(Event.DID_MOUNT);
+      this.onCreate(props, context);
     });
   }
 
-  public update(props: Readonly<P>) {
+  public onCreate(props: Readonly<P>, context?: any) {
+    this.lifecycleObserver ? this.lifecycleObserver.next(Event.ON_CREATE) : emptyFunction();
+  }
+
+  public willMount() {
+    this.lifecycleObserver ? this.lifecycleObserver.next(Event.WILL_MOUNT) : emptyFunction();
+  }
+
+  public didMount() {
+    this.lifecycleObserver ? this.lifecycleObserver.next(Event.DID_MOUNT) : emptyFunction();
+  }
+
+  public receiveProps(props: Readonly<P>) {
     this.props$ = Observable.of(props);
-    this.lifecycleObserver.next(Event.RECEIVE_PROPS);
+    this.lifecycleObserver ? this.lifecycleObserver.next(Event.RECEIVE_PROPS) : emptyFunction();
+  }
+
+  public shouldUpdate(nextProps: Readonly<P>, nextState: Readonly<P>) {
+    this.lifecycleObserver ? this.lifecycleObserver.next(Event.SHOULD_UPDATE) : emptyFunction();
+    return true;
+  }
+
+  public willUpdate(nextProps: Readonly<P>, nextState: Readonly<P>) {
+    this.lifecycleObserver ? this.lifecycleObserver.next(Event.WILL_UPDATE) : emptyFunction();
+  }
+
+  public didUpdate() {
+    this.lifecycleObserver ? this.lifecycleObserver.next(Event.DID_UPDATE) : emptyFunction();
+  }
+
+  public willUnmount() {
+    this.lifecycleObserver ? this.lifecycleObserver.next(Event.WILL_UNMOUNT) : emptyFunction();
   }
 
 }
