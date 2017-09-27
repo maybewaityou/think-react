@@ -18,7 +18,7 @@ export default class extends ViewModel<IViewModelProps> {
 
   public onCreate(props: Readonly<any>, context?: any) {
     this.liveData.lifecycle$.subscribe((eventType: Event) => {
-      log(eventType);
+      log(Event[eventType]);
     });
   }
 
