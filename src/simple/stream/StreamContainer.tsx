@@ -6,13 +6,13 @@
  *
  */
 import { Map } from 'immutable';
+import { bind } from 'mario-ducks';
 import { PureComponent } from 'mario-pure';
 import { log } from 'mario-utilities';
 import * as React from 'react';
 import { bindActionCreators } from 'redux';
 import { Observable } from 'rxjs';
 import actionCreator from '../../dataflow/actions/ActionCreator';
-import { connection } from '../../dataflow/connect/connection';
 import StreamComponent from '../../main/components/high-order-component/stream/StreamComponent';
 import StreamView from './StreamView';
 
@@ -24,9 +24,7 @@ export interface IStreamContainerState {
   result: any;
 }
 
-@connection((state: any) => ({
-}), (dispatch: any) => ({
-  actions: bindActionCreators(actionCreator, dispatch),
+@bind((state: any) => ({
 }))
 export default class StreamContainer extends StreamComponent<IStreamContainerProps, IStreamContainerState> {
 

@@ -5,10 +5,10 @@
  * description:
  *
  */
-import { epicCreator } from 'mario-ducks';
+import { epicCreator, IAction } from 'mario-ducks';
 import { ActionsObservable, combineEpics } from 'redux-observable';
 import { Observable } from 'rxjs';
-import IAction, {
+import {
   CANCEL,
   ERROR,
   FETCH_HOME_DATA,

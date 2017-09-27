@@ -17,8 +17,3 @@ export const CALLBACK = 'CALLBACK';
 export const CONSECUTIVE = 'CONSECUTIVE';
 export const CONCURRENT = 'CONCURRENT';
 export const ERROR = 'ERROR';
-
-export default interface IAction {
-  type: string;
-  payload: any;
-}

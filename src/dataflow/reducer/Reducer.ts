@@ -6,9 +6,10 @@
  *
  */
 import Immutable, { fromJS, Map } from 'immutable';
+import { IAction } from 'mario-ducks';
 import { ReducersMapObject } from 'redux';
 import { testReducer } from '../../simple/test/index';
-import IAction, { DECREMENT, ERROR, FETCH_HOME_DATA, INCREMENT } from '../actions/Action';
+import { DECREMENT, ERROR, FETCH_HOME_DATA, INCREMENT } from '../actions/Action';
 
 const $initializeNetworkState: Map<string, any> = fromJS({
   isSuccess: false,
