@@ -37,7 +37,7 @@ export default class extends ViewModel<IViewModelProps> {
     },
     handleTest01Click: () => {
       this.props.actions(TEST_ACTION_UNACCEPT);
-      this.liveData.props$.subscribe((value: any) => {
+      this.liveData.props$.subscribe((value: Readonly<IViewModelProps>) => {
         log(value);
       });
     },
