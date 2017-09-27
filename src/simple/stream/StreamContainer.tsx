@@ -10,9 +10,7 @@ import { bind } from 'mario-ducks';
 import { PureComponent } from 'mario-pure';
 import { log } from 'mario-utilities';
 import * as React from 'react';
-import { bindActionCreators } from 'redux';
 import { Observable } from 'rxjs';
-import actionCreator from '../../dataflow/actions/ActionCreator';
 import StreamComponent from '../../main/components/high-order-component/stream/StreamComponent';
 import StreamView from './StreamView';
 
