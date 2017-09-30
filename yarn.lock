@@ -5388,9 +5388,9 @@ mario-architecture-components@^0.0.10:
     mario-pure "^0.0.8"
     rxjs "^5.4.3"
 
-mario-ducks@^0.0.70:
-  version "0.0.70"
-  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.70.tgz#f568f005259bdf1782255909d190e8696cfc55eb"
+mario-ducks@^0.0.71:
+  version "0.0.71"
+  resolved "https://registry.yarnpkg.com/mario-ducks/-/mario-ducks-0.0.71.tgz#4341b2ed76dccd67682d6b21def256a9935a50d6"
   dependencies:
     immutable "^3.8.1"
     mario-utilities "^0.0.25"
