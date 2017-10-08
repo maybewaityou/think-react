@@ -6,4 +6,4 @@
  *
  */
 
-export { default as testLogics } from './Logic';
+export { default as testLogics } from './Logics';
