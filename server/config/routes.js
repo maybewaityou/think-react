@@ -8,7 +8,6 @@
 const Router = require('koa-router');
 const graphqlHTTP = require('koa-graphql');
 const bodyParser = require('koa-bodyparser');
-const { graphqlKoa, graphiqlKoa } = require('apollo-server-koa');
 const App = require('../app/controllers/app');
 const Home = require('../app/controllers/home');
 const Users = require('../app/controllers/users');
