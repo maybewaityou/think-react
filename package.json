@@ -11,8 +11,7 @@
     "build:pro": "webpack --config config/webpack.pro.config.js",
     "analyzer": "webpack-bundle-analyzer stats.json"
   },
-  "pre-commit": [
-  ],
+  "pre-commit": [],
   "author": "MeePwn",
   "license": "ISC",
   "dependencies": {
