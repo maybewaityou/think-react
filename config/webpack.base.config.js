@@ -94,8 +94,9 @@ module.exports = {
       filename: '[name].[contenthash:8].css',
     }),
     new HtmlWebpackPlugin({
-      title: 'think react',
-      template: `${assetsPath}/template/index.ejs`
+      title: 'risk warning',
+      template: `${assetsPath}/template/index.ejs`,
+      favicon: `${assetsPath}/image/favicon.ico`
     }),
     new ForkTsCheckerWebpackPlugin(),
     new NamedModulesPlugin(),
