@@ -57,5 +57,5 @@ dist:dll
 .uglify-cache
 .uglify-dll-cache
 stats.json
-# package-lock.json
-# yarn.lock
+package-lock.json
+yarn.lock
