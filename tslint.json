@@ -105,9 +105,7 @@
     "no-empty-interface": false,
     "object-literal-sort-keys": false,
     "max-line-length": false,
-    "max-classes-per-file": false,
-    "no-empty": false,
-    "only-arrow-functions": false
+    "no-empty": false
   },
   "rulesDirectory": []
 }

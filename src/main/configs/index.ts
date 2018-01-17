@@ -5,3 +5,5 @@
  * description:
  *
  */
+
+export { default as routesConfig } from './routes-config/index';

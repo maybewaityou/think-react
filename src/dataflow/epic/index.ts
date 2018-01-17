@@ -5,3 +5,5 @@
  * description:
  *
  */
+
+export { default as rootEpic } from './Epic';

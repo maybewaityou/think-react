@@ -5,8 +5,6 @@
  * description:
  *
  */
-import { testLogics } from '../../simple/test/index';
 
 export default [
-  ...testLogics,
 ];

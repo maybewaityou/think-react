@@ -5,47 +5,32 @@
  * description:
  *
  */
-import 'babel-polyfill';
-import './assets/stylesheet/style.css';
+import '../assets/stylesheet/style.scss';
 
-import { ApolloClient, configureApolloStore, configureStore, createNetworkInterface, MarioProvider } from 'mario-ducks';
+import { configureStore, Provider } from 'mario-ducks';
 import { NetworkClient } from 'mario-utilities';
-import * as React from 'react';
-// import Perf from 'react-addons-perf';
-import * as ReactDOM from 'react-dom';
-import rootEpic from './dataflow/epic/Epic';
-import rootLogic from './dataflow/logic/Logic';
+import React from 'react';
+import { render } from 'react-dom';
+import { rootEpic } from './dataflow/epic/index';
+import { rootLogic } from './dataflow/logic/index';
 import middlewares from './dataflow/middleware/index';
-import rootReducer from './dataflow/reducer/Reducer';
-import FunctionalContainer from './simple/functional/FunctionalContainer';
-import ApolloContainer from './simple/react-apollo/ApolloContainer';
-import ApolloStatelessContainer from './simple/react-apollo/ApolloStatelessContainer';
-import RecomposeContainer from './simple/recompose/RecomposeContainer';
-import ObservableContainer from './simple/redux-observable/ObservableContainer';
-import StreamContainer from './simple/stream/StreamContainer';
-import { TestContainer } from './simple/test/index';
+import { rootReducer } from './dataflow/reducer/index';
+import TestContainer from './pages/index';
 
-/* 性能分析 */
-// const win: any = window;
-// win.Perf = Perf;
+const networkClient = NetworkClient.getInstance().setConfig({ silence: false });
 
-/* 清除 warning */
-console.warn = () => ({});
+const store = configureStore({}, networkClient, rootReducer, rootLogic, rootEpic, middlewares);
 
-const apolloClient = new ApolloClient({
-  networkInterface: createNetworkInterface({
-    uri: 'http://localhost:9999/pages/graphql',
-  }),
-});
+function renderApp() {
+  render((
+    <Provider store={store}>
+      <TestContainer />
+    </Provider>
+  ), window.document.getElementById('app'));
+}
 
-const networkClient = NetworkClient.getInstance();
+renderApp();
 
-const store = configureApolloStore({}, apolloClient, networkClient, rootReducer, rootLogic, rootEpic, middlewares);
-
-const App = (
-  <MarioProvider store={store} client={apolloClient}>
-    <TestContainer />
-  </MarioProvider>
-);
-
-ReactDOM.render(App, document.getElementById('app'));
+if (module.hot) {
+  module.hot.accept(['./pages/index'], renderApp);
+}

@@ -5,3 +5,5 @@
  * description:
  *
  */
+
+export { default as rootReducer } from './Reducer';

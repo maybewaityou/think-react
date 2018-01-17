@@ -5,3 +5,5 @@
  * description:
  *
  */
+
+export { DataUtility, CryptoUtility } from './data/index';

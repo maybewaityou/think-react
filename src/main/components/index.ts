@@ -5,3 +5,5 @@
  * description:
  *
  */
+
+export { Button } from './views/index';
