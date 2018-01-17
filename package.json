@@ -9,9 +9,10 @@
     "build:dll": "webpack --config config/webpack.dll.config.js",
     "build:dev": "webpack --config config/webpack.dev.config.js --profile --json > stats.json",
     "build:pro": "webpack --config config/webpack.pro.config.js",
-    "analyzer": "webpack-bundle-analyzer stats.json"
+    "analyzer": "webpack-bundle-analyzer stats.json",
+    "lint": "tslint -c tslint.json 'src/**/*.*'"
   },
-  "pre-commit": [],
+  "pre-commit": [ "lint" ],
   "author": "MeePwn",
   "license": "ISC",
   "dependencies": {

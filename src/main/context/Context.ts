@@ -5,9 +5,10 @@
  * description:
  *
  */
+import { log } from 'mario-utilities';
 
 export default {
   test: () => {
-    console.log('=========');
+    log('=========');
   },
 };
