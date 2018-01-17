@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pre": "",
     "start": "webpack-dev-server --config config/webpack.dev.config.js --devtool eval --progress --colors --inline --hot",
     "clear": "rm -rf dist && rm -rf dist:dll && rm -rf .uglify-cache && rm -rf .uglify-dll-cache",
     "build:dll": "webpack --config config/webpack.dll.config.js",
@@ -12,6 +11,8 @@
     "build:pro": "webpack --config config/webpack.pro.config.js",
     "analyzer": "webpack-bundle-analyzer stats.json"
   },
+  "pre-commit": [
+  ],
   "author": "MeePwn",
   "license": "ISC",
   "dependencies": {
