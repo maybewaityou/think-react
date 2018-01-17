@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config config/webpack.dev.config.js --devtool eval --progress --colors --inline --hot",
-    "clear": "rm -rf dist && rm -rf dist:dll && rm -rf .uglify-cache && rm -rf .uglify-dll-cache",
+    "clear": "rm -rf dist && rm -rf dist:dll && rm -rf .uglify-cache && rm -rf .uglify-dll-cache && rm -rf stats.json",
     "build:dll": "webpack --config config/webpack.dll.config.js",
     "build:dev": "webpack --config config/webpack.dev.config.js --profile --json > stats.json",
     "build:pro": "webpack --config config/webpack.pro.config.js",
