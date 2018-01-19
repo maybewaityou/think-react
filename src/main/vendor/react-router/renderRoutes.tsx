@@ -6,7 +6,22 @@
  *
  */
 import React from 'react';
+import { Switch } from 'react-router';
 import { Route } from 'react-router-dom';
 import { IRouteConfig } from './PropTypes';
 
-export default (config: IRouteConfig[] | undefined, extraProps?: any) => ( config.map((route: IRouteConfig) => <Route key={route.path} exact={route.exact} path={route.path} component={route.component} /> ));
+export default (routes: IRouteConfig[], extraProps = {}, switchProps = {}) => (
+  <Switch {...switchProps}>
+    {routes.map((route, i) => (
+      <Route
+        key={route.path}
+        path={route.path}
+        exact={route.exact}
+        strict={route.strict}
+        render={(props) => (
+          <route.component {...props} {...extraProps} route={route} />
+        )}
+      />
+    ))}
+  </Switch>
+);

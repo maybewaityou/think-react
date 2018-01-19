@@ -8,6 +8,7 @@
 import { context } from '@context';
 import { log, NetworkClient } from 'mario-utilities';
 import React from 'react';
+import { matchPath } from 'react-router';
 
 export default class extends React.PureComponent<any, any> {
 
@@ -22,9 +23,15 @@ export default class extends React.PureComponent<any, any> {
         <button onClick={this.handleClick}>go fosrward</button>
         <button onClick={() => {
           NetworkClient.getInstance()
-            .asyncObserve('http://localhost:9999/server/checkForUpdates', {})
+            .asyncObserve('http://localhost:9999/awp/pad/login/authUser_Pad.do?username=yinfeng&password=123', {})
             .subscribe((response: any) => {}, (error: Error) => {});
         }}>send request</button>
+        <button onClick={() => {
+          this.props.history.push('/child/123');
+        }}>link to child page</button>
+        <button onClick={() => {
+          this.props.history.push('/child/123/grand-child');
+        }}>link to grand child page</button>
         <button onClick={() => {
           context.test();
         }}>test context</button>

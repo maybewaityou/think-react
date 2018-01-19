@@ -5,17 +5,30 @@
  * description:
  *
  */
+import React from 'react';
+import Child from '../../../pages/Child';
+import GrandChild from '../../../pages/GrandChild';
 import Home from '../../../pages/Home';
-import { routeLoader } from '../../vendor/index';
+import Root from '../../../pages/Root';
+import { renderRoutes, routeLoader } from '../../vendor/index';
 
 export default [
   {
-    path: '/',
-    exact: true,
-    component: Home,
-  },
-  {
-    path: '/about',
-    component: routeLoader(() => import(/* webpackChunkName: "about" */'../../../pages/About')),
+    component: Root,
+    routes: [
+      {
+        path: '/',
+        exact: true,
+        component: Home,
+      },
+      {
+        path: '/child/:id',
+        component: routeLoader(() => import(/* webpackChunkName: "child" */'../../../pages/Child')),
+        routes: [{
+          path: '/child/:id/grand-child',
+          component: routeLoader(() => import(/* webpackChunkName: "grand-child" */'../../../pages/GrandChild')),
+        }],
+      },
+    ],
   },
 ];
