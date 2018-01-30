@@ -23,7 +23,7 @@ export const NetworkUtility = {
 
 export const networkClient = NetworkUtility.init({
 
-  prepare: ({ url, params }: any) => {
+  prepare: ({ url, params }) => {
     const URL = `${Constant.BASE_URL}/${url}`;
     log(`== url ===>>>> ${URL}`);
     log(`== params ===>>>> ${toString(params)}`);
@@ -40,13 +40,13 @@ export const networkClient = NetworkUtility.init({
     }
   },
 
-  handleResponse: (response: any, resolve: any, reject: any, { url, params }: any) => {
+  handleResponse: (response: any, resolve: any, reject: any, { url, params }) => {
     log(`== url ===>>>> ${url}`);
     log(`== response ===>>>> ${toString(response)}`);
     resolve(response);
   },
 
-  handleError: (error: any, reject: any, { url, params }: any) => {
+  handleError: (error: any, reject: any, { url, params }) => {
     const errorResponse = { errorMessage: error.message, errorStack: error.stack };
     log(`== url ===>>>> ${url}`);
     log(`== error ===>>>> ${toString(errorResponse)}`);

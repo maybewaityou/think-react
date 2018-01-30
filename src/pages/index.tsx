@@ -5,15 +5,25 @@
  * description:
  *
  */
+import { bind } from 'mario-ducks';
+import { PureComponent } from 'mario-pure';
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
 
-import { routesConfig } from '../main/configs/index';
+import { ErrorBoundary, Modal } from '@components';
 import { renderRoutes } from '../main/vendor/index';
-import Home from './Home';
 
-export default () => (
-  <Router>
-    {renderRoutes(routesConfig)}
-  </Router>
-);
+@bind((state: any) => ({
+  $modalData: state.modalReducer,
+}))
+export default class extends PureComponent<any, any> {
+
+  public render() {
+    return (
+      <ErrorBoundary>
+        <Modal $modalData={this.props.$modalData} />
+        {renderRoutes(this.props.route.routes)}
+      </ErrorBoundary>
+    );
+  }
+
+}

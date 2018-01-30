@@ -12,20 +12,24 @@
     "analyzer": "webpack-bundle-analyzer stats.json",
     "lint": "tslint -c tslint.json 'src/**/*.*'"
   },
-  "pre-commit": [ "lint" ],
+  "pre-commit": [
+    "lint"
+  ],
   "author": "MeePwn",
   "license": "ISC",
   "dependencies": {
-    "mario-architecture-components": "^0.0.16",
+    "blueimp-md5-es6": "^2.7.4",
+    "history": "^4.7.2",
+    "mario-architecture-components": "^0.0.19",
     "mario-ducks": "^0.0.86",
     "mario-functional": "^0.0.5",
     "mario-pure": "^0.0.9",
-    "mario-utilities": "^0.0.37",
+    "mario-utilities": "^0.0.40",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.2.2",
-    "react-router-redux": "^4.0.8",
+    "react-router-redux": "^5.0.0-alpha.9",
     "styled-components": "^2.4.0"
   },
   "devDependencies": {

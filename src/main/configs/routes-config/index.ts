@@ -7,11 +7,11 @@
  */
 import React from 'react';
 
+import { renderRoutes, routeLoader } from '@vendor';
 import Child from '../../../pages/Child';
 import GrandChild from '../../../pages/GrandChild';
-import Home from '../../../pages/Home';
-import Root from '../../../pages/Root';
-import { renderRoutes, routeLoader } from '../../vendor/index';
+import { HomeContainer } from '../../../pages/home/index';
+import Root from '../../../pages/index';
 
 export default [
   {
@@ -20,7 +20,11 @@ export default [
       {
         path: '/',
         exact: true,
-        component: Home,
+        component: HomeContainer,
+      },
+      {
+        path: '/login',
+        component: routeLoader(() => import(/* webpackChunkName: "login" */'../../../pages/login/container/LoginContainer')),
       },
       {
         path: '/child/:id',

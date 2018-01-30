@@ -8,7 +8,9 @@
 import { log } from 'mario-utilities';
 
 export default {
-  test: () => {
-    log('=========');
+
+  isSuccess: (response: any) => {
+    return response.retCode === 'PD0000';
   },
+
 };

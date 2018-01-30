@@ -8,7 +8,7 @@
 import { IAction } from 'mario-ducks';
 import { log, toString } from 'mario-utilities';
 
-export default (store: any) => (next: any) => (action: any) => {
+export default (store: any) => (next: any) => (action: any): any => {
   log(`== action start ===>>>> ${toString(action)}`);
   next(action);
   log(`== action end ===>>>> ${toString(action)}`);

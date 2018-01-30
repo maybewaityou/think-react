@@ -12,3 +12,4 @@ export { Color } from './Color';
 export { Style } from './Style';
 export { CryptoParams } from './CryptoParams';
 export { ScreenAdapter } from './ScreenAdapter';
+export { ModalType } from './ModalType';

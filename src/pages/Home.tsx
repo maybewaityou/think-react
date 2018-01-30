@@ -9,7 +9,7 @@ import { log, NetworkClient } from 'mario-utilities';
 import React from 'react';
 import { matchPath } from 'react-router';
 
-import { context } from '@context';
+import { Context } from '@context';
 
 export default class extends React.PureComponent<any, any> {
 
@@ -28,14 +28,14 @@ export default class extends React.PureComponent<any, any> {
             .subscribe((response: any) => {}, (error: Error) => {});
         }}>send request</button>
         <button onClick={() => {
+          this.props.history.push('/login');
+        }}>link to child page</button>
+        <button onClick={() => {
           this.props.history.push('/child/123');
         }}>link to child page</button>
         <button onClick={() => {
           this.props.history.push('/child/123/grand-child');
         }}>link to grand child page</button>
-        <button onClick={() => {
-          context.test();
-        }}>test context</button>
       </div>
     );
   }

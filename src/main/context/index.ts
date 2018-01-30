@@ -6,4 +6,4 @@
  *
  */
 
-export { default as context } from './Context';
+export { default as Context } from './Context';

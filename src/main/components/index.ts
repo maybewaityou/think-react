@@ -6,4 +6,4 @@
  *
  */
 
-export { Button } from './views/index';
+export * from './views/index';

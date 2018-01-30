@@ -6,32 +6,54 @@
  *
  */
 import Immutable, { fromJS, Map } from 'immutable';
-import { IAction } from 'mario-ducks';
+import { acceptActions, IAction } from 'mario-ducks';
+import { routerReducer } from 'react-router-redux';
 import { combineReducers, ReducersMapObject } from 'redux';
 
-import { FETCH_DATA, FETCH_DATA_FAILURE, FETCH_DATA_SUCCESS } from '../actions/index';
+import { DISMISS_MODAL, SHOW_MODAL } from '@actions';
+import { homeReducer } from '../../pages/home/index';
+import { loginReducer } from '../../pages/login/index';
 
-const initializeNetworkState: Map<string, any> = fromJS({
-    isSuccess: false,
-    response: {},
-    error: {},
+const initializeModalState: Map<string, any> = fromJS({
+  shouldShow: false,
+  type: '', // modal type: success/warning/failure
+  message: '', // modal message
+  positiveTitle: '确定', // modal positive title
+  negativeTitle: '取消', // modal negative title
+  positiveAction: () => {}, // modal positive action
+  negativeAction: () => {}, // modal negative action
 });
 
-function networkReducer(state: Map<string, any> = initializeNetworkState, action: IAction) {
-    switch (action.type) {
-    case FETCH_DATA_SUCCESS:
-        return state
-            .set('isSuccess', true)
-            .set('response', action.payload);
-    case FETCH_DATA_FAILURE:
-        return state
-            .set('isSuccess', false)
-            .set('error', action.payload);
+const modalReducer = acceptActions((state: Map<string, any> = initializeModalState, action: IAction) => {
+  switch (action.type) {
+    case SHOW_MODAL:
+      return state
+        .set('shouldShow', true)
+        .set('type', action.payload.get('type'))
+        .set('message', action.payload.get('message'))
+        .set('positiveTitle', action.payload.get('positiveTitle') ? action.payload.get('positiveTitle') : '确定')
+        .set('negativeTitle', action.payload.get('negativeTitle') ? action.payload.get('negativeTitle') : '取消')
+        .set('positiveAction', action.payload.get('positiveAction'))
+        .set('negativeAction', action.payload.get('negativeAction'));
+    case DISMISS_MODAL:
+      return state
+        .set('shouldShow', false)
+        .set('type', '')
+        .set('message', '')
+        .set('positiveTitle', '确定')
+        .set('negativeTitle', '取消')
+        .set('positiveAction', () => {})
+        .set('negativeAction', () => {});
     default:
-        return state;
-    }
-}
+      return state;
+  }
+}, [
+  SHOW_MODAL, DISMISS_MODAL,
+]);
 
 export default {
-  networkReducer,
+  routerReducer,
+  modalReducer,
+  ...loginReducer,
+  ...homeReducer,
 };

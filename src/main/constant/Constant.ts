@@ -9,7 +9,7 @@ import { Color } from './Color';
 
 export const Constant = {
 
-  BASE_URL: 'http://10.240.90.214:8088/padServer/',
+  BASE_URL: 'http://10.240.81.230:7001/awp/pad/',
   DOWNLOAD_URL: 'http://localhost:9999/server/download?',
 
 };
