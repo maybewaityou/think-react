@@ -16,7 +16,7 @@ module.exports = {
     react: [ 'react', 'react-dom' ],
     reactRouter: [ 'react-router', 'react-router-dom' ],
     polyfill: [ 'core-js/fn/object/assign', 'core-js/fn/promise', 'whatwg-fetch' ],
-    mario: [ 'mario-ducks', 'mario-functional', 'mario-pure', 'mario-utilities', 'mario-architecture-components' ],
+    mario: [ 'mario-ducks', 'mario-architecture-components', 'mario-pure', 'mario-utilities', 'mario-functional' ],
   },
   output: {
     filename: '[name].dll.js',
