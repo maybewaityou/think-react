@@ -6,4 +6,4 @@
  *
  */
 
-export { DataUtility, CryptoUtility } from './data/index';
+export { DataUtility, CryptoUtility, NetworkUtility, networkClient } from './data/index';
