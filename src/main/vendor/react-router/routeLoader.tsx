@@ -6,6 +6,7 @@
  *
  */
 import React from 'react';
+
 import { AsyncRoute, IRouteConfigComponentProps } from './PropTypes';
 
 export default (asyncRoute: AsyncRoute) => (

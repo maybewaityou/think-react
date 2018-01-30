@@ -6,6 +6,7 @@
  *
  */
 import React from 'react';
+
 import { renderRoutes } from '../main/vendor/index';
 
 export default ({ route, history }: any) => (

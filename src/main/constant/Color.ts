@@ -7,6 +7,7 @@
  */
 
 export const Color = {
+
   red: 'red',
   white: 'white',
   blue: 'blue',

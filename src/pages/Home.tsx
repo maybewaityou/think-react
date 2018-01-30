@@ -5,10 +5,11 @@
  * description:
  *
  */
-import { context } from '@context';
 import { log, NetworkClient } from 'mario-utilities';
 import React from 'react';
 import { matchPath } from 'react-router';
+
+import { context } from '@context';
 
 export default class extends React.PureComponent<any, any> {
 

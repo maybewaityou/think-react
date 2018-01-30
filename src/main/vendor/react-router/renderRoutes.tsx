@@ -8,6 +8,7 @@
 import React from 'react';
 import { Switch } from 'react-router';
 import { Route } from 'react-router-dom';
+
 import { IRouteConfig } from './PropTypes';
 
 export default (routes: IRouteConfig[], extraProps = {}, switchProps = {}) => (
