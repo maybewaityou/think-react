@@ -41,7 +41,15 @@ module.exports = {
   },
   resolve: {
     alias: {
+      "@components": fullPath(`${srcPath}/main/components/index.ts`),
+      "@configs": fullPath(`${srcPath}/main/configs/index.ts`),
+      '@constant': fullPath(`${srcPath}/main/constant/index.ts`),
       '@context': fullPath(`${srcPath}/main/context/index.ts`),
+      "@extensions": fullPath(`${srcPath}/main/extensions/index.ts`),
+      "@manager": fullPath(`${srcPath}/main/manager/index.ts`),
+      "@utilities": fullPath(`${srcPath}/main/utilities/index.ts`),
+      "@vendor": fullPath(`${srcPath}/main/vendor/index.ts`),
+      "@actions": fullPath(`${srcPath}/dataflow/actions/index.ts`),
     },
     modules: [ fullPath(modulesPath) ],
     mainFields: [ 'jsnext:main', 'module', 'main' ],
