@@ -8,17 +8,15 @@
 import '../assets/stylesheet/style.scss';
 
 import { configureStore, Provider } from 'mario-ducks';
-import { NetworkClient } from 'mario-utilities';
 import React from 'react';
 import { render } from 'react-dom';
 
+import { networkClient } from '@utilities';
 import { rootEpic } from './dataflow/epic/index';
 import { rootLogic } from './dataflow/logic/index';
 import middlewares from './dataflow/middleware/index';
 import { rootReducer } from './dataflow/reducer/index';
 import TestContainer from './pages/index';
-
-const networkClient = NetworkClient.getInstance().setConfig({ silence: false });
 
 const store = configureStore({}, networkClient, rootReducer, rootLogic, rootEpic, middlewares);
 
