@@ -5,8 +5,6 @@
  * description:
  *
  */
-import md5 from 'blueimp-md5-es6';
-
 import { NetworkUtility } from '@utilities';
 import { Constant } from '../../../main/constant/index';
 
@@ -16,5 +14,5 @@ interface ILoginParams {
 }
 
 export function loginTask(params: ILoginParams) {
-  return NetworkUtility.observe(`login/authUser_Pad.do?username=${params.userName}&password=${md5(params.password)}`);
+  return NetworkUtility.observe(`login/authUser_Pad.do?username=${params.userName}&password=${params.password}`);
 }

@@ -18,7 +18,6 @@
   "author": "MeePwn",
   "license": "ISC",
   "dependencies": {
-    "blueimp-md5-es6": "^2.7.4",
     "history": "^4.7.2",
     "mario-architecture-components": "^0.0.19",
     "mario-ducks": "^0.0.86",

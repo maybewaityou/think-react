@@ -15,8 +15,6 @@
       "mario-architecture-components": ["node_modules/mario-architecture-components/index.d.ts"],
       "mario-extension": ["node_modules/mario-extension/index.d.ts"],
       "styled-components": ["node_modules/styled-components/typings/styled-components.d.ts"],
-      "md5": ["src/main/declare/md5/index.d.ts"],
-      "blueimp-md5-es6": ["src/main/declare/md5/index.d.ts"],
       "@components": ["src/main/components/index.ts"],
       "@configs": ["src/main/configs/index.ts"],
       "@constant": ["src/main/constant/index.ts"],
