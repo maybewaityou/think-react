@@ -17,7 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "mario-architecture-components": "^0.0.16",
-    "mario-ducks": "^0.0.83",
+    "mario-ducks": "^0.0.86",
     "mario-functional": "^0.0.5",
     "mario-pure": "^0.0.9",
     "mario-utilities": "^0.0.37",
