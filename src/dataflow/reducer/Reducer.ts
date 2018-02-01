@@ -14,7 +14,7 @@ import { DISMISS_MODAL, SHOW_MODAL } from '@actions';
 import { homeReducer } from '../../pages/home/index';
 import { loginReducer } from '../../pages/login/index';
 
-const initializeModalState: Map<string, any> = fromJS({
+const initialModalState: Map<string, any> = fromJS({
   shouldShow: false,
   type: '', // modal type: success/warning/failure
   message: '', // modal message
@@ -24,7 +24,7 @@ const initializeModalState: Map<string, any> = fromJS({
   negativeAction: () => {}, // modal negative action
 });
 
-const modalReducer = acceptActions((state: Map<string, any> = initializeModalState, action: IAction) => {
+const modalReducer = acceptActions((state: Map<string, any> = initialModalState, action: IAction) => {
   switch (action.type) {
     case SHOW_MODAL:
       return state
