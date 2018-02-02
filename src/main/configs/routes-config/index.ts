@@ -8,8 +8,8 @@
 import React from 'react';
 
 import { renderRoutes, routeLoader } from '@vendor';
-import Child from '../../../pages/Child';
-import GrandChild from '../../../pages/GrandChild';
+// import Child from '../../../pages/Child';
+// import GrandChild from '../../../pages/GrandChild';
 import { HomeContainer } from '../../../pages/home/index';
 import Root from '../../../pages/index';
 
