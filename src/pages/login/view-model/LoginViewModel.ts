@@ -29,7 +29,7 @@ export interface IHandlers {
 
 export default class extends ViewModel<IViewModelProps> {
 
-  public onCreate(props: Readonly<any>, context?: any) {
+  public onCreate(props: Readonly<IViewModelProps>, context?: any) {
 
   }
 
