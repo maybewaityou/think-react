@@ -14,8 +14,8 @@ import { ConnectedRouter as Router } from 'react-router-redux';
 
 import { networkClient } from '@utilities';
 import { renderRoutes } from '@vendor';
+import { history } from '@vendor';
 import { rootEpic } from './dataflow/epic/index';
-import history from './dataflow/history/index';
 import { rootLogic } from './dataflow/logic/index';
 import middlewares from './dataflow/middleware/index';
 import { rootReducer } from './dataflow/reducer/index';

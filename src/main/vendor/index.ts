@@ -7,3 +7,4 @@
  */
 
 export { routeLoader, renderRoutes } from './react-router/index';
+export { history } from './react-router-redux/index';
