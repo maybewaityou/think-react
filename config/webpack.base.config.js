@@ -16,11 +16,14 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HappyPack = require('happypack');
 
+// 静态部署
+const staticDeploy = true;
+
 const srcPath = 'src';
 const assetsPath = 'assets';
 const modulesPath = 'node_modules';
 const distPath = 'dist';
-const publicPath = 'public';
+const publicPath = staticDeploy ? './' : '/';
 const manifestRootPath = `../${distPath}:dll`;
 
 function fullPath(subPath) {
@@ -37,7 +40,7 @@ module.exports = {
     filename: '[name].bundle.[hash:8].js',
     chunkFilename: '[name].chunk.[chunkhash:8].js',
     path: fullPath(distPath),
-    publicPath: '/'
+    publicPath: publicPath
   },
   resolve: {
     alias: {
